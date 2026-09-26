@@ -60,3 +60,10 @@ Since this is a single-file application, the structure is straightforward:
 .
 ├── index.html      # Contains all HTML, CSS, and React/JSX logic
 └── README.md       # This file
+
+All application data, including the tool registry, architecture patterns, and stack presets, is defined in JavaScript arrays at the top of the <script> block inside index.html.
+Contributing
+Contributions are welcome. If you want to add a new tool, fix a bug, or improve the architecture patterns, please open a pull request.
+When adding a new tool, ensure you update the TOOLS array in the script section with accurate licensing, capabilities, and SDLC coverage data.
+License
+This project is open source and available under the MIT License.
