@@ -1,0 +1,1208 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="A curated architecture command centre for open-source developer tools, software delivery, DevSecOps, and low-resource engineering environments.">
+<meta name="theme-color" content="#0b1220">
+<title>Developer Stack Canvas | Architecture Command Centre</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0%25' stop-color='%2332d8f4'/%3E%3Cstop offset='100%25' stop-color='%2380e8ff'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='7' fill='url(%23g)'/%3E%3Cpath d='M8 11h16M8 16h16M8 21h16' stroke='%23041017' stroke-width='2.2' stroke-linecap='round'/%3E%3Ccircle cx='12' cy='11' r='1.5' fill='%23041017'/%3E%3Ccircle cx='20' cy='16' r='1.5' fill='%23041017'/%3E%3Ccircle cx='15' cy='21' r='1.5' fill='%23041017'/%3E%3C/svg%3E">
+<link rel="icon" type="image/png" sizes="32x32" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGSSURBVFhH7ZYxSwNBEIW/WRtbC0t/gI2NnY2Vv8DK/+A/sLOxEksLK0GwEgJBgiAhkIVdWYhkN7vZ3O7e5QJJYXZ23rzhLsFNFvbu3fBmd2bfoij6j/8eRVH0fwfUgQawBewCO8AssAP8Bj4BL4HvwF/4HtgB1oEVYB5YBuaAWWAamARagAUMoAMd6EIPOrSHHnShB30YQB+GMIIxTGACU5jBDGYxhznMYwELWMQSlrGCVaxhHXnksY99HKAYBShFGcpRgQpUogpVqEYNatCAFuxgF3uoQA02sYU6NKARzWhBC5rRghY0oxktaEULWtGCVrSiFa1oRSva0IY2tKMDHehCB7rQhR70oA996EMfBjCAIQxhCEO4h0d4hmd4gXd4hw/4hC/4hg/4hB/4hQAEIAhBCDIQhRjEIA4JSEIK0pCBLOQgDwUoQhFKUIYKVKEKdWhAAxrQgAY0oAENaEADGtCABjSgAQ1oQAMa0IAGNKAJTWjC/0X8A+qoRiXKUYlKVLIe1ahHPRrQgAY0oAENaEADGtCABjSgAQ1oQAMa0IAGNKAJTWjCE5rQhCY8wSM8wTO8wDu8wwd8whf8wC/8wR8C8I8ABOAf8A/4BwEIQBCCDIQhBnFIQBIykIUCFKEEZShDFepQhwY0oAENaEADGtCABjSgAQ1oQAMa0IAGNKAJTWjCPwH/AB+lRqWqZJmKAAAAABJRU5ErkJggg==">
+<link rel="apple-touch-icon" sizes="180x180" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0%25' stop-color='%2332d8f4'/%3E%3Cstop offset='100%25' stop-color='%2380e8ff'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='180' height='180' rx='40' fill='url(%23g)'/%3E%3Cpath d='M45 62h90M45 90h90M45 118h90' stroke='%23041017' stroke-width='12' stroke-linecap='round'/%3E%3Ccircle cx='68' cy='62' r='8' fill='%23041017'/%3E%3Ccircle cx='112' cy='90' r='8' fill='%23041017'/%3E%3Ccircle cx='85' cy='118' r='8' fill='%23041017'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+<script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<style>
+:root{color-scheme:dark;--bg:#0b1220;--bg-2:#0f172a;--surface:#111c2e;--surface-2:#162236;--surface-3:#1a2940;--surface-soft:rgba(17,28,46,.72);--text:#edf4ff;--text-2:#c6d2e3;--muted:#8291a7;--muted-2:#637188;--border:#24354d;--border-strong:#31445f;--primary:#32d8f4;--primary-2:#27bde0;--primary-soft:rgba(50,216,244,.11);--success:#36d399;--success-soft:rgba(54,211,153,.10);--warning:#f6c760;--warning-soft:rgba(246,199,96,.10);--danger:#ff7a90;--danger-soft:rgba(255,122,144,.10);--info:#7aa9ff;--info-soft:rgba(122,169,255,.10);--purple:#b794f6;--purple-soft:rgba(183,148,246,.10);--shadow-sm:0 1px 2px rgba(0,0,0,.18);--shadow-md:0 14px 40px rgba(0,0,0,.20);--shadow-lg:0 24px 70px rgba(0,0,0,.32);--radius-sm:8px;--radius-md:12px;--radius-lg:16px;--radius-xl:20px;--control:42px;--sidebar:268px;--topbar:72px;--transition:160ms ease;--container:1440px}
+html[data-theme="light"]{color-scheme:light;--bg:#f5f7fb;--bg-2:#ffffff;--surface:#ffffff;--surface-2:#f7f9fc;--surface-3:#eef3f9;--surface-soft:rgba(255,255,255,.88);--text:#132238;--text-2:#33445c;--muted:#6e7f95;--muted-2:#8796aa;--border:#dce4ee;--border-strong:#cbd7e6;--primary:#0795ad;--primary-2:#067f94;--primary-soft:rgba(7,149,173,.09);--success:#148d61;--success-soft:rgba(20,141,97,.09);--warning:#ad7610;--warning-soft:rgba(173,118,16,.09);--danger:#c0445d;--danger-soft:rgba(192,68,93,.08);--info:#4f74c7;--info-soft:rgba(79,116,199,.08);--purple:#7c3aed;--purple-soft:rgba(124,58,237,.08);--shadow-sm:0 1px 2px rgba(25,44,70,.07);--shadow-md:0 14px 40px rgba(25,44,70,.09);--shadow-lg:0 24px 70px rgba(25,44,70,.14)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,sans-serif;font-size:14px;line-height:1.5;overflow-x:hidden}button,input,select{font:inherit}button{cursor:pointer}a{color:inherit;text-decoration:none}::selection{background:rgba(50,216,244,.25)}
+.app-shell{min-height:100vh;display:flex;flex-direction:column;background:var(--bg)}.mobile-backdrop{position:fixed;inset:0;z-index:80;background:rgba(2,8,23,.65);backdrop-filter:blur(4px)}
+.sidebar{position:fixed;inset:0 auto 0 0;width:var(--sidebar);z-index:90;display:flex;flex-direction:column;background:var(--surface);border-right:1px solid var(--border);transition:transform var(--transition)}
+.sidebar-brand{padding:22px 20px 18px;border-bottom:1px solid var(--border)}.brand-row{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.brand-mark{width:36px;height:36px;border-radius:10px;display:grid;place-items:center;color:#041017;background:linear-gradient(135deg,var(--primary),#80e8ff);box-shadow:0 0 0 1px rgba(255,255,255,.12) inset}
+.brand-name{font-size:13px;font-weight:800;letter-spacing:.08em}.brand-sub{margin-top:4px;font-size:11px;color:var(--muted)}.sidebar-close{display:none}
+.nav{padding:12px 10px;overflow-y:auto;flex:1}.nav-group{margin-bottom:18px}.nav-label{padding:0 10px 6px;font-size:10px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--muted-2)}
+.nav-item{width:100%;display:flex;align-items:center;gap:10px;padding:8px 10px;margin-bottom:2px;color:var(--text-2);background:transparent;border:1px solid transparent;border-radius:9px;text-align:left;font-size:12px;font-weight:500;transition:background var(--transition),color var(--transition),border-color var(--transition)}
+.nav-item:hover{background:var(--surface-2);color:var(--text)}.nav-item:focus-visible,.icon-button:focus-visible,.btn:focus-visible,.search-input:focus-visible,.filter-select:focus-visible{outline:2px solid var(--primary);outline-offset:2px}
+.nav-item.active{background:var(--primary-soft);border-color:rgba(50,216,244,.18);color:var(--primary);font-weight:600}
+.nav-item i{width:16px;text-align:center;font-size:13px}.nav-item .nav-meta{margin-left:auto;font-size:10px;color:var(--muted-2)}
+.sidebar-footer{padding:12px 16px;border-top:1px solid var(--border)}.status-line{display:flex;align-items:center;justify-content:space-between;color:var(--muted);font-size:10px}
+.status-dot{width:7px;height:7px;border-radius:50%;background:var(--success);box-shadow:0 0 0 3px var(--success-soft)}
+.copyright-line{margin-top:6px;font-size:9px;color:var(--muted-2);text-align:center;line-height:1.4}
+.main-shell{margin-left:var(--sidebar);min-height:100vh;display:flex;flex-direction:column}
+.topbar{position:sticky;top:0;z-index:60;height:var(--topbar);display:flex;align-items:center;gap:14px;padding:0 28px;background:var(--surface-soft);border-bottom:1px solid var(--border);backdrop-filter:blur(14px)}
+.mobile-menu{display:none}.breadcrumbs{display:flex;flex-direction:column;min-width:0}.eyebrow{color:var(--muted);font-size:11px}
+.topbar-title{margin:0;font-size:16px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.global-search{margin-left:auto;width:min(420px,36vw);position:relative}.search-shell{position:relative}
+.search-icon{position:absolute;left:13px;top:50%;transform:translateY(-50%);color:var(--muted-2);pointer-events:none}
+.search-input{width:100%;height:40px;padding:0 86px 0 38px;color:var(--text);background:var(--surface-2);border:1px solid var(--border);border-radius:10px;outline:none;transition:border-color var(--transition),box-shadow var(--transition)}
+.search-input:hover{border-color:var(--border-strong)}.search-input:focus{border-color:rgba(50,216,244,.45);box-shadow:0 0 0 3px var(--primary-soft)}
+.shortcut{position:absolute;right:9px;top:50%;transform:translateY(-50%);display:inline-flex;gap:4px;align-items:center;color:var(--muted-2);font-size:10px}
+.keycap{min-width:21px;height:21px;display:inline-grid;place-items:center;border:1px solid var(--border);border-bottom-width:2px;border-radius:5px;background:var(--surface);font-weight:700}
+.topbar-actions{display:flex;align-items:center;gap:7px}
+.icon-button{width:40px;height:40px;display:grid;place-items:center;color:var(--text-2);background:transparent;border:1px solid var(--border);border-radius:10px;transition:background var(--transition),color var(--transition),border-color var(--transition)}
+.icon-button:hover{background:var(--surface-2);color:var(--text);border-color:var(--border-strong)}
+.main-content{max-width:var(--container);padding:30px 30px 56px;margin:0 auto;flex:1}
+.page-head{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;margin-bottom:22px}.page-head-copy{min-width:0}
+.page-title{margin:0;font-size:clamp(24px,3vw,32px);letter-spacing:-.035em;line-height:1.2}
+.page-description{margin:7px 0 0;max-width:820px;color:var(--muted);font-size:13px}
+.page-context{display:inline-flex;align-items:center;gap:8px;padding:6px 10px;border:1px solid var(--border);border-radius:999px;color:var(--muted);background:var(--surface-2);font-size:11px;white-space:nowrap}
+.page-context i{color:var(--success)}
+.site-footer{margin-left:var(--sidebar);padding:16px 28px;border-top:1px solid var(--border);background:var(--surface);text-align:center;font-size:11px;color:var(--muted-2)}
+.panel{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);box-shadow:var(--shadow-sm)}.panel+.panel{margin-top:18px}
+.panel-header{padding:18px 20px;border-bottom:1px solid var(--border)}.panel-title{margin:0;font-size:14px;font-weight:700}.panel-subtitle{margin:4px 0 0;color:var(--muted);font-size:12px}.panel-body{padding:20px}
+.hero-grid{display:grid;grid-template-columns:1.6fr .9fr;gap:14px;margin-bottom:18px}.hero-panel{padding:22px;position:relative;overflow:hidden}
+.hero-panel::after{content:'';position:absolute;inset:auto -90px -120px auto;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(50,216,244,.12),transparent 62%);pointer-events:none}
+.hero-kicker{color:var(--primary);font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase}
+.hero-title{margin:7px 0 6px;max-width:700px;font-size:clamp(22px,3vw,31px);letter-spacing:-.035em;line-height:1.15}
+.hero-text{max-width:720px;color:var(--muted);margin:0;font-size:13px}.hero-actions{display:flex;flex-wrap:wrap;gap:9px;margin-top:17px}
+.btn{min-height:38px;display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:0 13px;border-radius:9px;border:1px solid transparent;font-size:12px;font-weight:700;transition:transform var(--transition),background var(--transition),border-color var(--transition),color var(--transition),box-shadow var(--transition)}
+.btn:active{transform:translateY(1px)}.btn-primary{color:#05212a;background:var(--primary);box-shadow:0 8px 24px rgba(50,216,244,.15)}.btn-primary:hover{background:#53e0f8}
+.btn-secondary{color:var(--text);background:var(--surface-2);border-color:var(--border)}.btn-secondary:hover{border-color:var(--border-strong);background:var(--surface-3)}
+.btn-ghost{color:var(--muted);background:transparent}.btn-ghost:hover{color:var(--text);background:var(--surface-2)}
+.btn-danger{color:var(--danger);background:var(--danger-soft);border-color:rgba(255,122,144,.2)}.btn-sm{min-height:30px;padding:0 10px;font-size:11px}
+.quick-list{display:grid;gap:8px}.quick-item{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 11px;border-radius:10px;background:var(--surface-2);border:1px solid var(--border)}
+.quick-item-label{color:var(--text-2);font-size:12px}.quick-item-value{color:var(--primary);font-size:11px;font-weight:700}
+.metric-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-bottom:18px}.metric-card{padding:16px;min-height:106px}
+.metric-top{display:flex;align-items:center;justify-content:space-between;gap:10px}.metric-label{color:var(--muted);font-size:11px}
+.metric-icon{width:30px;height:30px;border-radius:8px;display:grid;place-items:center;background:var(--primary-soft);color:var(--primary)}
+.metric-value{margin-top:12px;font-size:23px;font-weight:800;letter-spacing:-.03em}.metric-note{margin-top:2px;color:var(--muted-2);font-size:10px}
+.toolbar{padding:14px;margin-bottom:14px}.toolbar-grid{display:grid;grid-template-columns:minmax(260px,1.4fr) repeat(3,minmax(150px,.55fr));gap:9px}
+.control{position:relative}.control i{position:absolute;left:11px;top:50%;transform:translateY(-50%);color:var(--muted-2);pointer-events:none}
+.filter-select,.text-control{width:100%;height:var(--control);padding:0 12px;color:var(--text);background:var(--surface-2);border:1px solid var(--border);border-radius:9px;outline:none}
+.text-control{padding-left:35px}.filter-select:hover,.text-control:hover{border-color:var(--border-strong)}
+.filter-select:focus,.text-control:focus{border-color:rgba(50,216,244,.45);box-shadow:0 0 0 3px var(--primary-soft)}
+.toolbar-footer{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:10px;color:var(--muted);font-size:10px}
+.toolbar-actions{display:flex;gap:4px}
+.table-wrap{overflow:auto}table{width:100%;border-collapse:collapse;min-width:850px}
+th{position:sticky;top:0;z-index:2;padding:11px 13px;background:var(--surface-2);color:var(--muted);text-align:left;font-size:10px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;border-bottom:1px solid var(--border);white-space:nowrap}
+td{padding:13px;border-bottom:1px solid var(--border);vertical-align:middle}tbody tr{transition:background var(--transition)}tbody tr:hover{background:var(--surface-2)}
+.table-sort{padding:0;color:inherit;background:transparent;border:0;font:inherit;text-transform:inherit;letter-spacing:inherit;cursor:pointer}
+.tool-cell{display:flex;align-items:center;gap:11px;min-width:260px;cursor:pointer}
+.tool-avatar{width:34px;height:34px;flex:0 0 auto;border-radius:9px;display:grid;place-items:center;background:var(--surface-3);border:1px solid var(--border);color:var(--primary)}
+.tool-name{display:block;font-weight:700;color:var(--text)}.tool-desc{display:block;margin-top:2px;max-width:420px;color:var(--muted);font-size:10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cell-muted{color:var(--muted);font-size:11px}.cell-compact{color:var(--text-2);font-size:11px}.cell-flex{display:flex;align-items:center;gap:7px}
+.favorite-button{width:30px;height:30px;display:grid;place-items:center;border:0;background:transparent;color:var(--muted-2);border-radius:8px;cursor:pointer}
+.favorite-button:hover{background:var(--surface-3);color:var(--warning)}.favorite-button.active{color:var(--warning)}
+.badge{display:inline-flex;align-items:center;gap:5px;min-height:22px;padding:0 8px;border-radius:999px;border:1px solid var(--border);font-size:10px;font-weight:700;white-space:nowrap}
+.badge-green{color:var(--success);background:var(--success-soft);border-color:rgba(54,211,153,.18)}
+.badge-orange{color:var(--warning);background:var(--warning-soft);border-color:rgba(246,199,96,.18)}
+.badge-blue{color:var(--info);background:var(--info-soft);border-color:rgba(122,169,255,.18)}
+.badge-purple{color:var(--purple);background:var(--purple-soft);border-color:rgba(183,148,246,.18)}
+.badge-red{color:var(--danger);background:var(--danger-soft);border-color:rgba(255,122,144,.18)}
+.badge-slate{color:var(--muted);background:var(--surface-3)}
+.badge-cyan{color:var(--primary);background:var(--primary-soft);border-color:rgba(50,216,244,.18)}
+.stage-stack{display:flex;flex-wrap:wrap;gap:4px;max-width:300px}.stage-chip{display:inline-flex;align-items:center;min-height:20px;padding:0 6px;color:var(--muted);background:var(--surface-3);border-radius:5px;font-size:9px}
+.mobile-tool-list{display:none;padding:10px}.mobile-tool-card{padding:14px;margin-bottom:8px;border:1px solid var(--border);border-radius:12px;background:var(--surface-2)}
+.mobile-tool-top{display:flex;justify-content:space-between;gap:10px}.mobile-tool-meta{display:flex;flex-wrap:wrap;gap:6px;margin-top:9px}.mobile-tool-actions{display:flex;justify-content:flex-end;margin-top:10px}
+.drawer-backdrop{position:fixed;inset:0;z-index:100;background:rgba(2,8,23,.66);backdrop-filter:blur(5px)}
+.drawer{position:fixed;z-index:110;top:0;right:0;height:100dvh;width:min(560px,100vw);background:var(--surface);border-left:1px solid var(--border);box-shadow:var(--shadow-lg);overflow-y:auto;animation:drawer-in 180ms ease}
+@keyframes drawer-in{from{transform:translateX(18px);opacity:.4}to{transform:translateX(0);opacity:1}}
+.drawer-header{position:sticky;top:0;z-index:2;display:flex;justify-content:space-between;gap:15px;padding:18px 20px;background:var(--surface-soft);border-bottom:1px solid var(--border);backdrop-filter:blur(14px)}
+.drawer-body{padding:20px}.drawer-title-row{display:flex;align-items:flex-start;gap:12px}
+.drawer-tool-icon{width:42px;height:42px;display:grid;place-items:center;border-radius:11px;background:var(--primary-soft);color:var(--primary);flex:0 0 auto}
+.drawer-title{margin:0;font-size:21px;letter-spacing:-.02em}.drawer-desc{margin:5px 0 0;color:var(--muted);font-size:12px}
+.detail-section{margin-top:22px}.detail-label{margin:0 0 8px;color:var(--muted-2);font-size:10px;font-weight:800;letter-spacing:.09em;text-transform:uppercase}
+.detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px}.detail-item{padding:12px;border:1px solid var(--border);border-radius:10px;background:var(--surface-2)}
+.detail-item-label{color:var(--muted-2);font-size:10px}.detail-item-value{margin-top:3px;color:var(--text-2);font-size:11px;line-height:1.45}
+.capability-list{display:flex;flex-wrap:wrap;gap:6px}
+.detail-note{padding:12px;color:var(--text-2);background:var(--surface-2);border:1px solid var(--border);border-radius:10px;font-size:11px}
+.detail-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px;padding-top:18px;border-top:1px solid var(--border)}
+.decision-list{display:grid;gap:9px}.decision-card{display:grid;grid-template-columns:1fr 32px 1.15fr;gap:10px;align-items:center;padding:13px;border:1px solid var(--border);border-radius:12px;background:var(--surface-2)}
+.decision-q{color:var(--text-2);font-size:12px;font-weight:600}.decision-arrow{color:var(--primary);text-align:center}
+.decision-a{padding:10px 11px;border-radius:9px;background:var(--primary-soft);border:1px solid rgba(50,216,244,.16);color:var(--text-2);font-size:11px}
+.decision-tag{display:inline-block;margin-bottom:4px;color:var(--primary);font-size:9px;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+.search-mini{margin-bottom:13px}
+.stack-layout{display:grid;grid-template-columns:280px 1fr;gap:14px}.stack-nav{padding:9px}
+.stack-tab{width:100%;padding:13px;text-align:left;border:1px solid transparent;background:transparent;color:var(--text-2);border-radius:10px;cursor:pointer}
+.stack-tab:hover{background:var(--surface-2)}.stack-tab.active{background:var(--primary-soft);border-color:rgba(50,216,244,.18);color:var(--text)}
+.stack-tab-name{display:block;font-weight:700}.stack-tab-desc{display:block;margin-top:3px;color:var(--muted);font-size:10px;line-height:1.4}
+.stack-panel{padding:20px}.stack-head{display:flex;justify-content:space-between;align-items:flex-start;gap:16px}.stack-head h3{margin:0;font-size:17px}.stack-head p{margin:5px 0 0;color:var(--muted);font-size:11px}
+.stack-flow{display:grid;gap:0;margin-top:18px}.stack-node{position:relative;display:grid;grid-template-columns:34px 1fr auto;gap:10px;align-items:center;padding:12px 10px}
+.stack-node:not(:last-child)::after{content:'';position:absolute;left:26px;top:45px;width:1px;height:21px;background:var(--border-strong)}
+.stack-node-icon{width:31px;height:31px;display:grid;place-items:center;color:var(--primary);background:var(--surface-2);border:1px solid var(--border);border-radius:8px;z-index:1}
+.stack-node-main strong{display:block;font-size:12px}.stack-node-main span{display:block;margin-top:1px;color:var(--muted);font-size:10px}.stack-node-type{color:var(--muted);font-size:10px;white-space:nowrap}
+.landscape-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:11px}
+.landscape-card{padding:15px;border:1px solid var(--border);border-radius:12px;background:var(--surface-2)}
+.landscape-icon{width:34px;height:34px;display:grid;place-items:center;border-radius:9px;margin-bottom:12px;background:var(--primary-soft);color:var(--primary)}
+.landscape-card h3{margin:0;font-size:13px}.landscape-card p{margin:5px 0 10px;color:var(--muted);font-size:10px;line-height:1.5}.landscape-tools{display:flex;flex-wrap:wrap;gap:5px}
+.pipeline{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:6px;align-items:stretch}
+.pipeline-step{position:relative;padding:13px 10px;border:1px solid var(--border);border-radius:11px;background:var(--surface-2);text-align:center}
+.pipeline-step:not(:last-child)::after{content:'\f178';font-family:'Font Awesome 6 Free';font-weight:900;position:absolute;top:50%;right:-11px;transform:translateY(-50%);color:var(--primary);z-index:2;font-size:10px}
+.pipeline-num{width:24px;height:24px;margin:0 auto 8px;display:grid;place-items:center;border-radius:50%;background:var(--primary-soft);color:var(--primary);font-size:10px;font-weight:800}
+.pipeline-name{font-size:10px;font-weight:700;line-height:1.35}.pipeline-desc{margin-top:4px;color:var(--muted);font-size:9px}
+.license-legend{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px}
+.notice{display:flex;align-items:flex-start;gap:9px;padding:12px 13px;color:var(--text-2);background:var(--info-soft);border:1px solid rgba(122,169,255,.16);border-radius:10px;font-size:11px}
+.notice i{color:var(--info);margin-top:1px}.notice-warning{background:var(--warning-soft);border-color:rgba(246,199,96,.16)}.notice-warning i{color:var(--warning)}
+.resource-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.resource-card{padding:17px;border:1px solid var(--border);border-radius:12px;background:var(--surface-2)}.resource-card h3{display:flex;align-items:center;gap:8px;margin:0;font-size:13px}.resource-card h3 i{color:var(--primary)}
+.resource-list{margin:11px 0 0;padding:0;list-style:none;display:grid;gap:9px}.resource-list li{display:flex;gap:8px;align-items:flex-start;color:var(--text-2);font-size:11px}.resource-list li i{color:var(--success);margin-top:2px}.resource-list strong{color:var(--text)}
+.resource-callout{margin-top:14px;padding:13px;border:1px solid rgba(50,216,244,.16);background:var(--primary-soft);border-radius:11px}
+.resource-callout h4{margin:0 0 5px;font-size:11px;color:var(--primary)}.resource-callout p{margin:0;color:var(--text-2);font-size:10px}
+.eco-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px}
+.eco-branch{padding:16px;border-radius:var(--radius-md);border:1px solid var(--border);background:var(--surface-2);transition:border-color var(--transition)}.eco-branch:hover{border-color:var(--border-strong)}
+.eco-branch-head{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+.eco-branch-icon{width:28px;height:28px;border-radius:7px;display:grid;place-items:center;font-size:12px}
+.eco-branch-title{font-size:13px;font-weight:600}.eco-branch-count{font-size:10px;color:var(--muted)}
+.eco-tools{display:flex;flex-wrap:wrap;gap:4px}
+.eco-tool-btn{font-size:11px;padding:3px 8px;border-radius:6px;background:var(--surface-3);color:var(--text-2);border:1px solid transparent;cursor:pointer;transition:all var(--transition)}
+.eco-tool-btn:hover{border-color:var(--border-strong);color:var(--text)}
+.flow-container{display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:center}
+.flow-step{padding:10px 14px;border-radius:var(--radius-md);background:var(--surface-2);border:1px solid var(--border);font-size:11px;font-weight:500;text-align:center}
+.flow-arrow{color:var(--muted);flex-shrink:0}
+.lifecycle-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:12px}
+.lifecycle-card{padding:16px;border:1px solid var(--border);border-radius:var(--radius-md);background:var(--surface-2)}
+.lifecycle-card h4{margin:0 0 6px;font-size:13px;font-weight:600;display:flex;align-items:center;gap:8px}
+.lifecycle-card h4 i{color:var(--primary)}
+.lifecycle-card p{margin:0 0 8px;font-size:11px;color:var(--muted)}
+.lifecycle-tools{font-size:11px;color:var(--text-2)}
+.pattern-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:12px}
+.pattern-card{padding:18px;border:1px solid var(--border);border-radius:var(--radius-md);background:var(--surface-2)}
+.pattern-card h3{margin:0 0 6px;font-size:13px;font-weight:600;display:flex;align-items:center;gap:8px}
+.pattern-card h3 i{color:var(--primary)}
+.pattern-card p{margin:0 0 12px;font-size:11px;color:var(--muted);line-height:1.5}
+.pattern-cols{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:10px}
+.pattern-col-title{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;margin-bottom:4px}
+.pattern-item{font-size:11px;color:var(--text-2);display:flex;align-items:start;gap:4px;margin-bottom:2px}
+.level-card{padding:20px;border:1px solid var(--border);border-radius:var(--radius-md);background:var(--surface-2);border-left:3px solid var(--primary)}
+.level-head{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.level-num{width:36px;height:36px;border-radius:var(--radius-md);display:grid;place-items:center;font-size:16px;font-weight:700}
+.level-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px}
+.project-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:12px}
+.project-card{padding:16px;border:1px solid var(--border);border-radius:var(--radius-md);background:var(--surface-2)}
+.project-card h4{margin:0 0 8px;font-size:13px;font-weight:600;display:flex;align-items:center;justify-content:space-between}
+.project-meta{display:flex;flex-direction:column;gap:4px}
+.project-meta span{font-size:11px;color:var(--text-2)}
+.project-meta strong{color:var(--muted);font-weight:500}
+.cost-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px}
+.cost-card{padding:18px;border:1px solid var(--border);border-radius:var(--radius-md);background:var(--surface-2)}
+.cost-card h3{margin:0 0 12px;font-size:13px;font-weight:600;display:flex;align-items:center;gap:8px}
+.cost-card h3 i{color:var(--primary)}
+.cost-item{font-size:12px;color:var(--text-2);padding-left:12px;border-left:2px solid var(--border);margin-bottom:6px}
+.progress-btns{display:flex;gap:4px;flex-wrap:wrap}
+.progress-btn{padding:3px 8px;border-radius:var(--radius-sm);font-size:10px;font-weight:500;border:1px solid var(--border);background:transparent;color:var(--muted);cursor:pointer;transition:all var(--transition)}
+.progress-btn:hover{border-color:var(--border-strong);color:var(--text)}
+.progress-btn.active{border-color:rgba(50,216,244,.3);background:var(--primary-soft);color:var(--primary)}
+.empty{padding:44px 18px;text-align:center}.empty-icon{width:44px;height:44px;margin:0 auto 11px;display:grid;place-items:center;border-radius:12px;background:var(--surface-2);border:1px solid var(--border);color:var(--muted-2)}
+.empty h3{margin:0;font-size:14px}.empty p{margin:5px 0 0;color:var(--muted);font-size:11px}
+.toast-region{position:fixed;right:18px;bottom:18px;z-index:140;display:grid;gap:8px;width:min(360px,calc(100vw - 36px))}
+.toast{display:flex;align-items:flex-start;gap:10px;padding:12px 13px;border-radius:10px;background:var(--surface);border:1px solid var(--border-strong);box-shadow:var(--shadow-md);animation:toast-in 180ms ease}
+@keyframes toast-in{from{transform:translateY(8px);opacity:0}to{transform:translateY(0);opacity:1}}
+.toast i{margin-top:2px;color:var(--success)}.toast p{margin:0;color:var(--text-2);font-size:11px}.toast button{margin-left:auto;color:var(--muted);border:0;background:transparent;cursor:pointer}
+.muted{color:var(--muted)}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.selfhost-table{min-width:800px}
+@media(max-width:1180px){:root{--sidebar:248px}.toolbar-grid{grid-template-columns:1.25fr 1fr 1fr}.toolbar-grid>:first-child{grid-column:span 3}.metric-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.hero-grid{grid-template-columns:1fr}.landscape-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.pipeline{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}.pipeline-step:not(:last-child)::after{display:none}}
+@media(max-width:900px){.sidebar{transform:translateX(-100%)}.sidebar.open{transform:translateX(0)}.sidebar-close{display:grid}.main-shell{margin-left:0}.mobile-menu{display:grid}.global-search{width:min(390px,48vw)}.main-content{padding:24px 20px 48px}.site-footer{margin-left:0}.decision-card{grid-template-columns:1fr}.decision-arrow{display:none}.stack-layout{grid-template-columns:1fr}.stack-nav{display:grid;grid-template-columns:1fr 1fr;gap:5px}.resource-grid{grid-template-columns:1fr}.eco-grid{grid-template-columns:repeat(auto-fill,minmax(240px,1fr))}.lifecycle-grid,.pattern-grid{grid-template-columns:1fr}.level-grid{grid-template-columns:1fr}.cost-grid{grid-template-columns:1fr}.project-grid{grid-template-columns:1fr}}
+@media(max-width:680px){:root{--topbar:62px}.topbar{padding:0 14px;gap:8px}.breadcrumbs{display:none}.global-search{order:2;flex:1;width:auto}.topbar-actions{order:3}.main-content{padding:20px 14px 42px}.page-head{align-items:flex-start;flex-direction:column;margin-bottom:18px}.page-context{display:none}.hero-panel{padding:18px}.metric-grid{gap:8px}.metric-card{min-height:96px;padding:13px}.metric-value{font-size:20px}.toolbar-grid{grid-template-columns:1fr 1fr}.toolbar-grid>:first-child{grid-column:span 2}.toolbar-footer{align-items:flex-start;flex-direction:column}.directory-table{display:none}.mobile-tool-list{display:block}.landscape-grid{grid-template-columns:1fr}.pipeline{grid-template-columns:1fr 1fr}.stack-nav{grid-template-columns:1fr}.detail-grid{grid-template-columns:1fr}.shortcut{display:none}.flow-container{flex-direction:column}.flow-arrow{transform:rotate(90deg)}.pattern-cols{grid-template-columns:1fr}.site-footer{padding:14px 16px}}
+@media(max-width:460px){.search-input{padding-left:34px;padding-right:10px}.topbar-actions .icon-button:first-child{display:none}.hero-actions .btn{width:100%}.metric-grid{grid-template-columns:1fr 1fr}.metric-note{display:none}.toolbar-grid{grid-template-columns:1fr}.toolbar-grid>:first-child{grid-column:auto}.pipeline{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<noscript><div style="padding:24px;font-family:system-ui,sans-serif">JavaScript is required to use the Developer Stack Canvas.</div></noscript>
+<div id="root"></div>
+<script type="text/babel">
+const{useEffect,useMemo,useState,useCallback}=React;
+
+const SDLC_STAGES=['IDE / Editor','AI Coding','Planning & Implementation','Source Control','Code Quality & Security','Backend','Database','Authentication','API','Realtime','Testing','Build System','Containerisation','Deployment','Observability','Maintenance'];
+
+const CATEGORIES={IDE:'Code Editors & IDEs',AI_INLINE:'AI Inline Assistance',AI_IDE:'AI IDE Agents',AI_TERM:'AI Terminal Agents',AI_AUTO:'Autonomous AI Engineering',SCM:'Source Control & Collaboration',SEC:'Code Quality & Security',BAAS:'Backend-as-a-Service',FULL:'Full-Stack Builders',FRAMEWORK:'Backend Frameworks',BUILD:'Build Systems',DEPLOY:'Deployment & Infrastructure'};
+const LICENSES={OSI:'Fully Open Source (OSI)',SA:'Source Available',OC:'Open Core',FREE:'Freemium / Managed'};
+
+const TOOLS=[
+{id:'vscode',name:'Visual Studio Code',category:CATEGORIES.IDE,website:'https://code.visualstudio.com/',github:'https://github.com/microsoft/vscode',licenseType:LICENSES.OC,license:'MIT (Core) / Proprietary (Binaries)',desc:'Extensible, ubiquitous code editor with a massive extension marketplace, integrated terminal, Git support, and debugging.',capabilities:['Extension marketplace','Integrated terminal','Git integration','Debugging','IntelliSense','Remote development','Multi-root workspaces'],selfHosted:'N/A',cloud:'N/A',architecture:'Electron / TypeScript',strengths:'Massive ecosystem and broad language support. Free and open source core. Cross-platform with active Microsoft backing.',tradeoffs:'Can be resource-heavy with large extension sets. Electron-based memory usage. Telemetry concerns (can be disabled).',sdlc:['IDE / Editor'],bestFor:'General-purpose development across any language or framework',learningCurve:'Low'},
+{id:'eclipse',name:'Eclipse',category:CATEGORIES.IDE,website:'https://eclipseide.org/',github:'https://github.com/eclipse-platform',licenseType:LICENSES.OSI,license:'EPL 2.0',desc:'Classic Java-centric IDE with a mature plugin ecosystem and enterprise tooling.',capabilities:['Java development','Plugin architecture','Build tools integration','Debugging','Version control','Enterprise frameworks'],selfHosted:'N/A',cloud:'N/A',architecture:'Java',strengths:'Deep Java integration and mature tooling. Free and open source. Enterprise-grade with extensive plugin system.',tradeoffs:'Heavier workflow and a less minimal interface. Declining community compared to VS Code. Steep learning curve for beginners.',sdlc:['IDE / Editor'],bestFor:'Enterprise Java development and legacy projects',learningCurve:'Medium'},
+{id:'netbeans',name:'Apache NetBeans',category:CATEGORIES.IDE,website:'https://netbeans.apache.org/',github:'https://github.com/apache/netbeans',licenseType:LICENSES.OSI,license:'Apache 2.0',desc:'Apache-maintained IDE for Java, PHP, and web development with built-in Maven and Gradle support.',capabilities:['Java SE/EE','Maven / Gradle','PHP support','HTML5/CSS','Code templates','Refactoring'],selfHosted:'N/A',cloud:'N/A',architecture:'Java',strengths:'Apache-backed with strong out-of-box experience. Good Java EE support. Lighter than Eclipse.',tradeoffs:'Smaller extension ecosystem than VS Code. Less community activity. Fewer extensions available.',sdlc:['IDE / Editor'],bestFor:'Java development and Apache ecosystem users',learningCurve:'Medium'},
+{id:'aider',name:'Aider',category:CATEGORIES.AI_TERM,website:'https://aider.chat/',github:'https://github.com/Aider-AI/aider',licenseType:LICENSES.OSI,license:'Apache 2.0',desc:'Terminal-based AI pair programmer that works directly in your Git repository with repo-aware editing.',capabilities:['Repo-aware editing','Auto-commits','Multi-file edit','LLM integration','Codebase context','Multiple model support'],selfHosted:'Local CLI',cloud:'Uses API keys',architecture:'Python CLI',strengths:'Fast repo-aware workflow with Git integration. Works in terminal. Supports many LLMs. Automatic git commits.',tradeoffs:'Terminal-first experience is less visual than IDE agents. Requires API keys (cost). Depends on external LLM quality.',sdlc:['AI Coding','Planning & Implementation'],bestFor:'Terminal-focused developers wanting AI pair programming with Git integration',learningCurve:'Low-Medium'},
+{id:'opencode',name:'OpenCode',category:CATEGORIES.AI_TERM,website:'https://opencode.ai/',github:'https://github.com/anomalyco/opencode',licenseType:LICENSES.OSI,license:'MIT',desc:'Open-source terminal AI coding agent for interactive code editing and generation.',capabilities:['Code generation','Terminal execution','File editing','LLM integration'],selfHosted:'Local CLI',cloud:'Uses API keys',architecture:'TypeScript / CLI',strengths:'Open ecosystem and terminal-native control. Lightweight and simple interface.',tradeoffs:'The tool and surrounding ecosystem evolve quickly. Requires API keys. Less feature-rich than Aider.',sdlc:['AI Coding'],bestFor:'Developers wanting a minimal terminal AI coding tool',learningCurve:'Low'},
+{id:'cline',name:'Cline',category:CATEGORIES.AI_IDE,website:'https://cline.bot/',github:'https://github.com/cline/cline',licenseType:LICENSES.OSI,license:'Apache 2.0',desc:'Agentic coding assistant inside VS Code with terminal access, file editing, and browser interaction capabilities.',capabilities:['Executes commands','Reads / writes files','Browser automation','Multi-step tasks','Human approval gates','Multiple model support'],selfHosted:'Local extension',cloud:'Uses API keys',architecture:'TypeScript extension',strengths:'Strong repository and terminal workflows inside the editor. Autonomous execution with human-in-the-loop. Can use browser.',tradeoffs:'VS Code only. Agentic changes need review and good permissions hygiene. API costs. Requires configuration.',sdlc:['AI Coding','Testing'],bestFor:'VS Code users wanting an autonomous AI agent for multi-step development tasks',learningCurve:'Medium'},
+{id:'continue',name:'Continue',category:CATEGORIES.AI_IDE,website:'https://www.continue.dev/',github:'https://github.com/continuedev/continue',licenseType:LICENSES.OSI,license:'Apache 2.0',desc:'Open-source AI code assistant for VS Code and JetBrains with support for local and cloud models.',capabilities:['Chat','Autocomplete','Inline edit','Context-aware','Local model support','Custom configurations','Multi-IDE support'],selfHosted:'Local extension + local models',cloud:'API keys',architecture:'TypeScript',strengths:'Highly configurable model and workflow support. Works in VS Code and JetBrains. Supports local models.',tradeoffs:'Best results require some configuration and model selection. Quality depends on model choice.',sdlc:['AI Coding'],bestFor:'Developers wanting a configurable AI assistant across multiple IDEs with local model support',learningCurve:'Medium'},
+{id:'tabby',name:'Tabby',category:CATEGORIES.AI_INLINE,website:'https://tabby.tabbyml.com/',github:'https://github.com/TabbyML/tabby',licenseType:LICENSES.OSI,license:'Apache 2.0',desc:'Self-hosted AI coding assistant server providing code completions and chat, designed for enterprise privacy.',capabilities:['Autocomplete','Private hosting','Code completion','Admin panel','Multiple model backends','Enterprise features'],selfHosted:'Local server',cloud:'Managed options available',architecture:'Rust / ML stack',strengths:'Private, controllable coding assistance. Fully self-hostable. Enterprise-ready with admin dashboard.',tradeoffs:'Self-hosting requires suitable compute for strong local models. GPU recommended for performance. Server maintenance needed.',sdlc:['AI Coding'],bestFor:'Organizations wanting a self-hosted, privacy-focused AI coding assistant',learningCurve:'Medium-High'},
+{id:'openhands',name:'OpenHands',category:CATEGORIES.AI_AUTO,website:'https://www.all-hands.dev/',github:'https://github.com/All-Hands-AI/OpenHands',licenseType:LICENSES.OSI,license:'MIT',desc:'Autonomous AI software engineering platform that can plan, write, test, and ship code in an isolated sandboxed environment.',capabilities:['Sandboxed execution','Web browsing','Terminal access','Iterative fixing','Autonomous planning','Repository inspection','Testing','Debugging'],selfHosted:'Local container runtime',cloud:'Managed offerings vary',architecture:'Python / containerised runtime',strengths:'Designed for multi-step engineering tasks and iterative execution. Fully autonomous development in sandboxed environment. Web interface.',tradeoffs:'Agentic workflows can consume substantial compute and model tokens. Output needs human review. Not a replacement for senior engineers.',sdlc:['AI Coding','Testing','Maintenance'],bestFor:'Automating repetitive development tasks, prototyping, and augmenting engineering teams',learningCurve:'Medium'},
+{id:'gitlab',name:'GitLab',category:CATEGORIES.SCM,website:'https://gitlab.com/',github:'https://github.com/gitlabhq/gitlabhq',licenseType:LICENSES.OC,license:'MIT (CE) / Proprietary (EE)',desc:'Complete DevOps platform providing Git repositories, CI/CD, issue tracking, merge requests, container registry, and security scanning.',capabilities:['Git repositories','CI/CD pipelines','Issue tracking','Merge requests','Container registry','Security scanning','Package registry','Wiki','Project boards','Self-hosting'],selfHosted:'Docker / Omnibus / source',cloud:'GitLab.com',architecture:'Ruby / Go',strengths:'Broad DevOps lifecycle coverage in one product. Excellent CI/CD. Self-hostable. Security features built-in.',tradeoffs:'Self-hosting needs meaningful compute and operations capacity. Complex administration. EE features are proprietary.',sdlc:['Source Control','Build System'],bestFor:'Teams wanting a complete, self-hostable DevOps platform with integrated CI/CD and security',learningCurve:'Medium'},
+{id:'sonarqube',name:'SonarQube Community',category:CATEGORIES.SEC,website:'https://www.sonarsource.com/products/sonarqube/',github:'https://github.com/SonarSource/sonarqube',licenseType:LICENSES.OC,license:'LGPL v3 (Community)',desc:'Continuous code quality and security inspection tool detecting bugs, vulnerabilities, and code smells across 30+ languages.',capabilities:['Static analysis','Code smells','Quality gates','Bug detection','Vulnerability detection','Security hotspots','CI/CD integration','Multi-language'],selfHosted:'Docker / Java',cloud:'SonarQube Cloud',architecture:'Java',strengths:'Broad analysis coverage and quality-gate workflow. Wide language support. Community edition is free.',tradeoffs:'Heavier than lightweight CLI-only scanning. Resource-intensive. Enterprise features are paid. Can produce false positives.',sdlc:['Code Quality & Security'],bestFor:'Teams wanting automated code quality and security analysis in CI/CD pipelines',learningCurve:'Medium'},
+{id:'semgrep',name:'Semgrep',category:CATEGORIES.SEC,website:'https://semgrep.dev/',github:'https://github.com/semgrep/semgrep',licenseType:LICENSES.OC,license:'LGPL 2.1 (CLI)',desc:'Fast static analysis for bugs and security patterns using expressive pattern-based code searching across 30+ languages.',capabilities:['Custom rules','Fast scans','CI integration','SAST','Pre-commit hooks','Multi-language','Security rules'],selfHosted:'Local CLI',cloud:'Managed dashboard',architecture:'OCaml',strengths:'Fast feedback and expressive rule authoring. Custom rule creation. CI/CD friendly. Pre-commit integration.',tradeoffs:'Some advanced workflows depend on managed features. Requires rule knowledge. Can miss complex patterns.',sdlc:['Code Quality & Security'],bestFor:'Teams wanting fast, customizable static analysis and security scanning',learningCurve:'Medium'},
+{id:'turborepo',name:'Turborepo',category:CATEGORIES.BUILD,website:'https://turbo.build/repo',github:'https://github.com/vercel/turborepo',licenseType:LICENSES.OSI,license:'MPL 2.0',desc:'High-performance build system for JavaScript and TypeScript monorepos with intelligent task scheduling and caching.',capabilities:['Caching','Parallel execution','Task pipelines','Remote caching','Incremental builds','Zero-config'],selfHosted:'Local CLI',cloud:'Optional remote cache',architecture:'Rust',strengths:'Fast builds and strong task orchestration. Remote caching. Easy configuration. Great developer experience.',tradeoffs:'Most useful inside JS/TS monorepo workflows. JavaScript/TypeScript only. Not a backend tool.',sdlc:['Build System'],bestFor:'JavaScript/TypeScript monorepos needing fast, cached builds',learningCurve:'Low'},
+{id:'supabase',name:'Supabase',category:CATEGORIES.BAAS,website:'https://supabase.com/',github:'https://github.com/supabase/supabase',licenseType:LICENSES.OSI,license:'Apache 2.0',desc:'PostgreSQL-centric backend platform with auth, storage, API, realtime, edge functions, and auto-generated APIs.',capabilities:['PostgreSQL','Auth','Edge Functions','Realtime','Storage','RLS','REST + GraphQL APIs','Dashboard','Local CLI','Vector embeddings'],selfHosted:'Containerised stack',cloud:'Managed platform',architecture:'PostgreSQL / Go / TypeScript',strengths:'Powerful relational core with integrated developer tooling. Full PostgreSQL power. Row Level Security. Large community.',tradeoffs:'Self-hosting the full platform introduces operational complexity. Edge functions are Deno-based. Realtime has scaling considerations.',sdlc:['Backend','Database','Authentication','API','Realtime'],bestFor:'Developers wanting a PostgreSQL-centric Firebase alternative with realtime capabilities',learningCurve:'Low-Medium'},
+{id:'appwrite',name:'Appwrite',category:CATEGORIES.BAAS,website:'https://appwrite.io/',github:'https://github.com/appwrite/appwrite',licenseType:LICENSES.OSI,license:'BSD-3-Clause',desc:'Self-hostable backend platform for web and mobile with auth, databases, storage, functions, messaging, and realtime.',capabilities:['Auth','Databases','Functions','Storage','Projects','Messaging','Realtime','REST + GraphQL APIs'],selfHosted:'Docker',cloud:'Appwrite Cloud',architecture:'PHP / MariaDB / services',strengths:'Clear product model and approachable self-hosting path. Multi-project architecture. Great for multi-tenant apps.',tradeoffs:'Different data model from PostgreSQL-first stacks. Smaller ecosystem than Supabase. Document DB (not SQL).',sdlc:['Backend','Database','Authentication','API'],bestFor:'Teams wanting a self-hostable, multi-tenant BaaS with comprehensive backend services',learningCurve:'Low-Medium'},
+{id:'pocketbase',name:'PocketBase',category:CATEGORIES.BAAS,website:'https://pocketbase.io/',github:'https://github.com/pocketbase/pocketbase',licenseType:LICENSES.OSI,license:'MIT',desc:'Compact open-source backend delivered as a single executable with embedded SQLite, auth, files, and admin UI.',capabilities:['SQLite','Auth','Files','Admin UI','Realtime','REST API','Single-binary deployment'],selfHosted:'Single binary',cloud:'Use a VPS / container host',architecture:'Go / SQLite',strengths:'Very small operational footprint and easy deployment. Zero configuration. Perfect for prototypes. Portable.',tradeoffs:'SQLite is not a substitute for every high-scale distributed workload. No serverless functions. Smaller ecosystem.',sdlc:['Backend','Database','Authentication','API'],bestFor:'Rapid prototypes, small projects, and lightweight self-hosted applications',learningCurve:'Very Low'},
+{id:'nhost',name:'Nhost',category:CATEGORIES.BAAS,website:'https://nhost.io/',github:'https://github.com/nhost/nhost',licenseType:LICENSES.OSI,license:'MIT',desc:'GraphQL-first backend platform around PostgreSQL and Hasura with auth, storage, and serverless functions.',capabilities:['PostgreSQL','GraphQL','Auth','Functions','Storage','Instant GraphQL API'],selfHosted:'Containerised',cloud:'Managed platform',architecture:'Hasura / PostgreSQL',strengths:'Fast GraphQL delivery with PostgreSQL underneath. GraphQL-first architecture. Instant APIs via Hasura.',tradeoffs:'Permissions and GraphQL concepts add a learning curve. Smaller community than Supabase. GraphQL-centric.',sdlc:['Backend','Database','Authentication','API'],bestFor:'Teams preferring GraphQL-first architecture with PostgreSQL backend',learningCurve:'Medium'},
+{id:'parse',name:'Parse Server',category:CATEGORIES.BAAS,website:'https://parseplatform.org/',github:'https://github.com/parse-community/parse-server',licenseType:LICENSES.OSI,license:'BSD-3-Clause',desc:'Mature open-source backend server with auth, database adapters, file storage, push notifications, and cloud functions.',capabilities:['Auth','Database adapters','Push notifications','File storage','Cloud functions','REST API','GraphQL','LiveQuery'],selfHosted:'Node.js server',cloud:'Third-party hosting',architecture:'Node.js',strengths:'Battle-tested API model and broad deployment flexibility. Flexible database options. Push notifications built-in.',tradeoffs:'Developer experience is less unified than newer backend platforms. Older architecture. More setup required.',sdlc:['Backend','Database','Authentication','API'],bestFor:'Mobile-first applications needing a mature, self-hosted backend with push notifications',learningCurve:'Medium'},
+{id:'strapi',name:'Strapi',category:CATEGORIES.BAAS,website:'https://strapi.io/',github:'https://github.com/strapi/strapi',licenseType:LICENSES.OSI,license:'MIT',desc:'Leading open-source headless CMS with customizable admin panel, content API, and flexible content type builder.',capabilities:['Content API','Admin panel','REST / GraphQL','Content type builder','Plugin architecture','Role-based access','Media library','Internationalization'],selfHosted:'Node.js server',cloud:'Strapi Cloud',architecture:'Node.js',strengths:'Strong editorial workflow and API-first content model. Visual content modeling. Plugin ecosystem.',tradeoffs:'Content-heavy applications can require careful deployment sizing. Node.js only. Enterprise features are paid.',sdlc:['Backend','API'],bestFor:'Content-driven applications needing a flexible, self-hosted headless CMS',learningCurve:'Low-Medium'},
+{id:'directus',name:'Directus',category:CATEGORIES.BAAS,website:'https://directus.io/',github:'https://github.com/directus/directus',licenseType:LICENSES.SA,license:'BSL 1.1 (with later conversion)',desc:'Data platform that wraps existing SQL databases with instant REST and GraphQL APIs, admin app, and data management.',capabilities:['DB introspection','Data studio','REST / GraphQL','Admin interface','No-code views','Role-based permissions','Flows','Realtime'],selfHosted:'Docker / Node',cloud:'Directus Cloud',architecture:'Node.js',strengths:'Strong fit when the database already exists and should remain the source of truth. No vendor lock-in. Excellent admin UI.',tradeoffs:'License terms should be reviewed against intended commercial use case. Can be complex for simple use cases. Requires SQL database.',sdlc:['Backend','API','Database'],bestFor:'Teams with existing SQL databases wanting instant APIs and admin interface',learningCurve:'Low-Medium'},
+{id:'convex',name:'Convex',category:CATEGORIES.BAAS,website:'https://www.convex.dev/',github:'',licenseType:LICENSES.SA,license:'FSL-1.1-Apache-2.0',desc:'Reactive backend focused on TypeScript-first application development with document-relational database and realtime.',capabilities:['Reactive database','TypeScript functions','Realtime','Application state','Server-side logic','TypeScript-first'],selfHosted:'Local development focus',cloud:'Managed platform',architecture:'TypeScript / Rust services',strengths:'Tight TypeScript integration and reactive data model. Excellent developer experience. Realtime by default.',tradeoffs:'License and hosting model differ from conventional permissive OSS. Cloud-only. TypeScript only. Vendor dependency.',sdlc:['Backend','Database','Realtime','API'],bestFor:'TypeScript teams wanting a reactive, realtime backend (accepting cloud-only tradeoffs)',learningCurve:'Low-Medium'},
+{id:'encore',name:'Encore',category:CATEGORIES.BAAS,website:'https://encore.dev/',github:'https://github.com/encoredev/encore',licenseType:LICENSES.OSI,license:'MPL 2.0',desc:'Backend framework using infrastructure-aware code to simplify service deployment in Go and TypeScript.',capabilities:['Go / TypeScript','Infrastructure automation','Microservices','Databases','Queues','Cron jobs','Secrets management'],selfHosted:'Docker / Kubernetes',cloud:'Encore Cloud',architecture:'Go / TypeScript',strengths:'Reduces repetitive infrastructure wiring for backend teams. Type-safe cloud resources. Local development support.',tradeoffs:'Teams need to accept its architectural model and tooling. Relatively new. Smaller community.',sdlc:['Backend','API','Deployment'],bestFor:'Go/TypeScript teams wanting infrastructure abstraction without managing cloud config manually',learningCurve:'Medium'},
+{id:'wasp',name:'Wasp',category:CATEGORIES.FULL,website:'https://wasp.sh/',github:'https://github.com/wasp-lang/wasp',licenseType:LICENSES.OSI,license:'MIT',desc:'Declarative full-stack framework compiling React, Node.js, and Prisma configurations into complete web applications.',capabilities:['React + Node','Auth','Jobs','Declarative config','Boilerplate reduction','Background jobs','Deployment'],selfHosted:'Yes; generated app is deployable',cloud:'Third-party / own infra',architecture:'Haskell compiler + React / Node',strengths:'Removes repetitive glue code between frontend and backend. Built-in auth. Dramatically reduces boilerplate.',tradeoffs:'Abstractions can hide details until deeper customisation is needed. Newer framework. Smaller ecosystem.',sdlc:['IDE / Editor','Planning & Implementation','Backend','Authentication'],bestFor:'Full-stack web developers wanting to eliminate boilerplate with React + Node.js',learningCurve:'Medium'},
+{id:'koyeb',name:'Koyeb',category:CATEGORIES.DEPLOY,website:'https://www.koyeb.com/',github:'',licenseType:LICENSES.FREE,license:'Proprietary managed service',desc:'Managed application deployment platform with container support, GPU workloads, and global edge deployment.',capabilities:['Global deployment','Containers','Serverless workflows','GPU workloads','CPU workloads','Database hosting','Edge deployment','Auto-scaling'],selfHosted:'N/A',cloud:'Koyeb Cloud',architecture:'Managed infrastructure',strengths:'Fast path from container to deployed application. GPU support. Global edge deployment. Git-based workflow.',tradeoffs:'The platform itself is not open-source infrastructure software. Vendor dependency. Pricing varies by usage.',sdlc:['Deployment'],bestFor:'Teams needing simple deployment with GPU support for AI/ML workloads',learningCurve:'Low'},
+{id:'django',name:'Django',category:CATEGORIES.FRAMEWORK,website:'https://www.djangoproject.com/',github:'https://github.com/django/django',licenseType:LICENSES.OSI,license:'BSD',desc:'Python web framework designed for rapid application development with batteries-included approach.',capabilities:['ORM','Admin panel','Auth included','Migrations','Forms','Templating','i18n'],selfHosted:'Yes',cloud:'Any',architecture:'Python',strengths:'Batteries-included conventions and mature ecosystem. Rapid development. Built-in admin panel.',tradeoffs:'Can be more framework than needed for a tiny service. Monolithic by default. Python GIL limits concurrency.',sdlc:['Backend'],bestFor:'Rapid development, content sites, enterprise apps',learningCurve:'Medium'},
+{id:'laravel',name:'Laravel',category:CATEGORIES.FRAMEWORK,website:'https://laravel.com/',github:'https://github.com/laravel/framework',licenseType:LICENSES.OSI,license:'MIT',desc:'Productive PHP web framework with elegant syntax, broad ecosystem, and strong developer ergonomics.',capabilities:['Eloquent ORM','Blade','Queues','Migrations','Auth','Broadcasting','Task scheduling'],selfHosted:'Yes',cloud:'Any',architecture:'PHP',strengths:'Strong developer ergonomics and ecosystem depth. Rich ecosystem (Forge, Vapor, Nova, Livewire).',tradeoffs:'Best value comes when the team is comfortable with modern PHP patterns. Can be heavy.',sdlc:['Backend'],bestFor:'Rapid web development, SaaS applications',learningCurve:'Low-Medium'},
+{id:'springboot',name:'Spring Boot',category:CATEGORIES.FRAMEWORK,website:'https://spring.io/projects/spring-boot',github:'https://github.com/spring-projects/spring-boot',licenseType:LICENSES.OSI,license:'Apache 2.0',desc:'Mature Java framework for production-grade services with deep enterprise integration.',capabilities:['Dependency injection','JPA','Security','Auto-config','Embedded server','Actuator'],selfHosted:'Yes',cloud:'Any',architecture:'Java',strengths:'Deep enterprise integration and strong ecosystem maturity. JVM optimization. GraalVM native images.',tradeoffs:'More concepts and configuration than lightweight frameworks. Steep learning curve. Heavy startup time.',sdlc:['Backend'],bestFor:'Enterprise systems, microservices, high-reliability',learningCurve:'High'},
+{id:'aspnet',name:'ASP.NET Core',category:CATEGORIES.FRAMEWORK,website:'https://dotnet.microsoft.com/en-us/apps/aspnet',github:'https://github.com/dotnet/aspnetcore',licenseType:LICENSES.OSI,license:'MIT',desc:'Cross-platform, high-performance framework for web applications and APIs with strong type safety.',capabilities:['C#','Web API','SignalR','DI','Middleware','Kestrel'],selfHosted:'Yes',cloud:'Any',architecture:'C# / .NET',strengths:'Strong performance, tooling and type safety. Consistently among fastest frameworks. SignalR for realtime.',tradeoffs:'Teams often need familiarity with the broader .NET ecosystem. Microsoft ecosystem perception.',sdlc:['Backend','API','Realtime'],bestFor:'High-performance APIs, enterprise systems',learningCurve:'Medium-High'},
+{id:'rails',name:'Ruby on Rails',category:CATEGORIES.FRAMEWORK,website:'https://rubyonrails.org/',github:'https://github.com/rails/rails',licenseType:LICENSES.OSI,license:'MIT',desc:'Convention-over-configuration framework for shipping web products quickly with high development velocity.',capabilities:['Active Record','Hotwire','Jobs','ActionCable','Scaffolding','Migrations'],selfHosted:'Yes',cloud:'Any',architecture:'Ruby',strengths:'High product development velocity with strong conventions. Mature ecosystem. Great for startups.',tradeoffs:'Convention-heavy behaviour can take time to learn deeply. Performance at scale. Ruby community shrinking.',sdlc:['Backend'],bestFor:'Rapid development, startups, content-driven apps',learningCurve:'Medium'},
+{id:'express',name:'Express.js',category:CATEGORIES.FRAMEWORK,website:'https://expressjs.com/',github:'https://github.com/expressjs/express',licenseType:LICENSES.OSI,license:'MIT',desc:'Minimal Node.js web framework with a huge ecosystem, flexible and unopinionated.',capabilities:['Routing','Middleware','HTTP APIs','JSON handling'],selfHosted:'Yes',cloud:'Any',architecture:'Node.js',strengths:'Simple, familiar and flexible. Massive npm ecosystem. Non-blocking I/O for I/O-bound apps.',tradeoffs:'The team must define more of its application architecture. No built-in structure. Security is manual.',sdlc:['Backend','API'],bestFor:'APIs, microservices, JavaScript full-stack',learningCurve:'Low'},
+{id:'koa',name:'Koa',category:CATEGORIES.FRAMEWORK,website:'https://koajs.com/',github:'https://github.com/koajs/koa',licenseType:LICENSES.OSI,license:'MIT',desc:'Lightweight Node.js framework built around modern async/await patterns with minimal core.',capabilities:['Async / await','Middleware','HTTP','Context object'],selfHosted:'Yes',cloud:'Any',architecture:'Node.js',strengths:'Small core and explicit control. Modern async/await native. Cleaner than Express.',tradeoffs:'Smaller ecosystem and more assembly required. Very minimal. Less documentation.',sdlc:['Backend','API'],bestFor:'Developers wanting a modern, minimal Node.js framework',learningCurve:'Low'},
+{id:'phoenix',name:'Phoenix',category:CATEGORIES.FRAMEWORK,website:'https://www.phoenixframework.org/',github:'https://github.com/phoenixframework/phoenix',licenseType:LICENSES.OSI,license:'MIT',desc:'Elixir web framework for concurrent and real-time applications with fault-tolerance foundations.',capabilities:['LiveView','Channels','Concurrency','PubSub','Ecto','Routing'],selfHosted:'Yes',cloud:'Any',architecture:'Elixir / Erlang VM',strengths:'Excellent concurrency and fault-tolerance foundations. First-class realtime with Channels and LiveView.',tradeoffs:'Requires adoption of the Elixir ecosystem. Steep learning curve. Smaller job market.',sdlc:['Backend','Realtime'],bestFor:'Real-time, high-concurrency, fault-tolerant systems',learningCurve:'High'},
+{id:'gin',name:'Gin',category:CATEGORIES.FRAMEWORK,website:'https://gin-gonic.com/',github:'https://github.com/gin-gonic/gin',licenseType:LICENSES.OSI,license:'MIT',desc:'High-performance HTTP web framework for Go with low memory footprint.',capabilities:['Routing','Middleware','JSON validation','Error management'],selfHosted:'Yes',cloud:'Any',architecture:'Go',strengths:'Fast, small runtime footprint and straightforward API design. Go performance. Single binary deployment.',tradeoffs:'Deliberately minimal; teams choose their own persistence and auth layers. Less built-in functionality.',sdlc:['Backend','API'],bestFor:'High-performance APIs, resource-constrained environments',learningCurve:'Low-Medium'},
+{id:'flask',name:'Flask',category:CATEGORIES.FRAMEWORK,website:'https://flask.palletsprojects.com/',github:'https://github.com/pallets/flask',licenseType:LICENSES.OSI,license:'BSD-3-Clause',desc:'Small Python web framework with explicit control and incremental architecture.',capabilities:['Routing','Jinja','Extensions','Request handling'],selfHosted:'Yes',cloud:'Any',architecture:'Python',strengths:'Simple mental model and incremental architecture. Very low learning curve. Great for learning.',tradeoffs:'Complex applications require deliberate extension choices. No built-in structure at scale.',sdlc:['Backend'],bestFor:'Small APIs, prototypes, learning web development',learningCurve:'Very Low'}
+];
+
+const TABS={
+overview:{label:'Ecosystem Map',icon:'fa-diagram-project',description:'A comprehensive map of the modern open-source development ecosystem.'},
+directory:{label:'Tool Directory',icon:'fa-layer-group',description:'Explore and compare the curated developer stack.'},
+'ai-landscape':{label:'AI Landscape',icon:'fa-microchip',description:'See how coding agents fit into the software workflow.'},
+editors:{label:'Editors & IDEs',icon:'fa-code',description:'General-purpose development environments.'},
+frameworks:{label:'Backend Frameworks',icon:'fa-box',description:'Code-level backend framework comparison matrix.'},
+'backend-baas':{label:'Backend & BaaS',icon:'fa-server',description:'Open-source backend-as-a-service and infrastructure platforms.'},
+architecture:{label:'Architecture Patterns',icon:'fa-sitemap',description:'Common software architecture patterns with tool mappings.'},
+selfhosting:{label:'Self-Hosting Matrix',icon:'fa-hard-drive',description:'Which tools can be self-hosted and what that means operationally.'},
+devsecops:{label:'DevSecOps',icon:'fa-shield-halved',description:'Build quality and security checks into delivery.'},
+'stack-builder':{label:'Stack Builder',icon:'fa-cubes',description:'Review coherent stacks for common delivery scenarios.'},
+decision:{label:'Decision Tree',icon:'fa-code-branch',description:'Architecture decision guidance based on project type.'},
+workflow:{label:'Dev Workflow',icon:'fa-timeline',description:'Practical workflow from ideation to production.'},
+roadmap:{label:'Learning Roadmap',icon:'fa-graduation-cap',description:'Progressive learning path from beginner to professional.'},
+projects:{label:'Project Lab',icon:'fa-flask',description:'Practical projects to build with the tools in this canvas.'},
+license:{label:'License Matrix',icon:'fa-key',description:'Compare licensing and hosting models at a glance.'},
+cost:{label:'Cost Model',icon:'fa-calculator',description:'Understanding the true cost of free software.'},
+lowresource:{label:'Low-Resource Context',icon:'fa-earth-africa',description:'Practical architecture for constrained environments.'},
+comparison:{label:'Feature Matrix',icon:'fa-table',description:'Side-by-side comparison of key capabilities.'}
+};
+
+const STACKS=[
+{id:'solo',name:'Solo Developer SaaS',desc:'High delivery velocity with low operational overhead.',tags:['Fast iteration','Managed services'],tools:[['Visual Studio Code','IDE / Editor'],['Continue','AI Coding'],['GitLab','Source Control'],['Supabase','Backend + Database'],['Next.js / React','Frontend'],['Semgrep','Security'],['Koyeb','Deployment']]},
+{id:'mvp',name:'Rapid MVP',desc:'Fastest path from idea to working product.',tags:['Speed','Minimal ops'],tools:[['VS Code','Editor'],['Aider / Cline','AI Agent'],['Supabase','Instant Backend'],['React / Next.js','Frontend'],['GitLab','CI/CD'],['Vercel + Supabase','Deployment']]},
+{id:'low',name:'Low-Resource Self-Hosted',desc:'Small operational footprint for a modest VPS or local server.',tags:['Low bandwidth','Simple ops'],tools:[['VS Code','Editor'],['Aider','AI Coding'],['PocketBase','Backend + Database'],['Svelte / Vue','Frontend'],['Docker','Containerisation'],['GitLab (self-hosted)','Source Control']]},
+{id:'enterprise',name:'Enterprise Java',desc:'Structured delivery for large services and established teams.',tags:['Enterprise','CI/CD'],tools:[['Eclipse','IDE / Editor'],['Semgrep','SAST / policy'],['SonarQube','Quality gate'],['Spring Boot','Backend'],['PostgreSQL','Database'],['GitLab CI','Source + delivery'],['Docker + K8s','Infrastructure']]},
+{id:'ai-eng',name:'AI Software Engineering',desc:'Augmenting engineering teams with autonomous AI.',tags:['AI-augmented','Autonomous'],tools:[['Human Engineer','Oversight'],['Continue / Cline','AI Assistant'],['Aider','AI Agent'],['OpenHands','Autonomous'],['Git + GitLab','Source Control'],['SonarQube + Semgrep','Security'],['CI/CD to Production','Deployment']]}
+];
+
+const DECISIONS=[
+{tag:'Web basics',q:'Building a static site or documentation portal?',a:'Use a static build pipeline and lightweight frontend. Git-based hosting is often sufficient.'},
+{tag:'Relational SaaS',q:'Building a relational SaaS MVP?',a:'A PostgreSQL-first backend such as Supabase plus a React or Next.js frontend keeps the core model explicit.'},
+{tag:'Agency platform',q:'Need multiple products or projects under one operating model?',a:'A backend platform with project-level isolation and reusable auth/data services can reduce duplicated infrastructure.'},
+{tag:'Existing SQL',q:'Building an internal tool on an existing SQL database?',a:'Directus is useful when the database should remain the source of truth while APIs and admin views are needed quickly.'},
+{tag:'Small server',q:'Need a very small self-hosted deployment?',a:'PocketBase is a strong fit for compact deployments where SQLite and a single executable are acceptable.'},
+{tag:'Realtime',q:'Building a real-time collaborative application?',a:'Phoenix and other event-driven backends are well suited to persistent connections and concurrent workloads.'},
+{tag:'Infrastructure',q:'Want infrastructure automation without hand-building every service?',a:'Frameworks such as Encore can encode deployment concerns into the application development workflow.'},
+{tag:'Enterprise',q:'Building a large enterprise service ecosystem?',a:'Spring Boot or ASP.NET Core are common foundations when mature typed frameworks and structured operational practices matter.'},
+{tag:'CMS',q:'Need a content management system?',a:'Strapi for content-first teams. Directus when you already have a SQL database and need instant APIs.'},
+{tag:'Mobile backend',q:'Building a mobile application backend?',a:'Supabase or Appwrite both offer mobile SDKs with auth, realtime, and file storage built in.'},
+{tag:'AI application',q:'Building an AI-powered application?',a:'Combine a Python/Node.js framework with vector database support and GPU deployment via Koyeb.'},
+{tag:'Quick prototype',q:'Need the fastest path from idea to working prototype?',a:'PocketBase for instant backend, any lightweight frontend, VS Code with AI assistant. Ship in hours.'}
+];
+
+const PIPELINE=[['Developer','IDE, local feedback and safe defaults'],['Pre-commit','Formatting, linting and AI-assisted review'],['Code push','Git repository and merge workflow'],['SAST scan','Semgrep or equivalent pattern analysis'],['Quality gate','SonarQube-style maintainability checks'],['Deploy','Promote only artefacts that pass policy']];
+
+const LANDSCAPE=[
+{icon:'fa-keyboard',title:'Inline Assistance',desc:'Fast autocomplete and local completion while typing. Minimal context awareness.',tools:['Tabby','Continue']},
+{icon:'fa-window-maximize',title:'IDE Agents',desc:'Repository-aware chat, edits, commands and context inside the editor. Human approves actions.',tools:['Continue','Cline']},
+{icon:'fa-terminal',title:'Terminal Agents',desc:'CLI-first workflows for scaffolding, refactoring and Git-integrated changes.',tools:['Aider','OpenCode']},
+{icon:'fa-robot',title:'Autonomous Engineering',desc:'Longer-running agents that can plan, execute, test and iterate in a sandbox.',tools:['OpenHands']}
+];
+
+const ECOSYSTEM_BRANCHES=[
+{title:'Development Environment',icon:'fa-code',ids:['vscode','eclipse','netbeans'],color:'var(--info)',bg:'var(--info-soft)'},
+{title:'AI Development',icon:'fa-microchip',ids:['aider','opencode','cline','continue','tabby','openhands'],color:'var(--purple)',bg:'var(--purple-soft)'},
+{title:'Source Control',icon:'fa-code-branch',ids:['gitlab'],color:'var(--success)',bg:'var(--success-soft)'},
+{title:'Code Quality & Security',icon:'fa-shield-halved',ids:['sonarqube','semgrep'],color:'var(--danger)',bg:'var(--danger-soft)'},
+{title:'Build & Monorepo',icon:'fa-boxes-stacked',ids:['turborepo'],color:'var(--warning)',bg:'var(--warning-soft)'},
+{title:'Backend Platforms',icon:'fa-server',ids:['supabase','appwrite','pocketbase','nhost','parse','strapi','directus','convex','encore'],color:'var(--primary)',bg:'var(--primary-soft)'},
+{title:'Full-Stack',icon:'fa-layer-group',ids:['wasp'],color:'var(--warning)',bg:'var(--warning-soft)'},
+{title:'Backend Frameworks',icon:'fa-box',ids:['django','laravel','springboot','aspnet','rails','express','koa','phoenix','gin','flask'],color:'var(--info)',bg:'var(--info-soft)'},
+{title:'Infrastructure',icon:'fa-cloud',ids:['koyeb'],color:'var(--purple)',bg:'var(--purple-soft)'}
+];
+
+const LIFECYCLE_STAGES=[
+{name:'Ideation',desc:'Define the problem and explore solutions',tools:'Documentation, whiteboarding, AI brainstorming',icon:'fa-lightbulb'},
+{name:'Specification',desc:'Write requirements, user stories, acceptance criteria',tools:'GitLab Issues, project boards, markdown docs',icon:'fa-file-lines'},
+{name:'Architecture',desc:'Design system structure, choose technologies',tools:'This canvas, architecture decision records',icon:'fa-drafting-compass'},
+{name:'Implementation',desc:'Write code with AI assistance',tools:'VS Code + Cline/Continue + Aider',icon:'fa-code'},
+{name:'Local Testing',desc:'Unit tests, integration tests, manual testing',tools:'Testing frameworks, OpenHands for test generation',icon:'fa-vial'},
+{name:'Code Review',desc:'Peer review, AI-assisted review',tools:'GitLab Merge Requests, Cline for review',icon:'fa-eye'},
+{name:'Security Scanning',desc:'Automated security analysis',tools:'Semgrep + SonarQube in CI',icon:'fa-shield-halved'},
+{name:'CI/CD',desc:'Automated build, test, deployment pipeline',tools:'GitLab CI/CD, Turborepo for builds',icon:'fa-bolt'},
+{name:'Staging',desc:'Pre-production environment validation',tools:'Docker containers, staging environment',icon:'fa-server'},
+{name:'Production',desc:'Deploy to production infrastructure',tools:'Koyeb, Docker, Kubernetes',icon:'fa-cloud'},
+{name:'Monitoring',desc:'Observe system health and performance',tools:'Application monitoring, logging, alerting',icon:'fa-chart-line'},
+{name:'Iteration',desc:'Learn, improve, repeat the cycle',tools:'Feedback loops, analytics, issue tracking',icon:'fa-arrows-rotate'}
+];
+
+const ARCH_PATTERNS=[
+{name:'Monolith',desc:'Single deployable unit containing all application logic',pros:['Simple deployment','Easy to develop initially','Single codebase'],cons:['Scaling requires entire app','Can become complex','Team coordination at scale'],tools:['Django','Laravel','Rails','Spring Boot'],icon:'fa-box'},
+{name:'Modular Monolith',desc:'Monolith with clear internal module boundaries',pros:['Easier evolution path','Better code organization','Can extract services later'],cons:['Requires discipline','Module boundaries can blur','Still single deployment'],tools:['Spring Boot','ASP.NET Core','Django'],icon:'fa-boxes-stacked'},
+{name:'Microservices',desc:'Independent services communicating via APIs/messages',pros:['Independent scaling','Team autonomy','Technology flexibility'],cons:['Operational complexity','Network latency','Data consistency challenges'],tools:['Spring Boot','Gin','Express'],icon:'fa-network-wired'},
+{name:'Serverless',desc:'Functions triggered by events, managed by cloud provider',pros:['No server management','Auto-scaling','Pay per use'],cons:['Cold starts','Vendor lock-in','Debugging complexity'],tools:['Supabase Edge Functions','Koyeb'],icon:'fa-bolt'},
+{name:'BaaS',desc:'Backend-as-a-Service with pre-built backend capabilities',pros:['Rapid development','Managed infrastructure','Built-in realtime/auth'],cons:['Vendor dependency','Limited customization','Cost at scale'],tools:['Supabase','Appwrite','PocketBase','Nhost'],icon:'fa-server'},
+{name:'Headless CMS',desc:'Content management with API-first content delivery',pros:['Content flexibility','Multi-channel delivery','Developer-friendly'],cons:['Preview complexity','Content modeling overhead','Additional service'],tools:['Strapi','Directus'],icon:'fa-newspaper'},
+{name:'Event-Driven',desc:'Components communicate through events asynchronously',pros:['Loose coupling','Scalability','Resilience'],cons:['Complex debugging','Event ordering','Eventually consistent'],tools:['Phoenix','Spring Boot'],icon:'fa-bolt'},
+{name:'API-First',desc:'API contract defined before implementation',pros:['Clear contracts','Parallel development','Documentation'],cons:['Upfront design time','Contract changes costly','Over-engineering risk'],tools:['Express','Gin'],icon:'fa-plug'},
+{name:'Database-First',desc:'Database schema drives application design',pros:['Data integrity','Clear data model','Directus pattern'],cons:['Schema changes costly','May limit flexibility','DB expertise required'],tools:['Directus','Supabase'],icon:'fa-database'},
+{name:'Full-Stack Framework',desc:'Unified framework handling frontend and backend',pros:['Reduced context switching','Shared types','Rapid development'],cons:['Opinionated','Framework lock-in','Limited flexibility'],tools:['Wasp','Next.js'],icon:'fa-layer-group'}
+];
+
+const SELFHOST_DATA=[
+{tool:'Supabase',model:'Cloud + Self-host',docker:'✓',db:'PostgreSQL',infra:'Medium-High',maint:'High',notes:'Complex self-hosting, many services'},
+{tool:'Appwrite',model:'Cloud + Self-host',docker:'✓',db:'MariaDB/MySQL',infra:'Medium',maint:'Medium',notes:'Well-documented Docker setup'},
+{tool:'PocketBase',model:'Fully self-hostable',docker:'Optional',db:'Embedded SQLite',infra:'Very Low',maint:'Very Low',notes:'Single binary, minimal resources'},
+{tool:'Nhost',model:'Cloud + Self-host',docker:'✓',db:'PostgreSQL + Hasura',infra:'Medium-High',maint:'High',notes:'Multiple services required'},
+{tool:'Parse Server',model:'Fully self-hostable',docker:'✓',db:'MongoDB/PostgreSQL',infra:'Medium',maint:'Medium',notes:'Requires database + file storage'},
+{tool:'Strapi',model:'Cloud + Self-host',docker:'✓',db:'SQLite/PostgreSQL/MySQL',infra:'Low-Medium',maint:'Low-Medium',notes:'Node.js application'},
+{tool:'Directus',model:'Cloud + Self-host',docker:'✓',db:'Any SQL database',infra:'Medium',maint:'Medium',notes:'Requires existing SQL database'},
+{tool:'Convex',model:'Cloud only',docker:'✗',db:'Managed',infra:'None',maint:'None',notes:'Source-available, no self-hosting'},
+{tool:'GitLab',model:'Cloud + Self-host',docker:'✓',db:'PostgreSQL + Redis',infra:'High',maint:'High',notes:'Resource-heavy (4GB+ RAM)'},
+{tool:'SonarQube',model:'Self-hostable',docker:'✓',db:'H2 or PostgreSQL',infra:'Medium',maint:'Medium',notes:'Community edition is free'},
+{tool:'Semgrep',model:'CLI + Cloud',docker:'✓',db:'N/A',infra:'Very Low',maint:'Very Low',notes:'CLI tool, minimal infra'},
+{tool:'Tabby',model:'Self-hostable',docker:'✓',db:'N/A',infra:'Medium-High (GPU)',maint:'Medium',notes:'GPU recommended'},
+{tool:'OpenHands',model:'Self-hostable',docker:'✓',db:'N/A',infra:'Medium-High',maint:'Medium',notes:'Requires Docker + LLM API'},
+{tool:'Koyeb',model:'Cloud only',docker:'N/A',db:'Managed',infra:'None',maint:'None',notes:'Managed deployment platform'}
+];
+
+const LEARNING_LEVELS=[
+{l:1,t:'Foundations',c:'var(--success)',skills:['HTML','CSS','JavaScript','Git basics','VS Code'],project:'Personal portfolio website',desc:'Build a static website from scratch. Learn how the web works.'},
+{l:2,t:'Frontend Development',c:'var(--info)',skills:['TypeScript','React','Node.js','REST APIs','Databases'],project:'Task management application',desc:'Build a CRUD app with a database. Understand client-server architecture.'},
+{l:3,t:'Full-Stack Development',c:'var(--purple)',skills:['Supabase / Appwrite','Authentication','Backend frameworks','Testing'],project:'Blog platform with auth',desc:'Full application with users, authentication, and data persistence.'},
+{l:4,t:'Professional Engineering',c:'var(--warning)',skills:['GitLab CI/CD','Docker','Semgrep','SonarQube','Code review'],project:'Deploy production app with CI/CD',desc:'Automated testing, security scanning, deployment pipelines.'},
+{l:5,t:'Architecture & Infrastructure',c:'var(--danger)',skills:['System design','Cloud infrastructure','Security','Performance'],project:'Design a scalable microservice',desc:'Think about systems at scale. Design for reliability and maintainability.'},
+{l:6,t:'AI-Augmented Engineering',c:'var(--primary)',skills:['AI coding agents','OpenHands','Autonomous dev','DevSecOps'],project:'Build using AI tools at every stage',desc:'Leverage AI while maintaining engineering rigor and human oversight.'}
+];
+
+const PROJECTS=[
+{name:'Personal Portfolio',diff:'Beginner',stack:'HTML/CSS/JS or Next.js',tools:'VS Code, Git',deploy:'Vercel / GitHub Pages',skills:'HTML, CSS, responsive design'},
+{name:'Customer Support Dashboard',diff:'Beginner-Intermediate',stack:'React + Supabase',tools:'VS Code, Continue, Supabase',deploy:'Vercel + Supabase Cloud',skills:'CRUD, auth, realtime, dashboards'},
+{name:'Financial Management System',diff:'Intermediate',stack:'Next.js + Supabase + Charts',tools:'VS Code, Cline, Semgrep',deploy:'Vercel + Supabase',skills:'Data visualization, security'},
+{name:'Inventory Management',diff:'Intermediate',stack:'React + Appwrite',tools:'VS Code, Aider, Appwrite',deploy:'Docker + VPS',skills:'Multi-tenant, file uploads'},
+{name:'REST API',diff:'Intermediate',stack:'Express/Gin/Django + PostgreSQL',tools:'VS Code, GitLab CI',deploy:'Docker + Koyeb',skills:'API design, database, testing'},
+{name:'Authentication Platform',diff:'Intermediate-Advanced',stack:'Node.js + JWT + OAuth',tools:'VS Code, SonarQube',deploy:'Docker',skills:'OAuth flows, JWT, security'},
+{name:'Headless CMS',diff:'Advanced',stack:'Strapi or Directus + Custom frontend',tools:'VS Code, Strapi/Directus',deploy:'Docker + VPS',skills:'Content modeling, API design'},
+{name:'Real-time Collaboration',diff:'Advanced',stack:'Phoenix + LiveView or Supabase Realtime',tools:'VS Code, Phoenix/Supabase',deploy:'Fly.io / Koyeb',skills:'WebSockets, concurrency'},
+{name:'AI Developer Assistant',diff:'Advanced',stack:'Python + LLM API + React',tools:'VS Code, Aider, OpenHands',deploy:'Koyeb (GPU)',skills:'LLM integration, prompt engineering'},
+{name:'Multi-tenant SaaS',diff:'Advanced',stack:'Next.js + Supabase + Stripe',tools:'VS Code, GitLab, Semgrep',deploy:'Vercel + Supabase',skills:'Multi-tenancy, billing, scaling'},
+{name:'DevSecOps Pipeline',diff:'Advanced',stack:'GitLab CI + Semgrep + SonarQube',tools:'GitLab, Semgrep, SonarQube',deploy:'Self-hosted GitLab',skills:'CI/CD, security automation'},
+{name:'Self-hosted Dev Environment',diff:'Expert',stack:'PocketBase + GitLab + VS Code Server',tools:'Docker, PocketBase, GitLab',deploy:'VPS / Raspberry Pi',skills:'System administration, Docker'}
+];
+
+const COMPARISON_DATA=[
+{tool:'Supabase',cat:'BaaS',self:'✓',db:'PostgreSQL (Native)',auth:'Native',api:'REST + GraphQL',rt:'Native',fit:'PostgreSQL-centric apps'},
+{tool:'Appwrite',cat:'BaaS',self:'✓',db:'MariaDB (Native)',auth:'Native',api:'REST + GraphQL',rt:'Native',fit:'Multi-tenant apps'},
+{tool:'PocketBase',cat:'BaaS',self:'✓',db:'SQLite (Native)',auth:'Native',api:'REST',rt:'Native',fit:'Prototypes, small apps'},
+{tool:'Nhost',cat:'BaaS',self:'✓',db:'PostgreSQL (Native)',auth:'Native',api:'GraphQL',rt:'Via Hasura',fit:'GraphQL-first apps'},
+{tool:'Strapi',cat:'CMS',self:'✓',db:'SQL (Integration)',auth:'Native (RBAC)',api:'REST + GraphQL',rt:'N/A',fit:'Content-driven apps'},
+{tool:'Directus',cat:'CMS',self:'✓',db:'SQL (Native)',auth:'Native',api:'REST + GraphQL',rt:'Native',fit:'Existing SQL databases'},
+{tool:'Django',cat:'Framework',self:'✓',db:'SQL (Native)',auth:'Native',api:'Via DRF',rt:'Via Channels',fit:'Rapid web development'},
+{tool:'Spring Boot',cat:'Framework',self:'✓',db:'SQL (Native)',auth:'Native',api:'Native',rt:'Via WebSocket',fit:'Enterprise systems'},
+{tool:'Express.js',cat:'Framework',self:'✓',db:'Via integration',auth:'Via integration',api:'Native',rt:'Via Socket.io',fit:'APIs, microservices'},
+{tool:'Phoenix',cat:'Framework',self:'✓',db:'PostgreSQL (Native)',auth:'Via integration',api:'Native',rt:'Native',fit:'Real-time, high-concurrency'}
+];
+
+function icon(name,extra=''){return React.createElement('i',{className:`fa-solid ${name} ${extra}`.trim(),'aria-hidden':'true'});}
+
+function LicenseBadge({type}){
+const cls=type===LICENSES.OSI?'badge-green':type===LICENSES.SA?'badge-orange':type===LICENSES.FREE?'badge-slate':'badge-blue';
+const label=type===LICENSES.OSI?'OSI':type===LICENSES.SA?'Source available':type===LICENSES.FREE?'Managed':'Open core';
+return <span className={`badge ${cls}`}>{label}</span>;
+}
+
+function usePersistedState(key,fallback){
+const[value,setValue]=useState(()=>{try{const raw=localStorage.getItem(key);return raw?JSON.parse(raw):fallback;}catch{return fallback;}});
+useEffect(()=>{try{localStorage.setItem(key,JSON.stringify(value));}catch{}},[key,value]);
+return[value,setValue];
+}
+
+function useTheme(){
+const[theme,setTheme]=usePersistedState('dev-stack-theme','dark');
+useEffect(()=>{document.documentElement.dataset.theme=theme;},[theme]);
+return[theme,setTheme];
+}
+
+function App(){
+const[activeTab,setActiveTab]=useState('overview');
+const[mobileNavOpen,setMobileNavOpen]=useState(false);
+const[selectedTool,setSelectedTool]=useState(null);
+const[favorites,setFavorites]=usePersistedState('dev-stack-favorites',[]);
+const[learningProgress,setLearningProgress]=usePersistedState('dev-stack-progress',{});
+const[theme,setTheme]=useTheme();
+const[toasts,setToasts]=useState([]);
+const meta=TABS[activeTab]||TABS.overview;
+
+const showToast=(message)=>{const id=`${Date.now()}-${Math.random()}`;setToasts(c=>[...c,{id,message}]);window.setTimeout(()=>setToasts(c=>c.filter(t=>t.id!==id)),3000);};
+const toggleFavorite=(toolId)=>{setFavorites(c=>c.includes(toolId)?c.filter(id=>id!==toolId):[...c,toolId]);};
+const setProgress=(toolId,status)=>{setLearningProgress(c=>({...c,[toolId]:status}));showToast('Progress updated.');};
+const navigate=(tab)=>{setActiveTab(tab);setMobileNavOpen(false);};
+
+useEffect(()=>{
+const handler=(event)=>{
+if((event.ctrlKey||event.metaKey)&&event.key.toLowerCase()==='k'){event.preventDefault();const el=document.getElementById('globalSearch');if(el)el.focus();}
+if(event.key==='Escape'){setSelectedTool(null);setMobileNavOpen(false);}
+};
+document.addEventListener('keydown',handler);
+return()=>document.removeEventListener('keydown',handler);
+},[activeTab]);
+
+useEffect(()=>{document.body.style.overflow=(selectedTool||mobileNavOpen)?'hidden':'';return()=>{document.body.style.overflow='';};},[selectedTool,mobileNavOpen]);
+
+const render=()=>{
+const common={tools:TOOLS,favorites,toggleFavorite,onSelect:setSelectedTool,onToast:showToast,learningProgress,setProgress};
+switch(activeTab){
+case'directory':return<DirectoryView{...common}/>;
+case'ai-landscape':return<AIView{...common}/>;
+case'editors':return<EditorsView{...common}/>;
+case'frameworks':return<FrameworksView{...common}/>;
+case'backend-baas':return<BackendBaaSView{...common}/>;
+case'architecture':return<ArchitectureView/>;
+case'selfhosting':return<SelfHostingView/>;
+case'devsecops':return<DevSecOpsView/>;
+case'stack-builder':return<StackView onToast={showToast}/>;
+case'decision':return<DecisionView/>;
+case'workflow':return<WorkflowView/>;
+case'roadmap':return<RoadmapView learningProgress={learningProgress} setProgress={setProgress} onToast={showToast}/>;
+case'projects':return<ProjectsView/>;
+case'license':return<LicenseView tools={TOOLS}/>;
+case'cost':return<CostView/>;
+case'lowresource':return<MalawiView/>;
+case'comparison':return<ComparisonView/>;
+default:return<OverviewView{...common}navigate={navigate}/>;
+}
+};
+
+return<div className="app-shell">
+{mobileNavOpen&&<button className="mobile-backdrop"aria-label="Close navigation"onClick={()=>setMobileNavOpen(false)}></button>}
+<aside className={`sidebar ${mobileNavOpen?'open':''}`}aria-label="Primary navigation">
+<div className="sidebar-brand">
+<div className="brand-row">
+<div style={{display:'flex',alignItems:'center',gap:11}}>
+<div className="brand-mark">{icon('fa-layer-group')}</div>
+<div><div className="brand-name">DEV STACK CANVAS</div><div className="brand-sub">Architecture Command Centre</div></div>
+</div>
+<button className="icon-button sidebar-close"aria-label="Close navigation"onClick={()=>setMobileNavOpen(false)}>{icon('fa-xmark')}</button>
+</div>
+</div>
+<nav className="nav">
+<NavGroup label="Overview">
+<NavItem active={activeTab==='overview'}label="Ecosystem Map"iconName="fa-diagram-project"onClick={()=>navigate('overview')}/>
+<NavItem active={activeTab==='directory'}label="Tool Directory"iconName="fa-layer-group"meta={`${TOOLS.length}`}onClick={()=>navigate('directory')}/>
+</NavGroup>
+<NavGroup label="Development">
+<NavItem active={activeTab==='ai-landscape'}label="AI Landscape"iconName="fa-microchip"onClick={()=>navigate('ai-landscape')}/>
+<NavItem active={activeTab==='editors'}label="Editors & IDEs"iconName="fa-code"onClick={()=>navigate('editors')}/>
+<NavItem active={activeTab==='frameworks'}label="Backend Frameworks"iconName="fa-box"onClick={()=>navigate('frameworks')}/>
+</NavGroup>
+<NavGroup label="Infrastructure">
+<NavItem active={activeTab==='backend-baas'}label="Backend & BaaS"iconName="fa-server"onClick={()=>navigate('backend-baas')}/>
+<NavItem active={activeTab==='architecture'}label="Architecture Patterns"iconName="fa-sitemap"onClick={()=>navigate('architecture')}/>
+<NavItem active={activeTab==='selfhosting'}label="Self-Hosting Matrix"iconName="fa-hard-drive"onClick={()=>navigate('selfhosting')}/>
+</NavGroup>
+<NavGroup label="Engineering">
+<NavItem active={activeTab==='devsecops'}label="DevSecOps"iconName="fa-shield-halved"onClick={()=>navigate('devsecops')}/>
+<NavItem active={activeTab==='stack-builder'}label="Stack Builder"iconName="fa-cubes"onClick={()=>navigate('stack-builder')}/>
+<NavItem active={activeTab==='decision'}label="Decision Tree"iconName="fa-code-branch"onClick={()=>navigate('decision')}/>
+<NavItem active={activeTab==='workflow'}label="Dev Workflow"iconName="fa-timeline"onClick={()=>navigate('workflow')}/>
+</NavGroup>
+<NavGroup label="Learning">
+<NavItem active={activeTab==='roadmap'}label="Learning Roadmap"iconName="fa-graduation-cap"onClick={()=>navigate('roadmap')}/>
+<NavItem active={activeTab==='projects'}label="Project Lab"iconName="fa-flask"onClick={()=>navigate('projects')}/>
+</NavGroup>
+<NavGroup label="Reference">
+<NavItem active={activeTab==='license'}label="License Matrix"iconName="fa-key"onClick={()=>navigate('license')}/>
+<NavItem active={activeTab==='cost'}label="Cost Model"iconName="fa-calculator"onClick={()=>navigate('cost')}/>
+<NavItem active={activeTab==='lowresource'}label="Low-Resource Context"iconName="fa-earth-africa"onClick={()=>navigate('lowresource')}/>
+<NavItem active={activeTab==='comparison'}label="Feature Matrix"iconName="fa-table"onClick={()=>navigate('comparison')}/>
+</NavGroup>
+</nav>
+<div className="sidebar-footer">
+<div className="status-line"><span><span className="status-dot"style={{display:'inline-block',marginRight:7}}></span>{TOOLS.length} tools curated</span><span>v2.0</span></div>
+<div className="copyright-line">&copy; {new Date().getFullYear()} DevStack Canvas. All rights reserved.</div>
+</div>
+</aside>
+
+<div className="main-shell">
+<header className="topbar">
+<button className="icon-button mobile-menu"aria-label="Open navigation"onClick={()=>setMobileNavOpen(true)}>{icon('fa-bars')}</button>
+<div className="breadcrumbs"><span className="eyebrow">Developer platform</span><h1 className="topbar-title">{meta.label}</h1></div>
+<div className="global-search"><div className="search-shell">
+{icon('fa-magnifying-glass','search-icon')}
+<input id="globalSearch"className="search-input"aria-label="Search tools"placeholder="Search tools..."onFocus={()=>{if(activeTab!=='directory')navigate('directory');}}onChange={(e)=>window.dispatchEvent(new CustomEvent('directory-search',{detail:e.target.value}))}/>
+<span className="shortcut"><span className="keycap">Ctrl</span><span className="keycap">K</span></span>
+</div></div>
+<div className="topbar-actions">
+<button className="icon-button"aria-label="Toggle theme"onClick={()=>setTheme(theme==='dark'?'light':'dark')}title="Toggle theme">{icon(theme==='dark'?'fa-sun':'fa-moon')}</button>
+<button className="icon-button"aria-label="Reset preferences"title="Reset preferences"onClick={()=>{setFavorites([]);setLearningProgress({});setTheme('dark');showToast('Preferences reset.');}}>{icon('fa-rotate-left')}</button>
+</div>
+</header>
+<main className="main-content">
+<section className="page-head">
+<div className="page-head-copy">
+<div style={{display:'flex',alignItems:'center',gap:9}}><span style={{color:'var(--primary)',fontSize:11}}>{icon(meta.icon)}</span><h2 className="page-title">{meta.label}</h2></div>
+<p className="page-description">{meta.description}</p>
+</div>
+<div className="page-context">{icon('fa-circle-check')}<span>{TOOLS.length} tools in curated dataset</span></div>
+</section>
+{render()}
+</main>
+<footer className="site-footer">
+&copy; {new Date().getFullYear()} Developer Stack Canvas. All rights reserved. Built with open-source tools for the developer community.
+</footer>
+</div>
+
+{selectedTool&&<ToolDrawer tool={selectedTool}favorite={favorites.includes(selectedTool.id)}onFavorite={()=>toggleFavorite(selectedTool.id)}onClose={()=>setSelectedTool(null)}onToast={showToast}learningProgress={learningProgress}setProgress={setProgress}/>}
+<div className="toast-region"aria-live="polite"aria-atomic="true">
+{toasts.map(t=><div className="toast"key={t.id}>{icon('fa-circle-check')}<p>{t.message}</p><button aria-label="Dismiss"onClick={()=>setToasts(c=>c.filter(x=>x.id!==t.id))}>{icon('fa-xmark')}</button></div>)}
+</div>
+</div>;
+}
+
+function NavGroup({label,children}){return<div className="nav-group"><div className="nav-label">{label}</div>{children}</div>;}
+function NavItem({active,label,iconName,meta,onClick}){return<button className={`nav-item ${active?'active':''}`}aria-current={active?'page':undefined}onClick={onClick}>{icon(iconName)}<span>{label}</span>{meta&&<span className="nav-meta">{meta}</span>}</button>;}
+
+function OverviewView({tools,navigate,favorites,toggleFavorite,onSelect,learningProgress}){
+const osiCount=tools.filter(t=>t.licenseType===LICENSES.OSI).length;
+const backendCount=tools.filter(t=>t.sdlc.includes('Backend')).length;
+const aiCount=tools.filter(t=>t.category.startsWith('AI')).length;
+return<>
+<div className="hero-grid">
+<div className="panel hero-panel">
+<div className="hero-kicker">Curated engineering intelligence</div>
+<h3 className="hero-title">Choose a stack by architecture, not by hype.</h3>
+<p className="hero-text">Search tools by capability, delivery stage, licence model and hosting posture. The goal is a coherent engineering system that stays understandable as it grows.</p>
+<div className="hero-actions">
+<button className="btn btn-primary"onClick={()=>navigate('directory')}>{icon('fa-compass')} Explore all tools</button>
+<button className="btn btn-secondary"onClick={()=>navigate('stack-builder')}>{icon('fa-cubes')} Build a stack</button>
+</div>
+</div>
+<div className="panel hero-panel">
+<div className="hero-kicker">Coverage snapshot</div>
+<div className="quick-list"style={{marginTop:13}}>
+<div className="quick-item"><span className="quick-item-label">Open-source / OSI-labelled</span><span className="quick-item-value">{osiCount}</span></div>
+<div className="quick-item"><span className="quick-item-label">Backend-capable tools</span><span className="quick-item-value">{backendCount}</span></div>
+<div className="quick-item"><span className="quick-item-label">AI development tools</span><span className="quick-item-value">{aiCount}</span></div>
+<div className="quick-item"><span className="quick-item-label">Your saved tools</span><span className="quick-item-value">{favorites.length}</span></div>
+</div>
+</div>
+</div>
+
+<div className="metric-grid">
+<Metric iconName="fa-layer-group"label="Catalogued tools"value={tools.length}note="Curated entries in this canvas"/>
+<Metric iconName="fa-tags"label="Categories"value={Object.values(CATEGORIES).length}note="Grouped by engineering role"/>
+<Metric iconName="fa-route"label="SDLC stages"value={SDLC_STAGES.length}note="From editor to maintenance"/>
+<Metric iconName="fa-star"label="Saved tools"value={favorites.length}note="Stored in this browser"/>
+</div>
+
+<div className="panel"style={{padding:24,marginBottom:18}}>
+<h2 style={{margin:'0 0 4px',fontSize:16,fontWeight:650,display:'flex',alignItems:'center',gap:8}}>{icon('fa-diagram-project')} Ecosystem Map</h2>
+<p style={{margin:'0 0 16px',fontSize:12,color:'var(--muted)'}}>Click any tool to view details</p>
+<div className="eco-grid">
+{ECOSYSTEM_BRANCHES.map(b=>{
+const branchTools=b.ids.map(id=>tools.find(t=>t.id===id)).filter(Boolean);
+return<div className="eco-branch"key={b.title}>
+<div className="eco-branch-head">
+<div className="eco-branch-icon"style={{background:b.bg,color:b.color}}>{icon(b.icon)}</div>
+<div><div className="eco-branch-title">{b.title}</div><div className="eco-branch-count">{branchTools.length} tools</div></div>
+</div>
+<div className="eco-tools">
+{branchTools.map(t=><button className="eco-tool-btn"key={t.id}onClick={()=>onSelect(t)}>{t.name}</button>)}
+</div>
+</div>;
+})}
+</div>
+</div>
+
+<div className="panel"style={{padding:24,marginBottom:18}}>
+<h2 style={{margin:'0 0 4px',fontSize:16,fontWeight:650,display:'flex',alignItems:'center',gap:8}}>{icon('fa-timeline')} Software Development Lifecycle</h2>
+<p style={{margin:'0 0 16px',fontSize:12,color:'var(--muted)'}}>How tools connect across the development process</p>
+<div className="flow-container">
+{['IDE / Editor','AI Coding','Planning','Source Control','Code Quality','Backend','Build','Deploy'].map((s,i,a)=><React.Fragment key={s}>
+<div className="flow-step">{s}</div>
+{i<a.length-1&&<div className="flow-arrow">{icon('fa-chevron-right')}</div>}
+</React.Fragment>)}
+</div>
+</div>
+
+<div className="panel"style={{padding:24}}>
+<h2 style={{margin:'0 0 4px',fontSize:16,fontWeight:650,display:'flex',alignItems:'center',gap:8}}>{icon('fa-brain')} AI Coding: Levels of Autonomy</h2>
+<p style={{margin:'0 0 16px',fontSize:12,color:'var(--muted)'}}>From simple autocomplete to fully autonomous engineering</p>
+<div style={{display:'flex',flexDirection:'column',gap:8}}>
+{[{n:1,t:'AI Autocomplete',d:'Single-line suggestions as you type. Tab to accept.',tools:'Tabby, Continue',c:'var(--info)',bg:'var(--info-soft)'},{n:2,t:'AI Coding Assistant',d:'Chat-based help, code generation, explanations. Human drives.',tools:'Continue (chat), Tabby (chat)',c:'var(--primary)',bg:'var(--primary-soft)'},{n:3,t:'AI Coding Agent',d:'Multi-step execution with terminal, file editing. Human approves.',tools:'Cline, Aider',c:'var(--warning)',bg:'var(--warning-soft)'},{n:4,t:'Autonomous Engineer',d:'Plans, implements, tests, debugs with minimal intervention.',tools:'OpenHands',c:'var(--danger)',bg:'var(--danger-soft)'}].map(l=>
+<div key={l.n}style={{display:'flex',alignItems:'start',gap:12,padding:'12px 16px',borderRadius:'var(--radius-md)',background:'var(--surface-2)',border:'1px solid var(--border)'}}>
+<div style={{width:28,height:28,borderRadius:'var(--radius-sm)',background:l.bg,display:'grid',placeItems:'center',flexShrink:0}}><span style={{fontSize:12,fontWeight:700,color:l.c}}>{l.n}</span></div>
+<div style={{flex:1}}>
+<div style={{fontSize:13,fontWeight:600,marginBottom:2}}>{l.t}</div>
+<div style={{fontSize:12,color:'var(--muted)',marginBottom:4}}>{l.d}</div>
+<div style={{fontSize:11,color:'var(--text-2)',fontWeight:500}}>{l.tools}</div>
+</div>
+</div>
+)}
+</div>
+</div>
+</>;
+}
+
+function DirectoryView({tools,favorites,toggleFavorite,onSelect,onToast,learningProgress}){
+const[search,setSearch]=useState('');
+const[category,setCategory]=useState('All');
+const[license,setLicense]=useState('All');
+const[hosting,setHosting]=useState('All');
+const[sortBy,setSortBy]=useState('name');
+const[sortDir,setSortDir]=useState('asc');
+const[onlyFavorites,setOnlyFavorites]=useState(false);
+
+useEffect(()=>{const h=(e)=>setSearch(e.detail||'');window.addEventListener('directory-search',h);return()=>window.removeEventListener('directory-search',h);},[]);
+
+const filtered=useMemo(()=>{
+const q=search.trim().toLowerCase();
+const rows=tools.filter(t=>{
+const hay=[t.name,t.desc,t.category,t.architecture,...t.capabilities,...t.sdlc].join(' ').toLowerCase();
+return(!q||hay.includes(q))&&(category==='All'||t.category===category)&&(license==='All'||t.licenseType===license)&&(hosting==='All'||(hosting==='Self-hosted'?!['N/A',''].includes(t.selfHosted):!['N/A',''].includes(t.cloud)))&&(!onlyFavorites||favorites.includes(t.id));
+});
+return[...rows].sort((a,b)=>{const av=(a[sortBy]||'').toString().toLowerCase();const bv=(b[sortBy]||'').toString().toLowerCase();return av.localeCompare(bv)*(sortDir==='asc'?1:-1);});
+},[tools,search,category,license,hosting,favorites,onlyFavorites,sortBy,sortDir]);
+
+const reset=()=>{setSearch('');setCategory('All');setLicense('All');setHosting('All');setOnlyFavorites(false);};
+const toggleSort=(key)=>{if(sortBy===key)setSortDir(d=>d==='asc'?'desc':'asc');else{setSortBy(key);setSortDir('asc');}};
+
+return<>
+<div className="hero-grid">
+<div className="panel hero-panel">
+<div className="hero-kicker">Curated engineering intelligence</div>
+<h3 className="hero-title">Choose a stack by architecture, not by hype.</h3>
+<p className="hero-text">Search tools by capability, delivery stage, licence model and hosting posture. The goal is a coherent engineering system that stays understandable as it grows.</p>
+<div className="hero-actions">
+<button className="btn btn-primary"onClick={()=>filtered[0]&&onSelect(filtered[0])}>{icon('fa-compass')} Explore matching tools</button>
+<button className="btn btn-secondary"onClick={()=>setOnlyFavorites(v=>!v)}>{icon(onlyFavorites?'fa-star':'fa-star-half-stroke')}{onlyFavorites?'Show all tools':'Show favourites'}</button>
+</div>
+</div>
+<div className="panel hero-panel">
+<div className="hero-kicker">Coverage snapshot</div>
+<div className="quick-list"style={{marginTop:13}}>
+<div className="quick-item"><span className="quick-item-label">Open-source / OSI-labelled</span><span className="quick-item-value">{tools.filter(t=>t.licenseType===LICENSES.OSI).length}</span></div>
+<div className="quick-item"><span className="quick-item-label">Backend-capable tools</span><span className="quick-item-value">{tools.filter(t=>t.sdlc.includes('Backend')).length}</span></div>
+<div className="quick-item"><span className="quick-item-label">AI development tools</span><span className="quick-item-value">{tools.filter(t=>t.category.startsWith('AI')).length}</span></div>
+</div>
+</div>
+</div>
+
+<div className="metric-grid">
+<Metric iconName="fa-layer-group"label="Catalogued tools"value={tools.length}note="Curated entries in this canvas"/>
+<Metric iconName="fa-tags"label="Categories"value={Object.values(CATEGORIES).length}note="Grouped by engineering role"/>
+<Metric iconName="fa-route"label="SDLC stages"value={SDLC_STAGES.length}note="From editor to maintenance"/>
+<Metric iconName="fa-star"label="Saved tools"value={favorites.length}note="Stored in this browser"/>
+</div>
+
+<div className="panel toolbar">
+<div className="toolbar-grid">
+<div className="control"><input className="text-control"value={search}onChange={e=>setSearch(e.target.value)}aria-label="Search tools"placeholder="Search by name, capability, architecture or stage"/>{icon('fa-magnifying-glass')}</div>
+<select className="filter-select"value={category}onChange={e=>setCategory(e.target.value)}aria-label="Filter by category"><option>All</option>{Object.values(CATEGORIES).map(c=><option key={c}>{c}</option>)}</select>
+<select className="filter-select"value={license}onChange={e=>setLicense(e.target.value)}aria-label="Filter by licence"><option>All</option>{Object.values(LICENSES).map(c=><option key={c}>{c}</option>)}</select>
+<select className="filter-select"value={hosting}onChange={e=>setHosting(e.target.value)}aria-label="Filter by hosting"><option>All</option><option>Self-hosted</option><option>Managed cloud</option></select>
+</div>
+<div className="toolbar-footer">
+<span>Showing <strong style={{color:'var(--text)'}}>{filtered.length}</strong> of {tools.length} tools{onlyFavorites?' · favourites only':''}</span>
+<div className="toolbar-actions"><button className={`btn btn-sm ${onlyFavorites?'btn-secondary':'btn-ghost'}`}onClick={()=>setOnlyFavorites(v=>!v)}>{icon(onlyFavorites?'fa-star':'fa-star')}Favourites</button><button className="btn btn-sm btn-ghost"onClick={reset}>{icon('fa-rotate-left')}Reset</button></div>
+</div>
+</div>
+
+<div className="panel">
+<div className="panel-header"style={{display:'flex',alignItems:'center',justifyContent:'space-between',gap:12}}>
+<div><h3 className="panel-title">Tool registry</h3><p className="panel-subtitle">Dense on desktop, prioritised on mobile. Select a tool for full detail.</p></div>
+<span className="badge badge-slate">{sortBy} {sortDir==='asc'?'ascending':'descending'}</span>
+</div>
+{filtered.length===0?<EmptyState onReset={reset}/>:<>
+<div className="directory-table table-wrap">
+<table>
+<thead><tr>
+<th style={{width:30}}></th><th><button className="table-sort"onClick={()=>toggleSort('name')}>Tool</button></th><th><button className="table-sort"onClick={()=>toggleSort('category')}>Category</button></th><th>Licence</th><th>Hosting</th><th>Architecture</th><th>SDLC coverage</th>
+</tr></thead>
+<tbody>{filtered.map(tool=><tr key={tool.id}>
+<td><button className={`favorite-button ${favorites.includes(tool.id)?'active':''}`}aria-label={`${favorites.includes(tool.id)?'Remove':'Save'} ${tool.name}`}onClick={()=>toggleFavorite(tool.id)}>{icon('fa-star')}</button></td>
+<td><div className="tool-cell"onClick={()=>onSelect(tool)}>
+<span className="tool-avatar">{icon(tool.category.startsWith('AI')?'fa-microchip':tool.category===CATEGORIES.SEC?'fa-shield-halved':tool.category===CATEGORIES.IDE?'fa-code':'fa-cube')}</span>
+<span><span className="tool-name">{tool.name}</span><span className="tool-desc">{tool.desc}</span></span>
+</div></td>
+<td className="cell-compact">{tool.category}</td><td><LicenseBadge type={tool.licenseType}/></td><td className="cell-compact"><span className="cell-flex">{icon(tool.selfHosted!=='N/A'?'fa-server':'fa-cloud')}{tool.selfHosted!=='N/A'?'Self-hostable':'Managed / N/A'}</span></td><td className="cell-muted">{tool.architecture}</td>
+<td><div className="stage-stack">{tool.sdlc.slice(0,4).map(stage=><span className="stage-chip"key={stage}>{stage}</span>)}</div></td>
+</tr>)}</tbody>
+</table>
+</div>
+<div className="mobile-tool-list">{filtered.map(tool=><div className="mobile-tool-card"key={tool.id}>
+<div className="mobile-tool-top"><div style={{display:'flex',gap:10,alignItems:'flex-start'}}><span className="tool-avatar">{icon(tool.category.startsWith('AI')?'fa-microchip':tool.category===CATEGORIES.SEC?'fa-shield-halved':tool.category===CATEGORIES.IDE?'fa-code':'fa-cube')}</span><div><strong className="tool-name">{tool.name}</strong><div className="tool-desc"style={{whiteSpace:'normal'}}>{tool.desc}</div></div></div><button className={`favorite-button ${favorites.includes(tool.id)?'active':''}`}onClick={()=>toggleFavorite(tool.id)}>{icon('fa-star')}</button></div>
+<div className="mobile-tool-meta"><LicenseBadge type={tool.licenseType}/><span className="badge badge-slate">{tool.category}</span><span className="badge badge-slate">{tool.architecture}</span></div>
+<div className="mobile-tool-actions"><button className="btn btn-secondary btn-sm"onClick={()=>onSelect(tool)}>{icon('fa-arrow-up-right-from-square')}View details</button></div>
+</div>)}</div>
+</>}
+</div>
+</>;
+}
+
+function Metric({iconName,label,value,note}){return<div className="panel metric-card"><div className="metric-top"><span className="metric-label">{label}</span><span className="metric-icon">{icon(iconName)}</span></div><div className="metric-value">{value}</div><div className="metric-note">{note}</div></div>;}
+function EmptyState({onReset}){return<div className="empty"><div className="empty-icon">{icon('fa-magnifying-glass')}</div><h3>No tools match those filters.</h3><p>Try a broader search, remove a filter, or reset the registry.</p><button className="btn btn-secondary"style={{marginTop:13}}onClick={onReset}>{icon('fa-rotate-left')}Reset filters</button></div>;};
+
+function ToolDrawer({tool,favorite,onFavorite,onClose,onToast,learningProgress,setProgress}){
+const copy=async()=>{const text=`${tool.name}\n${tool.desc}\nCategory: ${tool.category}\nLicense: ${tool.license}\nArchitecture: ${tool.architecture}`;try{await navigator.clipboard.writeText(text);onToast('Tool summary copied.');}catch{onToast('Clipboard not available.');}};
+const progress=learningProgress[tool.id]||'';
+return<><button className="drawer-backdrop"aria-label="Close"onClick={onClose}></button><aside className="drawer"role="dialog"aria-modal="true"aria-labelledby="tool-drawer-title">
+<div className="drawer-header"><div className="drawer-title-row"><span className="drawer-tool-icon">{icon(tool.category.startsWith('AI')?'fa-microchip':tool.category===CATEGORIES.SEC?'fa-shield-halved':tool.category===CATEGORIES.IDE?'fa-code':'fa-cube')}</span><div><h2 id="tool-drawer-title"className="drawer-title">{tool.name}</h2><p className="drawer-desc">{tool.category}</p></div></div><button className="icon-button"aria-label="Close"onClick={onClose}>{icon('fa-xmark')}</button></div>
+<div className="drawer-body">
+<p style={{margin:0,color:'var(--text-2)',fontSize:13,lineHeight:1.65}}>{tool.desc}</p>
+<div className="detail-section"><p className="detail-label">Core profile</p><div className="detail-grid">
+<Detail label="Architecture"value={tool.architecture}/><Detail label="Licence"value={tool.license}/><Detail label="Self-hosting"value={tool.selfHosted}/><Detail label="Managed cloud"value={tool.cloud}/>
+{tool.bestFor&&<Detail label="Best for"value={tool.bestFor}/>}
+{tool.learningCurve&&<Detail label="Learning curve"value={tool.learningCurve}/>}
+</div></div>
+<div className="detail-section"><p className="detail-label">Capabilities</p><div className="capability-list">{tool.capabilities.map(c=><span className="badge badge-blue"key={c}>{c}</span>)}</div></div>
+<div className="detail-section"><p className="detail-label">Software delivery coverage</p><div className="capability-list">{tool.sdlc.map(c=><span className="badge badge-slate"key={c}>{c}</span>)}</div></div>
+<div className="detail-section"><p className="detail-label">Strengths</p><div className="detail-note">{tool.strengths}</div></div>
+<div className="detail-section"><p className="detail-label">Trade-offs</p><div className="detail-note">{tool.tradeoffs}</div></div>
+<div className="detail-section">
+<p className="detail-label">Track your progress</p>
+<div className="progress-btns">
+{['not-started','learning','used','comfortable','advanced'].map(s=><button key={s}className={`progress-btn ${progress===s?'active':''}`}onClick={()=>setProgress(tool.id,s)}>{s==='not-started'?'Not Started':s.charAt(0).toUpperCase()+s.slice(1)}</button>)}
+</div>
+</div>
+<div className="notice"style={{marginTop:18}}>{icon('fa-circle-info')}<span>Licensing labels are a planning aid. Review the project's current licence before making production or commercial decisions.</span></div>
+<div className="detail-actions">
+<button className="btn btn-primary"onClick={onFavorite}>{icon(favorite?'fa-star':'fa-star')}{favorite?'Saved':'Save tool'}</button>
+<button className="btn btn-secondary"onClick={copy}>{icon('fa-copy')}Copy summary</button>
+{tool.website&&<a className="btn btn-secondary"href={tool.website}target="_blank"rel="noopener noreferrer">{icon('fa-globe')}Official site</a>}
+{tool.github&&<a className="btn btn-secondary"href={tool.github}target="_blank"rel="noopener noreferrer">{icon('fa-brands fa-github')}GitHub</a>}
+</div>
+</div>
+</aside></>;
+}
+function Detail({label,value}){return<div className="detail-item"><div className="detail-item-label">{label}</div><div className="detail-item-value">{value}</div></div>;}
+
+function AIView({tools,onSelect}){
+return<>
+<div className="panel"style={{marginBottom:18}}>
+<div className="panel-header"><h3 className="panel-title">AI development landscape</h3><p className="panel-subtitle">A practical mental model: faster feedback first, broader autonomy later.</p></div>
+<div className="panel-body">
+<div className="landscape-grid">
+{LANDSCAPE.map(l=><div className="landscape-card"key={l.title}>
+<div className="landscape-icon">{icon(l.icon)}</div>
+<h3>{l.title}</h3><p>{l.desc}</p>
+<div className="landscape-tools">{l.tools.map(t=>{const tool=tools.find(x=>x.name===t);return tool?<button className="badge badge-slate"key={t}onClick={()=>onSelect(tool)} style={{cursor:'pointer',border:0}}>{t}</button>:<span className="badge badge-slate"key={t}>{t}</span>})}</div>
+</div>)}
+</div>
+</div>
+</div>
+
+<div className="panel"style={{marginBottom:18}}>
+<div className="panel-header"><h3 className="panel-title">OpenHands: Autonomous Workflow</h3><p className="panel-subtitle">From human request to completed implementation</p></div>
+<div className="panel-body">
+<div className="flow-container">
+{['Human Request','Planning','Repo Inspection','Code Changes','Terminal','Testing','Debugging','Iteration','Complete'].map((s,i,a)=><React.Fragment key={s}>
+<div className="flow-step"><div style={{fontSize:9,color:'var(--muted)',marginBottom:2}}>Step {i+1}</div>{s}</div>
+{i<a.length-1&&<div className="flow-arrow">{icon('fa-chevron-right')}</div>}
+</React.Fragment>)}
+</div>
+</div>
+</div>
+
+<div className="panel"style={{marginBottom:18}}>
+<div className="panel-header"><h3 className="panel-title">AI Tool Comparison</h3><p className="panel-subtitle">Capabilities across the AI coding spectrum</p></div>
+<div className="panel-body">
+<div className="table-wrap"><table style={{minWidth:700}}>
+<thead><tr><th>Capability</th><th>Continue</th><th>Tabby</th><th>Cline</th><th>Aider</th><th>OpenHands</th></tr></thead>
+<tbody>
+{[['Context','File + chat','Project-wide','Full codebase','Full repo map','Full repo + sandbox'],['Repo Awareness','●','●','●●','●●●','●●●'],['Terminal Access','—','—','●●●','●●●','●●●'],['File Editing','●●','●','●●●','●●●','●●●'],['Autonomous','—','—','●●','●●','●●●'],['Testing','—','—','●●','●●','●●●'],['Git Integration','—','—','●','●●●','●●●'],['Human Approval','Always','Always','Per action','Per commit','Configurable'],['Local Models','●●●','●●●','●●','●●','●●'],['Privacy','●●●','●●●','●●●','●●','●●●']].map(([l,...v])=><tr key={l}><td style={{fontWeight:500}}>{l}</td>{v.map((x,i)=><td key={i}style={{textAlign:'center'}}>{x}</td>)}</tr>)}
+</tbody>
+</table></div>
+</div>
+</div>
+
+<div className="panel">
+<div className="panel-header"><h3 className="panel-title">Agent operating principles</h3><p className="panel-subtitle">Keep agentic development inspectable and reversible.</p></div>
+<div className="panel-body">
+<div className="resource-grid">
+<InfoCard iconName="fa-lock"title="Permission boundaries"><p className="muted"style={{margin:0,fontSize:11}}>Give agents only the filesystem, network and credential access required for the task. Review command execution and generated diffs.</p></InfoCard>
+<InfoCard iconName="fa-code-branch"title="Git as the rollback layer"><p className="muted"style={{margin:0,fontSize:11}}>Small commits, clean branches and visible diffs make agent-assisted changes easier to review, test and reverse.</p></InfoCard>
+</div>
+</div>
+</div>
+</>;
+}
+function InfoCard({iconName,title,children}){return<div className="resource-card"><h3>{icon(iconName)}{title}</h3><div style={{marginTop:10}}>{children}</div></div>;}
+
+function EditorsView({tools,onSelect}){
+const eds=tools.filter(t=>t.category===CATEGORIES.IDE);
+return<div style={{display:'grid',gridTemplateColumns:'repeat(auto-fill,minmax(320px,1fr))',gap:12}}>
+{eds.map(t=><div className="panel"key={t.id}style={{padding:20,cursor:'pointer'}}onClick={()=>onSelect(t)}>
+<h3 style={{margin:'0 0 8px',fontSize:15,fontWeight:650}}>{t.name}</h3>
+<p style={{margin:'0 0 12px',fontSize:12,color:'var(--muted)',lineHeight:1.5}}>{t.desc}</p>
+<div style={{display:'flex',flexDirection:'column',gap:4,marginBottom:12}}>
+<div style={{fontSize:11,color:'var(--muted)'}}>License: <span style={{color:'var(--text-2)'}}>{t.license}</span></div>
+<div style={{fontSize:11,color:'var(--muted)'}}>Learning Curve: <span style={{color:'var(--text-2)'}}>{t.learningCurve}</span></div>
+<div style={{fontSize:11,color:'var(--muted)'}}>Best For: <span style={{color:'var(--text-2)'}}>{t.bestFor}</span></div>
+</div>
+<div style={{display:'flex',flexWrap:'wrap',gap:4}}>{t.capabilities.slice(0,4).map(c=><span className="badge badge-blue"key={c}>{c}</span>)}</div>
+</div>)}
+</div>;
+}
+
+function FrameworksView({tools}){
+const fws=tools.filter(t=>t.category===CATEGORIES.FRAMEWORK);
+return<>
+<div className="panel"style={{padding:4,marginBottom:18}}>
+<div className="table-wrap"style={{border:'none'}}>
+<table>
+<thead><tr><th>Framework</th><th>Language</th><th>Architecture</th><th>Curve</th><th>Performance</th><th>Realtime</th><th>Scale</th></tr></thead>
+<tbody>{fws.map(f=><tr key={f.id}>
+<td style={{fontWeight:600}}><a href={f.website}target="_blank"rel="noopener noreferrer"style={{color:'var(--text)'}}>{f.name}</a></td>
+<td><span className="badge badge-blue">{f.architecture.split('/')[0].trim()}</span></td>
+<td className="cell-compact">{f.architecture}</td>
+<td><span className={`badge ${f.learningCurve.includes('Very Low')||f.learningCurve==='Low'?'badge-green':f.learningCurve.includes('High')?'badge-red':'badge-yellow'}`}>{f.learningCurve}</span></td>
+<td className="cell-muted">{f.strengths.split('.')[0]}</td>
+<td className="cell-compact">{f.sdlc.includes('Realtime')?'Native':'Via integration'}</td>
+<td className="cell-compact">{f.sdlc.length>1?'Small to Enterprise':'Small to Large'}</td>
+</tr>)}</tbody>
+</table>
+</div>
+</div>
+<div style={{display:'grid',gridTemplateColumns:'repeat(auto-fill,minmax(340px,1fr))',gap:12}}>
+{fws.map(f=><div className="panel"key={f.id}style={{padding:16}}>
+<div style={{display:'flex',alignItems:'center',justifyContent:'space-between',marginBottom:8}}>
+<h3 style={{margin:0,fontSize:14,fontWeight:650}}>{f.name}</h3>
+<span className="badge badge-blue">{f.architecture.split('/')[0].trim()}</span>
+</div>
+<p style={{margin:'0 0 8px',fontSize:12,color:'var(--muted)'}}>{f.desc}</p>
+<div style={{fontSize:11,color:'var(--muted)',marginBottom:4}}><strong style={{color:'var(--text-2)'}}>Built-in:</strong> {f.capabilities.join(', ')}</div>
+<div style={{fontSize:11,color:'var(--muted)',marginBottom:4}}><strong style={{color:'var(--text-2)'}}>Trade-offs:</strong> {f.tradeoffs}</div>
+<div style={{fontSize:11,color:'var(--muted)'}}><strong style={{color:'var(--text-2)'}}>Best for:</strong> {f.bestFor}</div>
+</div>)}
+</div>
+</>;
+}
+
+function BackendBaaSView({tools,onSelect}){
+const baasTools=tools.filter(t=>t.category===CATEGORIES.BAAS||t.category===CATEGORIES.FULL);
+return<>
+<div className="panel"style={{padding:20,marginBottom:18}}>
+<h2 style={{margin:'0 0 12px',fontSize:14,fontWeight:650}}>Quick Picks</h2>
+<div style={{display:'grid',gridTemplateColumns:'repeat(auto-fill,minmax(200px,1fr))',gap:8}}>
+{[{l:'Smallest footprint',t:'PocketBase'},{l:'Firebase alternative',t:'Supabase'},{l:'Multi-tenant',t:'Appwrite'},{l:'SQL DB to API',t:'Directus'},{l:'GraphQL-first',t:'Nhost'},{l:'Headless CMS',t:'Strapi'}].map(p=>
+<div key={p.t}style={{padding:'10px 12px',borderRadius:'var(--radius-md)',background:'var(--surface-2)',border:'1px solid var(--border)'}}>
+<div style={{fontSize:10,color:'var(--muted)',marginBottom:2}}>{p.l}</div>
+<div style={{fontSize:13,fontWeight:600}}>{p.t}</div>
+</div>)}
+</div>
+</div>
+
+<div className="panel"style={{padding:20,marginBottom:18}}>
+<h2 style={{margin:'0 0 12px',fontSize:14,fontWeight:650}}>Directus: Database-First Architecture</h2>
+<div className="flow-container">
+{['Existing SQL Database','Directus','REST / GraphQL API','Web / Mobile Clients'].map((s,i,a)=><React.Fragment key={s}>
+<div className="flow-step">{s}</div>{i<a.length-1&&<div className="flow-arrow">{icon('fa-chevron-right')}</div>}
+</React.Fragment>)}
+</div>
+</div>
+
+<div style={{display:'grid',gridTemplateColumns:'repeat(auto-fill,minmax(340px,1fr))',gap:12}}>
+{baasTools.map(t=><div className="panel"key={t.id}style={{padding:20,cursor:'pointer'}}onClick={()=>onSelect(t)}>
+<div style={{display:'flex',alignItems:'center',justifyContent:'space-between',marginBottom:8}}>
+<h3 style={{margin:0,fontSize:14,fontWeight:650}}>{t.name}</h3>
+<span className="badge badge-cyan">{t.category.toUpperCase()}</span>
+</div>
+<p style={{margin:'0 0 10px',fontSize:12,color:'var(--muted)',lineHeight:1.5}}>{t.desc}</p>
+<div style={{display:'flex',flexWrap:'wrap',gap:4,marginBottom:10}}>{t.capabilities.slice(0,5).map(c=><span className="badge badge-slate"key={c}>{c}</span>)}</div>
+<div style={{display:'flex',alignItems:'center',justifyContent:'space-between'}}>
+<span style={{fontSize:10,color:'var(--muted)'}}>{t.license}</span>
+<div style={{display:'flex',gap:4}}>{t.selfHosted!=='N/A'&&<span className="badge badge-green"style={{fontSize:10}}>Self-host</span>}{t.cloud!=='N/A'&&<span className="badge badge-blue"style={{fontSize:10}}>Cloud</span>}</div>
+</div>
+</div>)}
+</div>
+</>;
+}
+
+function ArchitectureView(){
+return<div className="pattern-grid">
+{ARCH_PATTERNS.map(p=><div className="pattern-card"key={p.name}>
+<div style={{display:'flex',alignItems:'center',gap:8,marginBottom:8}}>
+<div style={{width:32,height:32,borderRadius:'var(--radius-md)',background:'var(--primary-soft)',display:'grid',placeItems:'center'}}>{icon(p.icon)}</div>
+<h3 style={{margin:0}}>{p.name}</h3>
+</div>
+<p>{p.desc}</p>
+<div className="pattern-cols">
+<div><div className="pattern-col-title"style={{color:'var(--success)'}}>Advantages</div>{p.pros.map(x=><div className="pattern-item"key={x}><span style={{color:'var(--success)'}}>+</span>{x}</div>)}</div>
+<div><div className="pattern-col-title"style={{color:'var(--danger)'}}>Trade-offs</div>{p.cons.map(x=><div className="pattern-item"key={x}><span style={{color:'var(--danger)'}}>−</span>{x}</div>)}</div>
+</div>
+<div style={{display:'flex',flexWrap:'wrap',gap:4}}>{p.tools.map(t=><span className="badge badge-blue"key={t}>{t}</span>)}</div>
+</div>)}
+</div>;
+}
+
+function SelfHostingView(){
+return<>
+<div className="panel"style={{padding:20,marginBottom:18}}>
+<h2 style={{margin:'0 0 10px',fontSize:14,fontWeight:650}}>Deployment Models</h2>
+<div style={{display:'flex',flexWrap:'wrap',gap:12}}>
+<div style={{display:'flex',alignItems:'center',gap:6}}><div style={{width:10,height:10,borderRadius:'50%',background:'var(--success)'}}></div><span style={{fontSize:12,color:'var(--text-2)'}}>Fully self-hostable</span></div>
+<div style={{display:'flex',alignItems:'center',gap:6}}><div style={{width:10,height:10,borderRadius:'50%',background:'var(--info)'}}></div><span style={{fontSize:12,color:'var(--text-2)'}}>Cloud + self-hosting</span></div>
+<div style={{display:'flex',alignItems:'center',gap:6}}><div style={{width:10,height:10,borderRadius:'50%',background:'var(--warning)'}}></div><span style={{fontSize:12,color:'var(--text-2)'}}>Cloud only</span></div>
+</div>
+</div>
+<div className="panel"style={{padding:4}}>
+<div className="table-wrap selfhost-table"style={{border:'none'}}>
+<table>
+<thead><tr><th>Tool</th><th>Model</th><th>Docker</th><th>Database</th><th>Infra</th><th>Maintenance</th><th>Notes</th></tr></thead>
+<tbody>{SELFHOST_DATA.map(r=><tr key={r.tool}>
+<td style={{fontWeight:600}}>{r.tool}</td>
+<td><span className={`badge ${r.model.includes('Fully')?'badge-green':r.model.includes('Cloud only')?'badge-orange':'badge-blue'}`}>{r.model}</span></td>
+<td>{r.docker}</td><td className="cell-muted">{r.db}</td><td className="cell-muted">{r.infra}</td>
+<td><span className={`badge ${r.maint.includes('Very Low')?'badge-green':r.maint.includes('High')?'badge-red':'badge-yellow'}`}>{r.maint}</span></td>
+<td className="cell-muted">{r.notes}</td>
+</tr>)}</tbody>
+</table>
+</div>
+</div>
+</>;
+}
+
+function DevSecOpsView(){
+return<>
+<div className="panel"style={{marginBottom:18}}>
+<div className="panel-header"><h3 className="panel-title">DevSecOps delivery layer</h3><p className="panel-subtitle">Make security and quality feedback part of the normal engineering path.</p></div>
+<div className="panel-body">
+<div className="pipeline">{PIPELINE.map(([name,desc],i)=><div className="pipeline-step"key={name}><div className="pipeline-num">{i+1}</div><div className="pipeline-name">{name}</div><div className="pipeline-desc">{desc}</div></div>)}</div>
+</div>
+</div>
+<div className="resource-grid"style={{marginBottom:18}}>
+<InfoCard iconName="fa-shield-halved"title="Security controls"><ul className="resource-list">
+<li>{icon('fa-check')}<span><strong>Dependency hygiene.</strong> Keep manifests locked and review known-risk packages.</span></li>
+<li>{icon('fa-check')}<span><strong>Static analysis.</strong> Catch policy violations before deployment.</span></li>
+<li>{icon('fa-check')}<span><strong>Secret handling.</strong> Keep tokens and credentials out of source control.</span></li>
+</ul></InfoCard>
+<InfoCard iconName="fa-chart-line"title="Quality controls"><ul className="resource-list">
+<li>{icon('fa-check')}<span><strong>Automated tests.</strong> Protect core behaviour before refactoring.</span></li>
+<li>{icon('fa-check')}<span><strong>Quality gates.</strong> Make release criteria visible and repeatable.</span></li>
+<li>{icon('fa-check')}<span><strong>Observability.</strong> Instrument important user and system paths.</span></li>
+</ul></InfoCard>
+</div>
+<div className="resource-grid">
+<InfoCard iconName="fa-magnifying-glass"title="Static Analysis & SAST"><ul className="resource-list">
+<li>{icon('fa-check')}<span><strong>Static Analysis:</strong> Examining source code without executing it.</span></li>
+<li>{icon('fa-check')}<span><strong>SAST:</strong> Static analysis focused on security vulnerabilities.</span></li>
+<li>{icon('fa-check')}<span><strong>Code Smells:</strong> Indicators of deeper problems in code.</span></li>
+<li>{icon('fa-check')}<span><strong>Vulnerability Detection:</strong> Identifying known security weaknesses.</span></li>
+</ul></InfoCard>
+<InfoCard iconName="fa-link"title="Supply-Chain Security"><ul className="resource-list">
+<li>{icon('fa-check')}<span><strong>Dependency Security:</strong> Scan for known CVEs. Lock files. Regular updates.</span></li>
+<li>{icon('fa-check')}<span><strong>Branch Protection:</strong> Require reviews and passing CI before merge.</span></li>
+<li>{icon('fa-check')}<span><strong>Least Privilege:</strong> Minimal permissions for CI tokens and service accounts.</span></li>
+</ul></InfoCard>
+</div>
+</>;
+}
+
+function StackView({onToast}){
+const[active,setActive]=useState(STACKS[0].id);
+const stack=STACKS.find(s=>s.id===active)||STACKS[0];
+const copy=async()=>{try{await navigator.clipboard.writeText(`${stack.name}\n\n${stack.tools.map(([n,t])=>`• ${n}: ${t}`).join('\n')}`);onToast('Stack copied.');}catch{onToast('Clipboard not available.');}};
+return<div className="stack-layout">
+<div className="panel stack-nav">
+<div className="panel-header"style={{padding:'14px 13px'}}><h3 className="panel-title">Presets</h3><p className="panel-subtitle">Starting points, not rigid recipes.</p></div>
+{STACKS.map(s=><button className={`stack-tab ${s.id===active?'active':''}`}key={s.id}onClick={()=>setActive(s.id)}><span className="stack-tab-name">{s.name}</span><span className="stack-tab-desc">{s.desc}</span></button>)}
+</div>
+<div className="panel stack-panel">
+<div className="stack-head"><div><h3>{stack.name}</h3><p>{stack.desc}</p></div><button className="btn btn-secondary"onClick={copy}>{icon('fa-copy')}Copy stack</button></div>
+<div className="license-legend"style={{marginTop:12}}>{stack.tags.map(t=><span className="badge badge-slate"key={t}>{t}</span>)}</div>
+<div className="stack-flow">{stack.tools.map(([name,type],i)=><div className="stack-node"key={name}><span className="stack-node-icon">{icon(i===0?'fa-pen-to-square':i===stack.tools.length-1?'fa-cloud-arrow-up':'fa-cube')}</span><div className="stack-node-main"><strong>{name}</strong><span>{type}</span></div><span className="stack-node-type">Layer {i+1}</span></div>)}</div>
+<div className="notice"style={{marginTop:12}}>{icon('fa-lightbulb')}<span>Presets intentionally combine tools across layers. Replace individual nodes when your workload, budget or constraints call for a different trade-off.</span></div>
+</div>
+</div>;
+}
+
+function DecisionView(){
+const[query,setQuery]=useState('');
+const rows=DECISIONS.filter(d=>`${d.q} ${d.a} ${d.tag}`.toLowerCase().includes(query.toLowerCase()));
+return<div className="panel"><div className="panel-header"><h3 className="panel-title">Architecture decision map</h3><p className="panel-subtitle">Use the constraints first. The tool choice follows from the workload, operational model and team capacity.</p></div><div className="panel-body">
+<div className="search-mini control"><input className="text-control"style={{paddingRight:12}}placeholder="Search decisions..."value={query}onChange={e=>setQuery(e.target.value)}aria-label="Search decisions"/>{icon('fa-magnifying-glass')}</div>
+<div className="decision-list">{rows.map((d,i)=><div className="decision-card"key={i}><div><span className="decision-tag">{d.tag}</span><div className="decision-q">{d.q}</div></div><div className="decision-arrow">{icon('fa-arrow-right')}</div><div className="decision-a">{d.a}</div></div>)}</div>
+{!rows.length&&<EmptyState onReset={()=>setQuery('')}/>}
+</div></div>;
+}
+
+function WorkflowView(){
+return<div style={{display:'flex',flexDirection:'column',gap:8}}>
+{LIFECYCLE_STAGES.map((s,i)=><div className="panel"key={s.name}style={{padding:16,display:'flex',alignItems:'start',gap:16}}>
+<div style={{display:'flex',flexDirection:'column',alignItems:'center'}}>
+<div style={{width:40,height:40,borderRadius:'var(--radius-lg)',background:'var(--primary-soft)',border:'1px solid rgba(50,216,244,.2)',display:'grid',placeItems:'center',flexShrink:0}}>{icon(s.icon)}</div>
+{i<LIFECYCLE_STAGES.length-1&&<div style={{width:1.5,flex:1,background:'var(--border)',marginTop:4,minHeight:12}}></div>}
+</div>
+<div style={{flex:1,paddingTop:2}}>
+<div style={{display:'flex',alignItems:'center',gap:8,marginBottom:4}}>
+<span style={{fontSize:10,color:'var(--muted)'}}>Stage {i+1}</span>
+<h3 style={{margin:0,fontSize:14,fontWeight:650}}>{s.name}</h3>
+</div>
+<p style={{margin:'0 0 4px',fontSize:12,color:'var(--muted)'}}>{s.desc}</p>
+<div style={{fontSize:11,color:'var(--text-2)'}}><strong style={{color:'var(--muted)'}}>Tools:</strong> {s.tools}</div>
+</div>
+</div>)}
+</div>;
+}
+
+function RoadmapView({learningProgress,setProgress,onToast}){
+return<div style={{display:'flex',flexDirection:'column',gap:12}}>
+{LEARNING_LEVELS.map(lv=><div className="panel"key={lv.l}style={{padding:20,borderLeft:`3px solid ${lv.c}`}}>
+<div style={{display:'flex',alignItems:'center',gap:12,marginBottom:14}}>
+<div style={{width:36,height:36,borderRadius:'var(--radius-md)',background:`color-mix(in srgb,${lv.c} 15%,transparent)`,display:'grid',placeItems:'center'}}>
+<span style={{fontSize:16,fontWeight:700,color:lv.c}}>{lv.l}</span>
+</div>
+<div><h3 style={{margin:0,fontSize:15,fontWeight:650}}>{lv.t}</h3><div style={{fontSize:10,color:'var(--muted)'}}>Level {lv.l}</div></div>
+</div>
+<div className="level-grid">
+<div>
+<div style={{fontSize:10,fontWeight:600,color:'var(--muted)',textTransform:'uppercase',letterSpacing:'0.04em',marginBottom:6}}>Skills</div>
+<div style={{display:'flex',flexWrap:'wrap',gap:4}}>{lv.skills.map(s=><span className="badge badge-blue"key={s}>{s}</span>)}</div>
+</div>
+<div>
+<div style={{fontSize:10,fontWeight:600,color:'var(--muted)',textTransform:'uppercase',letterSpacing:'0.04em',marginBottom:6}}>Build This</div>
+<div style={{fontSize:13,fontWeight:600,marginBottom:2}}>{lv.project}</div>
+<div style={{fontSize:11,color:'var(--muted)'}}>{lv.desc}</div>
+</div>
+<div>
+<div style={{fontSize:10,fontWeight:600,color:'var(--muted)',textTransform:'uppercase',letterSpacing:'0.04em',marginBottom:6}}>Progress</div>
+<div className="progress-btns">
+{['not-started','learning','used','comfortable','advanced'].map(s=><button key={s}className={`progress-btn ${(learningProgress['level-'+lv.l]||'')===s?'active':''}`}onClick={()=>{setProgress('level-'+lv.l,s);onToast('Progress saved.');}}>{s==='not-started'?'Not Started':s.charAt(0).toUpperCase()+s.slice(1)}</button>)}
+</div>
+</div>
+</div>
+</div>)}
+</div>;
+}
+
+function ProjectsView(){
+return<div className="project-grid">
+{PROJECTS.map((p,i)=><div className="project-card"key={i}>
+<h4>{`Project ${i+1}: ${p.name}`}<span className={`badge ${p.diff.includes('Beginner')&&!p.diff.includes('Intermediate')?'badge-green':p.diff.includes('Expert')?'badge-red':p.diff.includes('Advanced')?'badge-orange':'badge-blue'}`}>{p.diff}</span></h4>
+<div className="project-meta">
+<span><strong>Stack:</strong> {p.stack}</span>
+<span><strong>Tools:</strong> {p.tools}</span>
+<span><strong>Deploy:</strong> {p.deploy}</span>
+<span><strong>Skills:</strong> {p.skills}</span>
+</div>
+</div>)}
+</div>;
+}
+
+function LicenseView({tools}){
+const[query,setQuery]=useState('');
+const rows=tools.filter(t=>`${t.name} ${t.license} ${t.licenseType}`.toLowerCase().includes(query.toLowerCase()));
+return<div className="panel"><div className="panel-header"><h3 className="panel-title">Licence matrix</h3><p className="panel-subtitle">Use this as a screening layer. Licence wording can change; commercial terms need direct review.</p></div><div className="panel-body">
+<div className="license-legend"><span className="badge badge-green">OSI-labelled</span><span className="badge badge-blue">Open core</span><span className="badge badge-orange">Source available</span><span className="badge badge-slate">Managed service</span></div>
+<div className="notice notice-warning"style={{marginBottom:13}}>{icon('fa-triangle-exclamation')}<span>"Open source" is not the same as "free to use however you want". Review the actual licence before redistribution or commercial deployment.</span></div>
+<div style={{marginBottom:18}}>
+<div style={{display:'grid',gridTemplateColumns:'repeat(auto-fill,minmax(300px,1fr))',gap:12}}>
+<div className="panel"style={{padding:16,borderLeft:'3px solid var(--success)'}}>
+<h4 style={{margin:'0 0 6px',fontSize:13,color:'var(--success)'}}>Fully Open Source (OSI)</h4>
+<p style={{margin:'0 0 8px',fontSize:11,color:'var(--muted)'}}>MIT, Apache-2.0, BSD, LGPL, MPL-2.0, EPL-2.0</p>
+<div style={{display:'flex',flexWrap:'wrap',gap:4}}>{tools.filter(t=>t.licenseType===LICENSES.OSI).map(t=><span className="badge badge-green"key={t.id}style={{fontSize:9}}>{t.name}</span>)}</div>
+</div>
+<div className="panel"style={{padding:16,borderLeft:'3px solid var(--warning)'}}>
+<h4 style={{margin:'0 0 6px',fontSize:13,color:'var(--warning)'}}>Source Available</h4>
+<p style={{margin:'0 0 8px',fontSize:11,color:'var(--muted)'}}>Code visible but license restricts certain uses.</p>
+<div style={{display:'flex',flexWrap:'wrap',gap:4}}>{tools.filter(t=>t.licenseType===LICENSES.SA).map(t=><span className="badge badge-orange"key={t.id}style={{fontSize:9}}>{t.name} ({t.license})</span>)}</div>
+</div>
+<div className="panel"style={{padding:16,borderLeft:'3px solid var(--info)'}}>
+<h4 style={{margin:'0 0 6px',fontSize:13,color:'var(--info)'}}>Open Core</h4>
+<p style={{margin:'0 0 8px',fontSize:11,color:'var(--muted)'}}>Community edition open source. Enterprise proprietary.</p>
+<div style={{display:'flex',flexWrap:'wrap',gap:4}}>{tools.filter(t=>t.licenseType===LICENSES.OC).map(t=><span className="badge badge-blue"key={t.id}style={{fontSize:9}}>{t.name}</span>)}</div>
+</div>
+<div className="panel"style={{padding:16,borderLeft:'3px solid var(--purple)'}}>
+<h4 style={{margin:'0 0 6px',fontSize:13,color:'var(--purple)'}}>Managed / Proprietary</h4>
+<p style={{margin:'0 0 8px',fontSize:11,color:'var(--muted)'}}>Cloud-only. Not open source.</p>
+<div style={{display:'flex',flexWrap:'wrap',gap:4}}>{tools.filter(t=>t.licenseType===LICENSES.FREE).map(t=><span className="badge badge-purple"key={t.id}style={{fontSize:9}}>{t.name}</span>)}</div>
+</div>
+</div>
+</div>
+<div className="search-mini control"><input className="text-control"placeholder="Search the licence matrix..."value={query}onChange={e=>setQuery(e.target.value)}aria-label="Search licences"/>{icon('fa-magnifying-glass')}</div>
+<div className="table-wrap"><table style={{minWidth:720}}>
+<thead><tr><th>Tool</th><th>Licence type</th><th>Specific licence</th><th>Self-hosting</th></tr></thead>
+<tbody>{rows.map(t=><tr key={t.id}><td style={{fontWeight:600}}>{t.name}</td><td><LicenseBadge type={t.licenseType}/></td><td className="cell-muted">{t.license}</td><td className="cell-compact">{t.selfHosted}</td></tr>)}</tbody>
+</table></div>
+</div></div>;
+}
+
+function CostView(){
+return<>
+<div className="panel"style={{padding:20,marginBottom:18,borderLeft:'3px solid var(--warning)'}}>
+<h2 style={{margin:'0 0 6px',fontSize:14,fontWeight:650}}>Key Insight</h2>
+<p style={{margin:0,fontSize:13,color:'var(--text-2)'}}>"Free software" does not mean "zero-cost production." The total cost of ownership includes infrastructure, maintenance, engineering time, and opportunity costs.</p>
+</div>
+<div className="cost-grid"style={{marginBottom:18}}>
+{[{t:'Free / Open Source Software',i:'fa-gift',c:'var(--success)',items:['License cost: $0','What is free: VS Code, Git, PocketBase, Supabase CE, Appwrite, Semgrep, SonarQube CE','Hidden costs: Setup time, learning curve, community support (no SLA)']},{t:'Infrastructure Cost',i:'fa-server',c:'var(--info)',items:['Self-hosting: VPS ($5-50/mo), domain ($10-15/yr), SSL (free)','Scaling: More CPU/RAM as traffic grows','Backups: Storage costs for database backups']},{t:'Managed Cloud Cost',i:'fa-cloud',c:'var(--primary)',items:['Supabase: Free tier to $25/mo (Pro) to usage-based','Koyeb: Free tier to usage-based (GPU is expensive)','Trade-off: Pay money, save time on operations']},{t:'AI Model / API Cost',i:'fa-microchip',c:'var(--warning)',items:['Cloud LLMs: OpenAI, Anthropic, pay per token','Local models: Free but need GPU hardware','Budget: $10-100+/month depending on usage']}].map(s=>
+<div className="cost-card"key={s.t}>
+<h3>{icon(s.i)}{s.t}</h3>
+{s.items.map((x,j)=><div className="cost-item"key={j}>{x}</div>)}
+</div>)}
+</div>
+<div className="panel"style={{padding:20}}>
+<h3 style={{margin:'0 0 12px',fontSize:14,fontWeight:650,display:'flex',alignItems:'center',gap:8}}>{icon('fa-clock')}Engineering / Maintenance Cost</h3>
+<p style={{margin:'0 0 12px',fontSize:13,color:'var(--text-2)'}}>The largest cost is always <strong>engineering time</strong>.</p>
+<div style={{display:'grid',gridTemplateColumns:'repeat(auto-fill,minmax(180px,1fr))',gap:8}}>
+{[{t:'Learning',d:'Time to become productive with each tool'},{t:'Maintenance',d:'Updates, security patches, configuration'},{t:'Debugging',d:'Troubleshooting self-hosted infrastructure'}].map(x=><div key={x.t}style={{padding:12,borderRadius:'var(--radius-md)',background:'var(--surface-2)',border:'1px solid var(--border)'}}><div style={{fontSize:10,color:'var(--muted)',marginBottom:2}}>{x.t}</div><div style={{fontSize:12,color:'var(--text-2)'}}>{x.d}</div></div>)}
+</div>
+</div>
+</>;
+}
+
+function MalawiView(){
+return<>
+<div className="panel"style={{marginBottom:18}}>
+<div className="panel-header"><h3 className="panel-title">Low-resource engineering context</h3><p className="panel-subtitle">Optimise for unreliable connectivity, constrained hardware, operating cost and small teams without abandoning good architecture.</p></div>
+<div className="panel-body">
+<div className="resource-grid">
+<Resource title="Typical constraints"items={['Limited or expensive bandwidth','Intermittent power and connectivity','Low-cost laptops, small servers or entry-level VPS plans','Small teams that need clear operational ownership']}iconName="fa-triangle-exclamation"/>
+<Resource title="Architectural responses"items={['Prefer simple deployment topologies over unnecessary microservices','Keep frontends lean and consider offline-first patterns','Use managed services selectively when they remove operational burden','Back up data locally and remotely with explicit recovery procedures']}iconName="fa-gears"/>
+</div>
+</div>
+</div>
+<div className="resource-grid"style={{marginBottom:18}}>
+<div className="panel panel-body">
+<h3 style={{margin:'0 0 5px',fontSize:14}}>Compact backend pattern</h3>
+<p className="muted"style={{margin:'0 0 10px',fontSize:11}}>PocketBase is a useful example when one binary, a local SQLite store and straightforward admin tooling meet the application requirements.</p>
+<div className="resource-callout"><h4>{icon('fa-check')}Keep the topology understandable</h4><p>For small deployments, fewer moving parts can materially reduce support overhead. Scale the architecture when the workload actually needs it.</p></div>
+</div>
+<div className="panel panel-body">
+<h3 style={{margin:'0 0 5px',fontSize:14}}>Frontend pattern</h3>
+<p className="muted"style={{margin:'0 0 10px',fontSize:11}}>Prefer compressed assets, modest JavaScript payloads, resilient caching and clear offline/error states when connectivity is unreliable.</p>
+<div className="resource-callout"><h4>{icon('fa-wifi')}Design for the connection you have</h4><p>Optimise the critical path first. A fast, resilient application is usually more valuable than a larger feature set that assumes perfect connectivity.</p></div>
+</div>
+</div>
+<div className="resource-grid">
+<Resource title="When PocketBase makes sense"items={['Single binary: no complex setup, works on minimal VPS','Low resources: runs on 256MB RAM','Offline development: everything local, no external dependencies','Easy deployment: copy one file to server','Best for: Prototypes, small apps, NGOs, local SMEs']}iconName="fa-check"/>
+<Resource title="When managed services make sense"items={['Supabase Cloud: free tier, no server management','Reduces operational burden: no backups, updates, patching','Better for small teams: focus on product, not infrastructure','Consideration: Requires internet connectivity','Best for: Startups, small teams, projects where ops time exceeds cloud cost']}iconName="fa-cloud"/>
+</div>
+</>;
+}
+function Resource({title,items,iconName}){return<div className="resource-card"><h3>{icon(iconName)}{title}</h3><ul className="resource-list">{items.map((item,i)=><li key={i}>{icon('fa-check')}<span>{item}</span></li>)}</ul></div>;}
+
+function ComparisonView(){
+return<>
+<div className="panel"style={{padding:4,marginBottom:18}}>
+<div className="table-wrap"style={{border:'none'}}>
+<table>
+<thead><tr><th>Tool</th><th>Category</th><th>Self-Host</th><th>Database</th><th>Auth</th><th>API</th><th>Realtime</th><th>Best Fit</th></tr></thead>
+<tbody>{COMPARISON_DATA.map(r=><tr key={r.tool}>
+<td style={{fontWeight:600}}>{r.tool}</td>
+<td><span className="badge badge-blue">{r.cat}</span></td>
+<td>{r.self==='✓'?<span style={{color:'var(--success)'}}>✓</span>:<span style={{color:'var(--muted)'}}>—</span>}</td>
+<td className="cell-muted">{r.db}</td><td className="cell-muted">{r.auth}</td><td className="cell-muted">{r.api}</td><td className="cell-muted">{r.rt}</td><td className="cell-muted">{r.fit}</td>
+</tr>)}</tbody>
+</table>
+</div>
+</div>
+<div className="panel"style={{padding:20}}>
+<h2 style={{margin:'0 0 10px',fontSize:14,fontWeight:650}}>Legend</h2>
+<div style={{display:'flex',flexWrap:'wrap',gap:16,fontSize:12,color:'var(--text-2)'}}>
+<div><span style={{color:'var(--success)',fontWeight:600}}>Native</span> = Built-in capability</div>
+<div><span style={{color:'var(--info)',fontWeight:600}}>Via integration</span> = Available through packages</div>
+<div><span style={{color:'var(--muted)',fontWeight:600}}>N/A</span> = Not relevant</div>
+</div>
+</div>
+</>;
+}
+
+ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
+</script>
+</body>
+</html>
