@@ -2,12 +2,11 @@
 <html lang="en" data-theme="dark">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="description" content="A curated architecture command centre for open-source developer tools, software delivery, DevSecOps, and low-resource engineering environments.">
 <meta name="theme-color" content="#0b1220">
 <title>Developer Stack Canvas | Architecture Command Centre</title>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0%25' stop-color='%2332d8f4'/%3E%3Cstop offset='100%25' stop-color='%2380e8ff'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='7' fill='url(%23g)'/%3E%3Cpath d='M8 11h16M8 16h16M8 21h16' stroke='%23041017' stroke-width='2.2' stroke-linecap='round'/%3E%3Ccircle cx='12' cy='11' r='1.5' fill='%23041017'/%3E%3Ccircle cx='20' cy='16' r='1.5' fill='%23041017'/%3E%3Ccircle cx='15' cy='21' r='1.5' fill='%23041017'/%3E%3C/svg%3E">
-<link rel="icon" type="image/png" sizes="32x32" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGSSURBVFhH7ZYxSwNBEIW/WRtbC0t/gI2NnY2Vv8DK/+A/sLOxEksLK0GwEgJBgiAhkIVdWYhkN7vZ3O7e5QJJYXZ23rzhLsFNFvbu3fBmd2bfoij6j/8eRVH0fwfUgQawBewCO8AssAP8Bj4BL4HvwF/4HtgB1oEVYB5YBuaAWWAamARagAUMoAMd6EIPOrSHHnShB30YQB+GMIIxTGACU5jBDGYxhznMYwELWMQSlrGCVaxhHXnksY99HKAYBShFGcpRgQpUogpVqEYNatCAFuxgF3uoQA02sYU6NKARzWhBC5rRghY0oxktaEULWtGCVrSiFa1oRSva0IY2tKMDHehCB7rQhR70oA996EMfBjCAIQxhCEO4h0d4hmd4gXd4hw/4hC/4hg/4hB/4hQAEIAhBCDIQhRjEIA4JSEIK0pCBLOQgDwUoQhFKUIYKVKEKdWhAAxrQgAY0oAENaEADGtCABjSgAQ1oQAMa0IAGNKAJTWjC/0X8A+qoRiXKUYlKVLIe1ahHPRrQgAY0oAENaEADGtCABjSgAQ1oQAMa0IAGNKAJTWjCE5rQhCY8wSM8wTO8wDu8wwd8whf8wC/8wR8C8I8ABOAf8A/4BwEIQBCCDIQhBnFIQBIykIUCFKEEZShDFepQhwY0oAENaEADGtCABjSgAQ1oQAMa0IAGNKAJTWjCPwH/AB+lRqWqZJmKAAAAABJRU5ErkJggg==">
 <link rel="apple-touch-icon" sizes="180x180" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0%25' stop-color='%2332d8f4'/%3E%3Cstop offset='100%25' stop-color='%2380e8ff'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='180' height='180' rx='40' fill='url(%23g)'/%3E%3Cpath d='M45 62h90M45 90h90M45 118h90' stroke='%23041017' stroke-width='12' stroke-linecap='round'/%3E%3Ccircle cx='68' cy='62' r='8' fill='%23041017'/%3E%3Ccircle cx='112' cy='90' r='8' fill='%23041017'/%3E%3Ccircle cx='85' cy='118' r='8' fill='%23041017'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,22 +18,24 @@
 <style>
 :root{color-scheme:dark;--bg:#0b1220;--bg-2:#0f172a;--surface:#111c2e;--surface-2:#162236;--surface-3:#1a2940;--surface-soft:rgba(17,28,46,.72);--text:#edf4ff;--text-2:#c6d2e3;--muted:#8291a7;--muted-2:#637188;--border:#24354d;--border-strong:#31445f;--primary:#32d8f4;--primary-2:#27bde0;--primary-soft:rgba(50,216,244,.11);--success:#36d399;--success-soft:rgba(54,211,153,.10);--warning:#f6c760;--warning-soft:rgba(246,199,96,.10);--danger:#ff7a90;--danger-soft:rgba(255,122,144,.10);--info:#7aa9ff;--info-soft:rgba(122,169,255,.10);--purple:#b794f6;--purple-soft:rgba(183,148,246,.10);--shadow-sm:0 1px 2px rgba(0,0,0,.18);--shadow-md:0 14px 40px rgba(0,0,0,.20);--shadow-lg:0 24px 70px rgba(0,0,0,.32);--radius-sm:8px;--radius-md:12px;--radius-lg:16px;--radius-xl:20px;--control:42px;--sidebar:268px;--topbar:72px;--transition:160ms ease;--container:1440px}
 html[data-theme="light"]{color-scheme:light;--bg:#f5f7fb;--bg-2:#ffffff;--surface:#ffffff;--surface-2:#f7f9fc;--surface-3:#eef3f9;--surface-soft:rgba(255,255,255,.88);--text:#132238;--text-2:#33445c;--muted:#6e7f95;--muted-2:#8796aa;--border:#dce4ee;--border-strong:#cbd7e6;--primary:#0795ad;--primary-2:#067f94;--primary-soft:rgba(7,149,173,.09);--success:#148d61;--success-soft:rgba(20,141,97,.09);--warning:#ad7610;--warning-soft:rgba(173,118,16,.09);--danger:#c0445d;--danger-soft:rgba(192,68,93,.08);--info:#4f74c7;--info-soft:rgba(79,116,199,.08);--purple:#7c3aed;--purple-soft:rgba(124,58,237,.08);--shadow-sm:0 1px 2px rgba(25,44,70,.07);--shadow-md:0 14px 40px rgba(25,44,70,.09);--shadow-lg:0 24px 70px rgba(25,44,70,.14)}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,sans-serif;font-size:14px;line-height:1.5;overflow-x:hidden}button,input,select{font:inherit}button{cursor:pointer}a{color:inherit;text-decoration:none}::selection{background:rgba(50,216,244,.25)}
-.app-shell{min-height:100vh;display:flex;flex-direction:column;background:var(--bg)}.mobile-backdrop{position:fixed;inset:0;z-index:80;background:rgba(2,8,23,.65);backdrop-filter:blur(4px)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,sans-serif;font-size:14px;line-height:1.5}button,input,select{font:inherit}button{cursor:pointer}a{color:inherit;text-decoration:none}::selection{background:rgba(50,216,244,.25)}
+.app-shell{min-height:100vh;display:flex;flex-direction:column;background:var(--bg);min-width:0;max-width:100%}
+.mobile-backdrop{position:fixed;inset:0;z-index:80;background:rgba(2,8,23,.65);backdrop-filter:blur(4px)}
 .sidebar{position:fixed;inset:0 auto 0 0;width:var(--sidebar);z-index:90;display:flex;flex-direction:column;background:var(--surface);border-right:1px solid var(--border);transition:transform var(--transition)}
 .sidebar-brand{padding:22px 20px 18px;border-bottom:1px solid var(--border)}.brand-row{display:flex;align-items:center;justify-content:space-between;gap:12px}
 .brand-mark{width:36px;height:36px;border-radius:10px;display:grid;place-items:center;color:#041017;background:linear-gradient(135deg,var(--primary),#80e8ff);box-shadow:0 0 0 1px rgba(255,255,255,.12) inset}
 .brand-name{font-size:13px;font-weight:800;letter-spacing:.08em}.brand-sub{margin-top:4px;font-size:11px;color:var(--muted)}.sidebar-close{display:none}
 .nav{padding:12px 10px;overflow-y:auto;flex:1}.nav-group{margin-bottom:18px}.nav-label{padding:0 10px 6px;font-size:10px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--muted-2)}
 .nav-item{width:100%;display:flex;align-items:center;gap:10px;padding:8px 10px;margin-bottom:2px;color:var(--text-2);background:transparent;border:1px solid transparent;border-radius:9px;text-align:left;font-size:12px;font-weight:500;transition:background var(--transition),color var(--transition),border-color var(--transition)}
-.nav-item:hover{background:var(--surface-2);color:var(--text)}.nav-item:focus-visible,.icon-button:focus-visible,.btn:focus-visible,.search-input:focus-visible,.filter-select:focus-visible{outline:2px solid var(--primary);outline-offset:2px}
+.nav-item:hover{background:var(--surface-2);color:var(--text)}
+.nav-item:focus-visible,.icon-button:focus-visible,.btn:focus-visible,.search-input:focus-visible,.filter-select:focus-visible,.eco-tool-btn:focus-visible{outline:2px solid var(--primary);outline-offset:2px}
 .nav-item.active{background:var(--primary-soft);border-color:rgba(50,216,244,.18);color:var(--primary);font-weight:600}
 .nav-item i{width:16px;text-align:center;font-size:13px}.nav-item .nav-meta{margin-left:auto;font-size:10px;color:var(--muted-2)}
 .sidebar-footer{padding:12px 16px;border-top:1px solid var(--border)}.status-line{display:flex;align-items:center;justify-content:space-between;color:var(--muted);font-size:10px}
 .status-dot{width:7px;height:7px;border-radius:50%;background:var(--success);box-shadow:0 0 0 3px var(--success-soft)}
 .copyright-line{margin-top:6px;font-size:9px;color:var(--muted-2);text-align:center;line-height:1.4}
-.main-shell{margin-left:var(--sidebar);min-height:100vh;display:flex;flex-direction:column}
-.topbar{position:sticky;top:0;z-index:60;height:var(--topbar);display:flex;align-items:center;gap:14px;padding:0 28px;background:var(--surface-soft);border-bottom:1px solid var(--border);backdrop-filter:blur(14px)}
+.main-shell{margin-left:var(--sidebar);min-height:100vh;display:flex;flex-direction:column;min-width:0;max-width:100%}
+.topbar{position:sticky;top:0;z-index:60;height:var(--topbar);display:flex;align-items:center;gap:14px;padding:0 28px;padding-left:max(28px,env(safe-area-inset-left));padding-right:max(28px,env(safe-area-inset-right));background:var(--surface-soft);border-bottom:1px solid var(--border);backdrop-filter:blur(14px)}
 .mobile-menu{display:none}.breadcrumbs{display:flex;flex-direction:column;min-width:0}.eyebrow{color:var(--muted);font-size:11px}
 .topbar-title{margin:0;font-size:16px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .global-search{margin-left:auto;width:min(420px,36vw);position:relative}.search-shell{position:relative}
@@ -46,14 +47,14 @@ html[data-theme="light"]{color-scheme:light;--bg:#f5f7fb;--bg-2:#ffffff;--surfac
 .topbar-actions{display:flex;align-items:center;gap:7px}
 .icon-button{width:40px;height:40px;display:grid;place-items:center;color:var(--text-2);background:transparent;border:1px solid var(--border);border-radius:10px;transition:background var(--transition),color var(--transition),border-color var(--transition)}
 .icon-button:hover{background:var(--surface-2);color:var(--text);border-color:var(--border-strong)}
-.main-content{max-width:var(--container);padding:30px 30px 56px;margin:0 auto;flex:1}
+.main-content{max-width:var(--container);width:100%;padding:30px 30px 56px;margin:0 auto;flex:1;min-width:0}
 .page-head{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;margin-bottom:22px}.page-head-copy{min-width:0}
 .page-title{margin:0;font-size:clamp(24px,3vw,32px);letter-spacing:-.035em;line-height:1.2}
 .page-description{margin:7px 0 0;max-width:820px;color:var(--muted);font-size:13px}
 .page-context{display:inline-flex;align-items:center;gap:8px;padding:6px 10px;border:1px solid var(--border);border-radius:999px;color:var(--muted);background:var(--surface-2);font-size:11px;white-space:nowrap}
 .page-context i{color:var(--success)}
 .site-footer{margin-left:var(--sidebar);padding:16px 28px;border-top:1px solid var(--border);background:var(--surface);text-align:center;font-size:11px;color:var(--muted-2)}
-.panel{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);box-shadow:var(--shadow-sm)}.panel+.panel{margin-top:18px}
+.panel{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);box-shadow:var(--shadow-sm);min-width:0;max-width:100%}.panel+.panel{margin-top:18px}
 .panel-header{padding:18px 20px;border-bottom:1px solid var(--border)}.panel-title{margin:0;font-size:14px;font-weight:700}.panel-subtitle{margin:4px 0 0;color:var(--muted);font-size:12px}.panel-body{padding:20px}
 .hero-grid{display:grid;grid-template-columns:1.6fr .9fr;gap:14px;margin-bottom:18px}.hero-panel{padding:22px;position:relative;overflow:hidden}
 .hero-panel::after{content:'';position:absolute;inset:auto -90px -120px auto;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(50,216,244,.12),transparent 62%);pointer-events:none}
@@ -78,73 +79,74 @@ html[data-theme="light"]{color-scheme:light;--bg:#f5f7fb;--bg-2:#ffffff;--surfac
 .filter-select:focus,.text-control:focus{border-color:rgba(50,216,244,.45);box-shadow:0 0 0 3px var(--primary-soft)}
 .toolbar-footer{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:10px;color:var(--muted);font-size:10px}
 .toolbar-actions{display:flex;gap:4px}
-.table-wrap{overflow:auto}table{width:100%;border-collapse:collapse;min-width:850px}
+.table-wrap{overflow:auto;max-width:100%;-webkit-overflow-scrolling:touch}table{width:100%;border-collapse:collapse;min-width:850px}
 th{position:sticky;top:0;z-index:2;padding:11px 13px;background:var(--surface-2);color:var(--muted);text-align:left;font-size:10px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;border-bottom:1px solid var(--border);white-space:nowrap}
 td{padding:13px;border-bottom:1px solid var(--border);vertical-align:middle}tbody tr{transition:background var(--transition)}tbody tr:hover{background:var(--surface-2)}
 .table-sort{padding:0;color:inherit;background:transparent;border:0;font:inherit;text-transform:inherit;letter-spacing:inherit;cursor:pointer}
-.tool-cell{display:flex;align-items:center;gap:11px;min-width:260px;cursor:pointer}
+.tool-cell{display:flex;align-items:center;gap:11px;min-width:0;cursor:pointer}
 .tool-avatar{width:34px;height:34px;flex:0 0 auto;border-radius:9px;display:grid;place-items:center;background:var(--surface-3);border:1px solid var(--border);color:var(--primary)}
-.tool-name{display:block;font-weight:700;color:var(--text)}.tool-desc{display:block;margin-top:2px;max-width:420px;color:var(--muted);font-size:10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.cell-muted{color:var(--muted);font-size:11px}.cell-compact{color:var(--text-2);font-size:11px}.cell-flex{display:flex;align-items:center;gap:7px}
+.tool-name{display:block;font-weight:700;color:var(--text);overflow-wrap:anywhere}.tool-desc{display:block;margin-top:2px;max-width:420px;color:var(--muted);font-size:10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cell-muted{color:var(--muted);font-size:11px;overflow-wrap:anywhere}.cell-compact{color:var(--text-2);font-size:11px;overflow-wrap:anywhere}.cell-flex{display:flex;align-items:center;gap:7px}
 .favorite-button{width:30px;height:30px;display:grid;place-items:center;border:0;background:transparent;color:var(--muted-2);border-radius:8px;cursor:pointer}
 .favorite-button:hover{background:var(--surface-3);color:var(--warning)}.favorite-button.active{color:var(--warning)}
 .badge{display:inline-flex;align-items:center;gap:5px;min-height:22px;padding:0 8px;border-radius:999px;border:1px solid var(--border);font-size:10px;font-weight:700;white-space:nowrap}
 .badge-green{color:var(--success);background:var(--success-soft);border-color:rgba(54,211,153,.18)}
 .badge-orange{color:var(--warning);background:var(--warning-soft);border-color:rgba(246,199,96,.18)}
+.badge-yellow{color:var(--warning);background:var(--warning-soft);border-color:rgba(246,199,96,.18)}
 .badge-blue{color:var(--info);background:var(--info-soft);border-color:rgba(122,169,255,.18)}
 .badge-purple{color:var(--purple);background:var(--purple-soft);border-color:rgba(183,148,246,.18)}
 .badge-red{color:var(--danger);background:var(--danger-soft);border-color:rgba(255,122,144,.18)}
 .badge-slate{color:var(--muted);background:var(--surface-3)}
 .badge-cyan{color:var(--primary);background:var(--primary-soft);border-color:rgba(50,216,244,.18)}
 .stage-stack{display:flex;flex-wrap:wrap;gap:4px;max-width:300px}.stage-chip{display:inline-flex;align-items:center;min-height:20px;padding:0 6px;color:var(--muted);background:var(--surface-3);border-radius:5px;font-size:9px}
-.mobile-tool-list{display:none;padding:10px}.mobile-tool-card{padding:14px;margin-bottom:8px;border:1px solid var(--border);border-radius:12px;background:var(--surface-2)}
+.mobile-tool-list{display:none;padding:10px}.mobile-tool-card{padding:14px;margin-bottom:8px;border:1px solid var(--border);border-radius:12px;background:var(--surface-2);min-width:0}
 .mobile-tool-top{display:flex;justify-content:space-between;gap:10px}.mobile-tool-meta{display:flex;flex-wrap:wrap;gap:6px;margin-top:9px}.mobile-tool-actions{display:flex;justify-content:flex-end;margin-top:10px}
 .drawer-backdrop{position:fixed;inset:0;z-index:100;background:rgba(2,8,23,.66);backdrop-filter:blur(5px)}
-.drawer{position:fixed;z-index:110;top:0;right:0;height:100dvh;width:min(560px,100vw);background:var(--surface);border-left:1px solid var(--border);box-shadow:var(--shadow-lg);overflow-y:auto;animation:drawer-in 180ms ease}
+.drawer{position:fixed;z-index:110;top:0;right:0;height:100dvh;width:min(560px,100vw);background:var(--surface);border-left:1px solid var(--border);box-shadow:var(--shadow-lg);overflow-y:auto;animation:drawer-in 180ms ease;padding-bottom:env(safe-area-inset-bottom)}
 @keyframes drawer-in{from{transform:translateX(18px);opacity:.4}to{transform:translateX(0);opacity:1}}
 .drawer-header{position:sticky;top:0;z-index:2;display:flex;justify-content:space-between;gap:15px;padding:18px 20px;background:var(--surface-soft);border-bottom:1px solid var(--border);backdrop-filter:blur(14px)}
-.drawer-body{padding:20px}.drawer-title-row{display:flex;align-items:flex-start;gap:12px}
+.drawer-body{padding:20px}.drawer-title-row{display:flex;align-items:flex-start;gap:12px;min-width:0}
 .drawer-tool-icon{width:42px;height:42px;display:grid;place-items:center;border-radius:11px;background:var(--primary-soft);color:var(--primary);flex:0 0 auto}
-.drawer-title{margin:0;font-size:21px;letter-spacing:-.02em}.drawer-desc{margin:5px 0 0;color:var(--muted);font-size:12px}
+.drawer-title{margin:0;font-size:21px;letter-spacing:-.02em;overflow-wrap:anywhere}.drawer-desc{margin:5px 0 0;color:var(--muted);font-size:12px}
 .detail-section{margin-top:22px}.detail-label{margin:0 0 8px;color:var(--muted-2);font-size:10px;font-weight:800;letter-spacing:.09em;text-transform:uppercase}
-.detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px}.detail-item{padding:12px;border:1px solid var(--border);border-radius:10px;background:var(--surface-2)}
-.detail-item-label{color:var(--muted-2);font-size:10px}.detail-item-value{margin-top:3px;color:var(--text-2);font-size:11px;line-height:1.45}
+.detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px}.detail-item{padding:12px;border:1px solid var(--border);border-radius:10px;background:var(--surface-2);min-width:0}
+.detail-item-label{color:var(--muted-2);font-size:10px}.detail-item-value{margin-top:3px;color:var(--text-2);font-size:11px;line-height:1.45;overflow-wrap:anywhere}
 .capability-list{display:flex;flex-wrap:wrap;gap:6px}
-.detail-note{padding:12px;color:var(--text-2);background:var(--surface-2);border:1px solid var(--border);border-radius:10px;font-size:11px}
+.detail-note{padding:12px;color:var(--text-2);background:var(--surface-2);border:1px solid var(--border);border-radius:10px;font-size:11px;overflow-wrap:anywhere}
 .detail-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px;padding-top:18px;border-top:1px solid var(--border)}
-.decision-list{display:grid;gap:9px}.decision-card{display:grid;grid-template-columns:1fr 32px 1.15fr;gap:10px;align-items:center;padding:13px;border:1px solid var(--border);border-radius:12px;background:var(--surface-2)}
-.decision-q{color:var(--text-2);font-size:12px;font-weight:600}.decision-arrow{color:var(--primary);text-align:center}
-.decision-a{padding:10px 11px;border-radius:9px;background:var(--primary-soft);border:1px solid rgba(50,216,244,.16);color:var(--text-2);font-size:11px}
+.decision-list{display:grid;gap:9px}.decision-card{display:grid;grid-template-columns:1fr 32px 1.15fr;gap:10px;align-items:center;padding:13px;border:1px solid var(--border);border-radius:12px;background:var(--surface-2);min-width:0}
+.decision-q{color:var(--text-2);font-size:12px;font-weight:600;overflow-wrap:anywhere}.decision-arrow{color:var(--primary);text-align:center}
+.decision-a{padding:10px 11px;border-radius:9px;background:var(--primary-soft);border:1px solid rgba(50,216,244,.16);color:var(--text-2);font-size:11px;overflow-wrap:anywhere}
 .decision-tag{display:inline-block;margin-bottom:4px;color:var(--primary);font-size:9px;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
 .search-mini{margin-bottom:13px}
-.stack-layout{display:grid;grid-template-columns:280px 1fr;gap:14px}.stack-nav{padding:9px}
+.stack-layout{display:grid;grid-template-columns:280px 1fr;gap:14px;min-width:0}.stack-nav{padding:9px}
 .stack-tab{width:100%;padding:13px;text-align:left;border:1px solid transparent;background:transparent;color:var(--text-2);border-radius:10px;cursor:pointer}
 .stack-tab:hover{background:var(--surface-2)}.stack-tab.active{background:var(--primary-soft);border-color:rgba(50,216,244,.18);color:var(--text)}
 .stack-tab-name{display:block;font-weight:700}.stack-tab-desc{display:block;margin-top:3px;color:var(--muted);font-size:10px;line-height:1.4}
-.stack-panel{padding:20px}.stack-head{display:flex;justify-content:space-between;align-items:flex-start;gap:16px}.stack-head h3{margin:0;font-size:17px}.stack-head p{margin:5px 0 0;color:var(--muted);font-size:11px}
-.stack-flow{display:grid;gap:0;margin-top:18px}.stack-node{position:relative;display:grid;grid-template-columns:34px 1fr auto;gap:10px;align-items:center;padding:12px 10px}
+.stack-panel{padding:20px;min-width:0}.stack-head{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;flex-wrap:wrap}.stack-head h3{margin:0;font-size:17px}.stack-head p{margin:5px 0 0;color:var(--muted);font-size:11px}
+.stack-flow{display:grid;gap:0;margin-top:18px}.stack-node{position:relative;display:grid;grid-template-columns:34px 1fr auto;gap:10px;align-items:center;padding:12px 10px;min-width:0}
 .stack-node:not(:last-child)::after{content:'';position:absolute;left:26px;top:45px;width:1px;height:21px;background:var(--border-strong)}
 .stack-node-icon{width:31px;height:31px;display:grid;place-items:center;color:var(--primary);background:var(--surface-2);border:1px solid var(--border);border-radius:8px;z-index:1}
 .stack-node-main strong{display:block;font-size:12px}.stack-node-main span{display:block;margin-top:1px;color:var(--muted);font-size:10px}.stack-node-type{color:var(--muted);font-size:10px;white-space:nowrap}
 .landscape-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:11px}
-.landscape-card{padding:15px;border:1px solid var(--border);border-radius:12px;background:var(--surface-2)}
+.landscape-card{padding:15px;border:1px solid var(--border);border-radius:12px;background:var(--surface-2);min-width:0}
 .landscape-icon{width:34px;height:34px;display:grid;place-items:center;border-radius:9px;margin-bottom:12px;background:var(--primary-soft);color:var(--primary)}
 .landscape-card h3{margin:0;font-size:13px}.landscape-card p{margin:5px 0 10px;color:var(--muted);font-size:10px;line-height:1.5}.landscape-tools{display:flex;flex-wrap:wrap;gap:5px}
 .pipeline{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:6px;align-items:stretch}
-.pipeline-step{position:relative;padding:13px 10px;border:1px solid var(--border);border-radius:11px;background:var(--surface-2);text-align:center}
+.pipeline-step{position:relative;padding:13px 10px;border:1px solid var(--border);border-radius:11px;background:var(--surface-2);text-align:center;min-width:0}
 .pipeline-step:not(:last-child)::after{content:'\f178';font-family:'Font Awesome 6 Free';font-weight:900;position:absolute;top:50%;right:-11px;transform:translateY(-50%);color:var(--primary);z-index:2;font-size:10px}
 .pipeline-num{width:24px;height:24px;margin:0 auto 8px;display:grid;place-items:center;border-radius:50%;background:var(--primary-soft);color:var(--primary);font-size:10px;font-weight:800}
 .pipeline-name{font-size:10px;font-weight:700;line-height:1.35}.pipeline-desc{margin-top:4px;color:var(--muted);font-size:9px}
 .license-legend{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px}
-.notice{display:flex;align-items:flex-start;gap:9px;padding:12px 13px;color:var(--text-2);background:var(--info-soft);border:1px solid rgba(122,169,255,.16);border-radius:10px;font-size:11px}
-.notice i{color:var(--info);margin-top:1px}.notice-warning{background:var(--warning-soft);border-color:rgba(246,199,96,.16)}.notice-warning i{color:var(--warning)}
+.notice{display:flex;align-items:flex-start;gap:9px;padding:12px 13px;color:var(--text-2);background:var(--info-soft);border:1px solid rgba(122,169,255,.16);border-radius:10px;font-size:11px;min-width:0}
+.notice i{color:var(--info);margin-top:1px;flex-shrink:0}.notice span{overflow-wrap:anywhere}.notice-warning{background:var(--warning-soft);border-color:rgba(246,199,96,.16)}.notice-warning i{color:var(--warning)}
 .resource-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.resource-card{padding:17px;border:1px solid var(--border);border-radius:12px;background:var(--surface-2)}.resource-card h3{display:flex;align-items:center;gap:8px;margin:0;font-size:13px}.resource-card h3 i{color:var(--primary)}
-.resource-list{margin:11px 0 0;padding:0;list-style:none;display:grid;gap:9px}.resource-list li{display:flex;gap:8px;align-items:flex-start;color:var(--text-2);font-size:11px}.resource-list li i{color:var(--success);margin-top:2px}.resource-list strong{color:var(--text)}
+.resource-card{padding:17px;border:1px solid var(--border);border-radius:12px;background:var(--surface-2);min-width:0}.resource-card h3{display:flex;align-items:center;gap:8px;margin:0;font-size:13px}.resource-card h3 i{color:var(--primary)}
+.resource-list{margin:11px 0 0;padding:0;list-style:none;display:grid;gap:9px}.resource-list li{display:flex;gap:8px;align-items:flex-start;color:var(--text-2);font-size:11px;min-width:0}.resource-list li i{color:var(--success);margin-top:2px;flex-shrink:0}.resource-list span{overflow-wrap:anywhere}.resource-list strong{color:var(--text)}
 .resource-callout{margin-top:14px;padding:13px;border:1px solid rgba(50,216,244,.16);background:var(--primary-soft);border-radius:11px}
 .resource-callout h4{margin:0 0 5px;font-size:11px;color:var(--primary)}.resource-callout p{margin:0;color:var(--text-2);font-size:10px}
 .eco-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px}
-.eco-branch{padding:16px;border-radius:var(--radius-md);border:1px solid var(--border);background:var(--surface-2);transition:border-color var(--transition)}.eco-branch:hover{border-color:var(--border-strong)}
+.eco-branch{padding:16px;border-radius:var(--radius-md);border:1px solid var(--border);background:var(--surface-2);transition:border-color var(--transition);min-width:0}.eco-branch:hover{border-color:var(--border-strong)}
 .eco-branch-head{display:flex;align-items:center;gap:10px;margin-bottom:10px}
 .eco-branch-icon{width:28px;height:28px;border-radius:7px;display:grid;place-items:center;font-size:12px}
 .eco-branch-title{font-size:13px;font-weight:600}.eco-branch-count{font-size:10px;color:var(--muted)}
@@ -152,16 +154,16 @@ td{padding:13px;border-bottom:1px solid var(--border);vertical-align:middle}tbod
 .eco-tool-btn{font-size:11px;padding:3px 8px;border-radius:6px;background:var(--surface-3);color:var(--text-2);border:1px solid transparent;cursor:pointer;transition:all var(--transition)}
 .eco-tool-btn:hover{border-color:var(--border-strong);color:var(--text)}
 .flow-container{display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:center}
-.flow-step{padding:10px 14px;border-radius:var(--radius-md);background:var(--surface-2);border:1px solid var(--border);font-size:11px;font-weight:500;text-align:center}
+.flow-step{padding:10px 14px;border-radius:var(--radius-md);background:var(--surface-2);border:1px solid var(--border);font-size:11px;font-weight:500;text-align:center;max-width:100%;overflow-wrap:anywhere}
 .flow-arrow{color:var(--muted);flex-shrink:0}
 .lifecycle-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:12px}
-.lifecycle-card{padding:16px;border:1px solid var(--border);border-radius:var(--radius-md);background:var(--surface-2)}
+.lifecycle-card{padding:16px;border:1px solid var(--border);border-radius:var(--radius-md);background:var(--surface-2);min-width:0}
 .lifecycle-card h4{margin:0 0 6px;font-size:13px;font-weight:600;display:flex;align-items:center;gap:8px}
 .lifecycle-card h4 i{color:var(--primary)}
 .lifecycle-card p{margin:0 0 8px;font-size:11px;color:var(--muted)}
 .lifecycle-tools{font-size:11px;color:var(--text-2)}
 .pattern-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:12px}
-.pattern-card{padding:18px;border:1px solid var(--border);border-radius:var(--radius-md);background:var(--surface-2)}
+.pattern-card{padding:18px;border:1px solid var(--border);border-radius:var(--radius-md);background:var(--surface-2);min-width:0}
 .pattern-card h3{margin:0 0 6px;font-size:13px;font-weight:600;display:flex;align-items:center;gap:8px}
 .pattern-card h3 i{color:var(--primary)}
 .pattern-card p{margin:0 0 12px;font-size:11px;color:var(--muted);line-height:1.5}
@@ -173,31 +175,34 @@ td{padding:13px;border-bottom:1px solid var(--border);vertical-align:middle}tbod
 .level-num{width:36px;height:36px;border-radius:var(--radius-md);display:grid;place-items:center;font-size:16px;font-weight:700}
 .level-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px}
 .project-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:12px}
-.project-card{padding:16px;border:1px solid var(--border);border-radius:var(--radius-md);background:var(--surface-2)}
-.project-card h4{margin:0 0 8px;font-size:13px;font-weight:600;display:flex;align-items:center;justify-content:space-between}
+.project-card{padding:16px;border:1px solid var(--border);border-radius:var(--radius-md);background:var(--surface-2);min-width:0}
+.project-card h4{margin:0 0 8px;font-size:13px;font-weight:600;display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap}
 .project-meta{display:flex;flex-direction:column;gap:4px}
-.project-meta span{font-size:11px;color:var(--text-2)}
+.project-meta span{font-size:11px;color:var(--text-2);overflow-wrap:anywhere}
 .project-meta strong{color:var(--muted);font-weight:500}
 .cost-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px}
-.cost-card{padding:18px;border:1px solid var(--border);border-radius:var(--radius-md);background:var(--surface-2)}
+.cost-card{padding:18px;border:1px solid var(--border);border-radius:var(--radius-md);background:var(--surface-2);min-width:0}
 .cost-card h3{margin:0 0 12px;font-size:13px;font-weight:600;display:flex;align-items:center;gap:8px}
 .cost-card h3 i{color:var(--primary)}
-.cost-item{font-size:12px;color:var(--text-2);padding-left:12px;border-left:2px solid var(--border);margin-bottom:6px}
+.cost-item{font-size:12px;color:var(--text-2);padding-left:12px;border-left:2px solid var(--border);margin-bottom:6px;overflow-wrap:anywhere}
 .progress-btns{display:flex;gap:4px;flex-wrap:wrap}
 .progress-btn{padding:3px 8px;border-radius:var(--radius-sm);font-size:10px;font-weight:500;border:1px solid var(--border);background:transparent;color:var(--muted);cursor:pointer;transition:all var(--transition)}
 .progress-btn:hover{border-color:var(--border-strong);color:var(--text)}
 .progress-btn.active{border-color:rgba(50,216,244,.3);background:var(--primary-soft);color:var(--primary)}
 .empty{padding:44px 18px;text-align:center}.empty-icon{width:44px;height:44px;margin:0 auto 11px;display:grid;place-items:center;border-radius:12px;background:var(--surface-2);border:1px solid var(--border);color:var(--muted-2)}
 .empty h3{margin:0;font-size:14px}.empty p{margin:5px 0 0;color:var(--muted);font-size:11px}
-.toast-region{position:fixed;right:18px;bottom:18px;z-index:140;display:grid;gap:8px;width:min(360px,calc(100vw - 36px))}
+.toast-region{position:fixed;right:18px;right:max(18px,env(safe-area-inset-right));bottom:18px;bottom:max(18px,env(safe-area-inset-bottom));z-index:140;display:grid;gap:8px;width:min(360px,calc(100vw - 36px))}
 .toast{display:flex;align-items:flex-start;gap:10px;padding:12px 13px;border-radius:10px;background:var(--surface);border:1px solid var(--border-strong);box-shadow:var(--shadow-md);animation:toast-in 180ms ease}
 @keyframes toast-in{from{transform:translateY(8px);opacity:0}to{transform:translateY(0);opacity:1}}
-.toast i{margin-top:2px;color:var(--success)}.toast p{margin:0;color:var(--text-2);font-size:11px}.toast button{margin-left:auto;color:var(--muted);border:0;background:transparent;cursor:pointer}
+.toast i{margin-top:2px;color:var(--success)}.toast p{margin:0;color:var(--text-2);font-size:11px;overflow-wrap:anywhere}.toast button{margin-left:auto;color:var(--muted);border:0;background:transparent;cursor:pointer}
 .muted{color:var(--muted)}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 .selfhost-table{min-width:800px}
+.error-boundary{padding:24px;margin:20px 0;border:1px solid var(--border);border-radius:var(--radius-lg);background:var(--surface)}
+.error-boundary h3{margin:0 0 8px;font-size:14px}
+.error-boundary p{margin:0 0 14px;color:var(--muted);font-size:12px}
 @media(max-width:1180px){:root{--sidebar:248px}.toolbar-grid{grid-template-columns:1.25fr 1fr 1fr}.toolbar-grid>:first-child{grid-column:span 3}.metric-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.hero-grid{grid-template-columns:1fr}.landscape-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.pipeline{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}.pipeline-step:not(:last-child)::after{display:none}}
 @media(max-width:900px){.sidebar{transform:translateX(-100%)}.sidebar.open{transform:translateX(0)}.sidebar-close{display:grid}.main-shell{margin-left:0}.mobile-menu{display:grid}.global-search{width:min(390px,48vw)}.main-content{padding:24px 20px 48px}.site-footer{margin-left:0}.decision-card{grid-template-columns:1fr}.decision-arrow{display:none}.stack-layout{grid-template-columns:1fr}.stack-nav{display:grid;grid-template-columns:1fr 1fr;gap:5px}.resource-grid{grid-template-columns:1fr}.eco-grid{grid-template-columns:repeat(auto-fill,minmax(240px,1fr))}.lifecycle-grid,.pattern-grid{grid-template-columns:1fr}.level-grid{grid-template-columns:1fr}.cost-grid{grid-template-columns:1fr}.project-grid{grid-template-columns:1fr}}
-@media(max-width:680px){:root{--topbar:62px}.topbar{padding:0 14px;gap:8px}.breadcrumbs{display:none}.global-search{order:2;flex:1;width:auto}.topbar-actions{order:3}.main-content{padding:20px 14px 42px}.page-head{align-items:flex-start;flex-direction:column;margin-bottom:18px}.page-context{display:none}.hero-panel{padding:18px}.metric-grid{gap:8px}.metric-card{min-height:96px;padding:13px}.metric-value{font-size:20px}.toolbar-grid{grid-template-columns:1fr 1fr}.toolbar-grid>:first-child{grid-column:span 2}.toolbar-footer{align-items:flex-start;flex-direction:column}.directory-table{display:none}.mobile-tool-list{display:block}.landscape-grid{grid-template-columns:1fr}.pipeline{grid-template-columns:1fr 1fr}.stack-nav{grid-template-columns:1fr}.detail-grid{grid-template-columns:1fr}.shortcut{display:none}.flow-container{flex-direction:column}.flow-arrow{transform:rotate(90deg)}.pattern-cols{grid-template-columns:1fr}.site-footer{padding:14px 16px}}
+@media(max-width:680px){:root{--topbar:62px}.topbar{padding-left:max(14px,env(safe-area-inset-left));padding-right:max(14px,env(safe-area-inset-right));gap:8px}.breadcrumbs{display:none}.global-search{order:2;flex:1;width:auto}.topbar-actions{order:3}.main-content{padding:20px 14px 42px}.page-head{align-items:flex-start;flex-direction:column;margin-bottom:18px}.page-context{display:none}.hero-panel{padding:18px}.metric-grid{gap:8px}.metric-card{min-height:96px;padding:13px}.metric-value{font-size:20px}.toolbar-grid{grid-template-columns:1fr 1fr}.toolbar-grid>:first-child{grid-column:span 2}.toolbar-footer{align-items:flex-start;flex-direction:column}.directory-table{display:none}.mobile-tool-list{display:block}.landscape-grid{grid-template-columns:1fr}.pipeline{grid-template-columns:1fr 1fr}.stack-nav{grid-template-columns:1fr}.detail-grid{grid-template-columns:1fr}.shortcut{display:none}.flow-container{flex-direction:column}.flow-arrow{transform:rotate(90deg)}.pattern-cols{grid-template-columns:1fr}.site-footer{padding:14px 16px}}
 @media(max-width:460px){.search-input{padding-left:34px;padding-right:10px}.topbar-actions .icon-button:first-child{display:none}.hero-actions .btn{width:100%}.metric-grid{grid-template-columns:1fr 1fr}.metric-note{display:none}.toolbar-grid{grid-template-columns:1fr}.toolbar-grid>:first-child{grid-column:auto}.pipeline{grid-template-columns:1fr}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
 </style>
@@ -206,7 +211,7 @@ td{padding:13px;border-bottom:1px solid var(--border);vertical-align:middle}tbod
 <noscript><div style="padding:24px;font-family:system-ui,sans-serif">JavaScript is required to use the Developer Stack Canvas.</div></noscript>
 <div id="root"></div>
 <script type="text/babel">
-const{useEffect,useMemo,useState,useCallback}=React;
+const{useEffect,useMemo,useState,useCallback,useRef,Component}=React;
 
 const SDLC_STAGES=['IDE / Editor','AI Coding','Planning & Implementation','Source Control','Code Quality & Security','Backend','Database','Authentication','API','Realtime','Testing','Build System','Containerisation','Deployment','Observability','Maintenance'];
 
@@ -249,6 +254,23 @@ const TOOLS=[
 {id:'gin',name:'Gin',category:CATEGORIES.FRAMEWORK,website:'https://gin-gonic.com/',github:'https://github.com/gin-gonic/gin',licenseType:LICENSES.OSI,license:'MIT',desc:'High-performance HTTP web framework for Go with low memory footprint.',capabilities:['Routing','Middleware','JSON validation','Error management'],selfHosted:'Yes',cloud:'Any',architecture:'Go',strengths:'Fast, small runtime footprint and straightforward API design. Go performance. Single binary deployment.',tradeoffs:'Deliberately minimal; teams choose their own persistence and auth layers. Less built-in functionality.',sdlc:['Backend','API'],bestFor:'High-performance APIs, resource-constrained environments',learningCurve:'Low-Medium'},
 {id:'flask',name:'Flask',category:CATEGORIES.FRAMEWORK,website:'https://flask.palletsprojects.com/',github:'https://github.com/pallets/flask',licenseType:LICENSES.OSI,license:'BSD-3-Clause',desc:'Small Python web framework with explicit control and incremental architecture.',capabilities:['Routing','Jinja','Extensions','Request handling'],selfHosted:'Yes',cloud:'Any',architecture:'Python',strengths:'Simple mental model and incremental architecture. Very low learning curve. Great for learning.',tradeoffs:'Complex applications require deliberate extension choices. No built-in structure at scale.',sdlc:['Backend'],bestFor:'Small APIs, prototypes, learning web development',learningCurve:'Very Low'}
 ];
+
+// Pre-computed search haystack. Avoids rebuilding the same string on every keystroke.
+TOOLS.forEach(t=>{t._hay=[t.name,t.desc,t.category,t.architecture,t.license,t.bestFor||'',...(t.capabilities||[]),...(t.sdlc||[])].join(' ').toLowerCase();});
+
+// Explicit realtime support classification for backend frameworks.
+const REALTIME_SUPPORT={
+  django:{level:'First-party',note:'Django Channels (ASGI)',cls:'badge-blue'},
+  laravel:{level:'First-party',note:'Laravel Broadcasting',cls:'badge-blue'},
+  springboot:{level:'First-party',note:'Spring WebSocket module',cls:'badge-blue'},
+  aspnet:{level:'Native',note:'SignalR built in',cls:'badge-green'},
+  rails:{level:'First-party',note:'ActionCable',cls:'badge-blue'},
+  express:{level:'Third-party',note:'Socket.io and community modules',cls:'badge-yellow'},
+  koa:{level:'Third-party',note:'Community modules (for example ws)',cls:'badge-yellow'},
+  phoenix:{level:'Native',note:'Channels and LiveView',cls:'badge-green'},
+  gin:{level:'Third-party',note:'Community websocket libraries',cls:'badge-yellow'},
+  flask:{level:'Third-party',note:'Flask-SocketIO',cls:'badge-yellow'}
+};
 
 const TABS={
 overview:{label:'Ecosystem Map',icon:'fa-diagram-project',description:'A comprehensive map of the modern open-source development ecosystem.'},
@@ -344,19 +366,19 @@ const ARCH_PATTERNS=[
 ];
 
 const SELFHOST_DATA=[
-{tool:'Supabase',model:'Cloud + Self-host',docker:'✓',db:'PostgreSQL',infra:'Medium-High',maint:'High',notes:'Complex self-hosting, many services'},
-{tool:'Appwrite',model:'Cloud + Self-host',docker:'✓',db:'MariaDB/MySQL',infra:'Medium',maint:'Medium',notes:'Well-documented Docker setup'},
+{tool:'Supabase',model:'Cloud + Self-host',docker:'Yes',db:'PostgreSQL',infra:'Medium-High',maint:'High',notes:'Complex self-hosting, many services'},
+{tool:'Appwrite',model:'Cloud + Self-host',docker:'Yes',db:'MariaDB/MySQL',infra:'Medium',maint:'Medium',notes:'Well-documented Docker setup'},
 {tool:'PocketBase',model:'Fully self-hostable',docker:'Optional',db:'Embedded SQLite',infra:'Very Low',maint:'Very Low',notes:'Single binary, minimal resources'},
-{tool:'Nhost',model:'Cloud + Self-host',docker:'✓',db:'PostgreSQL + Hasura',infra:'Medium-High',maint:'High',notes:'Multiple services required'},
-{tool:'Parse Server',model:'Fully self-hostable',docker:'✓',db:'MongoDB/PostgreSQL',infra:'Medium',maint:'Medium',notes:'Requires database + file storage'},
-{tool:'Strapi',model:'Cloud + Self-host',docker:'✓',db:'SQLite/PostgreSQL/MySQL',infra:'Low-Medium',maint:'Low-Medium',notes:'Node.js application'},
-{tool:'Directus',model:'Cloud + Self-host',docker:'✓',db:'Any SQL database',infra:'Medium',maint:'Medium',notes:'Requires existing SQL database'},
-{tool:'Convex',model:'Cloud only',docker:'✗',db:'Managed',infra:'None',maint:'None',notes:'Source-available, no self-hosting'},
-{tool:'GitLab',model:'Cloud + Self-host',docker:'✓',db:'PostgreSQL + Redis',infra:'High',maint:'High',notes:'Resource-heavy (4GB+ RAM)'},
-{tool:'SonarQube',model:'Self-hostable',docker:'✓',db:'H2 or PostgreSQL',infra:'Medium',maint:'Medium',notes:'Community edition is free'},
-{tool:'Semgrep',model:'CLI + Cloud',docker:'✓',db:'N/A',infra:'Very Low',maint:'Very Low',notes:'CLI tool, minimal infra'},
-{tool:'Tabby',model:'Self-hostable',docker:'✓',db:'N/A',infra:'Medium-High (GPU)',maint:'Medium',notes:'GPU recommended'},
-{tool:'OpenHands',model:'Self-hostable',docker:'✓',db:'N/A',infra:'Medium-High',maint:'Medium',notes:'Requires Docker + LLM API'},
+{tool:'Nhost',model:'Cloud + Self-host',docker:'Yes',db:'PostgreSQL + Hasura',infra:'Medium-High',maint:'High',notes:'Multiple services required'},
+{tool:'Parse Server',model:'Fully self-hostable',docker:'Yes',db:'MongoDB/PostgreSQL',infra:'Medium',maint:'Medium',notes:'Requires database + file storage'},
+{tool:'Strapi',model:'Cloud + Self-host',docker:'Yes',db:'SQLite/PostgreSQL/MySQL',infra:'Low-Medium',maint:'Low-Medium',notes:'Node.js application'},
+{tool:'Directus',model:'Cloud + Self-host',docker:'Yes',db:'Any SQL database',infra:'Medium',maint:'Medium',notes:'Requires existing SQL database'},
+{tool:'Convex',model:'Cloud only',docker:'No',db:'Managed',infra:'None',maint:'None',notes:'Source-available, no self-hosting'},
+{tool:'GitLab',model:'Cloud + Self-host',docker:'Yes',db:'PostgreSQL + Redis',infra:'High',maint:'High',notes:'Resource-heavy (4GB+ RAM)'},
+{tool:'SonarQube',model:'Self-hostable',docker:'Yes',db:'H2 or PostgreSQL',infra:'Medium',maint:'Medium',notes:'Community edition is free'},
+{tool:'Semgrep',model:'CLI + Cloud',docker:'Yes',db:'N/A',infra:'Very Low',maint:'Very Low',notes:'CLI tool, minimal infra'},
+{tool:'Tabby',model:'Self-hostable',docker:'Yes',db:'N/A',infra:'Medium-High (GPU)',maint:'Medium',notes:'GPU recommended'},
+{tool:'OpenHands',model:'Self-hostable',docker:'Yes',db:'N/A',infra:'Medium-High',maint:'Medium',notes:'Requires Docker + LLM API'},
 {tool:'Koyeb',model:'Cloud only',docker:'N/A',db:'Managed',infra:'None',maint:'None',notes:'Managed deployment platform'}
 ];
 
@@ -385,821 +407,996 @@ const PROJECTS=[
 ];
 
 const COMPARISON_DATA=[
-{tool:'Supabase',cat:'BaaS',self:'✓',db:'PostgreSQL (Native)',auth:'Native',api:'REST + GraphQL',rt:'Native',fit:'PostgreSQL-centric apps'},
-{tool:'Appwrite',cat:'BaaS',self:'✓',db:'MariaDB (Native)',auth:'Native',api:'REST + GraphQL',rt:'Native',fit:'Multi-tenant apps'},
-{tool:'PocketBase',cat:'BaaS',self:'✓',db:'SQLite (Native)',auth:'Native',api:'REST',rt:'Native',fit:'Prototypes, small apps'},
-{tool:'Nhost',cat:'BaaS',self:'✓',db:'PostgreSQL (Native)',auth:'Native',api:'GraphQL',rt:'Via Hasura',fit:'GraphQL-first apps'},
-{tool:'Strapi',cat:'CMS',self:'✓',db:'SQL (Integration)',auth:'Native (RBAC)',api:'REST + GraphQL',rt:'N/A',fit:'Content-driven apps'},
-{tool:'Directus',cat:'CMS',self:'✓',db:'SQL (Native)',auth:'Native',api:'REST + GraphQL',rt:'Native',fit:'Existing SQL databases'},
-{tool:'Django',cat:'Framework',self:'✓',db:'SQL (Native)',auth:'Native',api:'Via DRF',rt:'Via Channels',fit:'Rapid web development'},
-{tool:'Spring Boot',cat:'Framework',self:'✓',db:'SQL (Native)',auth:'Native',api:'Native',rt:'Via WebSocket',fit:'Enterprise systems'},
-{tool:'Express.js',cat:'Framework',self:'✓',db:'Via integration',auth:'Via integration',api:'Native',rt:'Via Socket.io',fit:'APIs, microservices'},
-{tool:'Phoenix',cat:'Framework',self:'✓',db:'PostgreSQL (Native)',auth:'Via integration',api:'Native',rt:'Native',fit:'Real-time, high-concurrency'}
+{tool:'Supabase',cat:'BaaS',self:'Yes',db:'PostgreSQL (Native)',auth:'Native',api:'REST + GraphQL',rt:'Native',fit:'PostgreSQL-centric apps'},
+{tool:'Appwrite',cat:'BaaS',self:'Yes',db:'MariaDB (Native)',auth:'Native',api:'REST + GraphQL',rt:'Native',fit:'Multi-tenant apps'},
+{tool:'PocketBase',cat:'BaaS',self:'Yes',db:'SQLite (Native)',auth:'Native',api:'REST',rt:'Native',fit:'Prototypes, small apps'},
+{tool:'Nhost',cat:'BaaS',self:'Yes',db:'PostgreSQL (Native)',auth:'Native',api:'GraphQL',rt:'Via Hasura',fit:'GraphQL-first apps'},
+{tool:'Strapi',cat:'CMS',self:'Yes',db:'SQL (Integration)',auth:'Native (RBAC)',api:'REST + GraphQL',rt:'N/A',fit:'Content-driven apps'},
+{tool:'Directus',cat:'CMS',self:'Yes',db:'SQL (Native)',auth:'Native',api:'REST + GraphQL',rt:'Native',fit:'Existing SQL databases'},
+{tool:'Django',cat:'Framework',self:'Yes',db:'SQL (Native)',auth:'Native',api:'Via DRF',rt:'Via Channels',fit:'Rapid web development'},
+{tool:'Spring Boot',cat:'Framework',self:'Yes',db:'SQL (Native)',auth:'Native',api:'Native',rt:'Via WebSocket',fit:'Enterprise systems'},
+{tool:'Express.js',cat:'Framework',self:'Yes',db:'Via integration',auth:'Via integration',api:'Native',rt:'Via Socket.io',fit:'APIs, microservices'},
+{tool:'Phoenix',cat:'Framework',self:'Yes',db:'PostgreSQL (Native)',auth:'Via integration',api:'Native',rt:'Native',fit:'Real-time, high-concurrency'}
 ];
+
+// Clipboard helper with graceful fallback for non-secure contexts and older browsers.
+async function copyText(text){
+  try{
+    if(typeof navigator!=='undefined'&&navigator.clipboard&&window.isSecureContext){
+      await navigator.clipboard.writeText(text);
+      return true;
+    }
+  }catch{}
+  try{
+    const ta=document.createElement('textarea');
+    ta.value=text;
+    ta.setAttribute('readonly','');
+    ta.style.position='fixed';
+    ta.style.top='-1000px';
+    ta.style.opacity='0';
+    document.body.appendChild(ta);
+    ta.select();
+    const ok=document.execCommand('copy');
+    document.body.removeChild(ta);
+    return !!ok;
+  }catch{return false;}
+}
 
 function icon(name,extra=''){return React.createElement('i',{className:`fa-solid ${name} ${extra}`.trim(),'aria-hidden':'true'});}
 
 function LicenseBadge({type}){
-const cls=type===LICENSES.OSI?'badge-green':type===LICENSES.SA?'badge-orange':type===LICENSES.FREE?'badge-slate':'badge-blue';
-const label=type===LICENSES.OSI?'OSI':type===LICENSES.SA?'Source available':type===LICENSES.FREE?'Managed':'Open core';
-return <span className={`badge ${cls}`}>{label}</span>;
+  const cls=type===LICENSES.OSI?'badge-green':type===LICENSES.SA?'badge-orange':type===LICENSES.FREE?'badge-slate':'badge-blue';
+  const label=type===LICENSES.OSI?'OSI':type===LICENSES.SA?'Source available':type===LICENSES.FREE?'Managed':'Open core';
+  return <span className={`badge ${cls}`}>{label}</span>;
 }
 
 function usePersistedState(key,fallback){
-const[value,setValue]=useState(()=>{try{const raw=localStorage.getItem(key);return raw?JSON.parse(raw):fallback;}catch{return fallback;}});
-useEffect(()=>{try{localStorage.setItem(key,JSON.stringify(value));}catch{}},[key,value]);
-return[value,setValue];
+  const[value,setValue]=useState(()=>{
+    try{
+      const raw=localStorage.getItem(key);
+      if(raw===null)return fallback;
+      const parsed=JSON.parse(raw);
+      return parsed===undefined||parsed===null?fallback:parsed;
+    }catch{return fallback;}
+  });
+  useEffect(()=>{
+    try{localStorage.setItem(key,JSON.stringify(value));}catch{}
+  },[key,value]);
+  return[value,setValue];
 }
 
 function useTheme(){
-const[theme,setTheme]=usePersistedState('dev-stack-theme','dark');
-useEffect(()=>{document.documentElement.dataset.theme=theme;},[theme]);
-return[theme,setTheme];
+  const[theme,setTheme]=usePersistedState('dev-stack-theme','dark');
+  useEffect(()=>{document.documentElement.dataset.theme=theme;},[theme]);
+  return[theme,setTheme];
+}
+
+// Error boundary so a single view failure cannot take down the whole canvas.
+class ErrorBoundary extends Component{
+  constructor(props){super(props);this.state={hasError:false};}
+  static getDerivedStateFromError(){return{hasError:true};}
+  componentDidCatch(error,info){try{console.error('View error:',error,info);}catch{}}
+  handleRetry=()=>this.setState({hasError:false});
+  render(){
+    if(this.state.hasError){
+      return <div className="error-boundary" role="alert">
+        <h3>This section could not be displayed.</h3>
+        <p>The rest of the canvas is still available. You can retry this section or continue using another view.</p>
+        <button className="btn btn-secondary" onClick={this.handleRetry}>{icon('fa-rotate-left')}Retry</button>
+      </div>;
+    }
+    return this.props.children;
+  }
 }
 
 function App(){
-const[activeTab,setActiveTab]=useState('overview');
-const[mobileNavOpen,setMobileNavOpen]=useState(false);
-const[selectedTool,setSelectedTool]=useState(null);
-const[favorites,setFavorites]=usePersistedState('dev-stack-favorites',[]);
-const[learningProgress,setLearningProgress]=usePersistedState('dev-stack-progress',{});
-const[theme,setTheme]=useTheme();
-const[toasts,setToasts]=useState([]);
-const meta=TABS[activeTab]||TABS.overview;
+  const[activeTab,setActiveTab]=useState('overview');
+  const[mobileNavOpen,setMobileNavOpen]=useState(false);
+  const[selectedTool,setSelectedTool]=useState(null);
+  const[favorites,setFavorites]=usePersistedState('dev-stack-favorites',[]);
+  const[learningProgress,setLearningProgress]=usePersistedState('dev-stack-progress',{});
+  const[theme,setTheme]=useTheme();
+  const[toasts,setToasts]=useState([]);
+  const[searchQuery,setSearchQuery]=useState('');
+  const meta=TABS[activeTab]||TABS.overview;
 
-const showToast=(message)=>{const id=`${Date.now()}-${Math.random()}`;setToasts(c=>[...c,{id,message}]);window.setTimeout(()=>setToasts(c=>c.filter(t=>t.id!==id)),3000);};
-const toggleFavorite=(toolId)=>{setFavorites(c=>c.includes(toolId)?c.filter(id=>id!==toolId):[...c,toolId]);};
-const setProgress=(toolId,status)=>{setLearningProgress(c=>({...c,[toolId]:status}));showToast('Progress updated.');};
-const navigate=(tab)=>{setActiveTab(tab);setMobileNavOpen(false);};
+  const showToast=useCallback((message)=>{
+    const id=`${Date.now()}-${Math.random()}`;
+    setToasts(c=>[...c,{id,message}]);
+    window.setTimeout(()=>setToasts(c=>c.filter(t=>t.id!==id)),3000);
+  },[]);
 
-useEffect(()=>{
-const handler=(event)=>{
-if((event.ctrlKey||event.metaKey)&&event.key.toLowerCase()==='k'){event.preventDefault();const el=document.getElementById('globalSearch');if(el)el.focus();}
-if(event.key==='Escape'){setSelectedTool(null);setMobileNavOpen(false);}
-};
-document.addEventListener('keydown',handler);
-return()=>document.removeEventListener('keydown',handler);
-},[activeTab]);
+  const toggleFavorite=useCallback((toolId)=>{
+    setFavorites(c=>c.includes(toolId)?c.filter(id=>id!==toolId):[...c,toolId]);
+  },[setFavorites]);
 
-useEffect(()=>{document.body.style.overflow=(selectedTool||mobileNavOpen)?'hidden':'';return()=>{document.body.style.overflow='';};},[selectedTool,mobileNavOpen]);
+  const setProgress=useCallback((toolId,status)=>{
+    setLearningProgress(c=>({...c,[toolId]:status}));
+    showToast('Progress updated.');
+  },[setLearningProgress,showToast]);
 
-const render=()=>{
-const common={tools:TOOLS,favorites,toggleFavorite,onSelect:setSelectedTool,onToast:showToast,learningProgress,setProgress};
-switch(activeTab){
-case'directory':return<DirectoryView{...common}/>;
-case'ai-landscape':return<AIView{...common}/>;
-case'editors':return<EditorsView{...common}/>;
-case'frameworks':return<FrameworksView{...common}/>;
-case'backend-baas':return<BackendBaaSView{...common}/>;
-case'architecture':return<ArchitectureView/>;
-case'selfhosting':return<SelfHostingView/>;
-case'devsecops':return<DevSecOpsView/>;
-case'stack-builder':return<StackView onToast={showToast}/>;
-case'decision':return<DecisionView/>;
-case'workflow':return<WorkflowView/>;
-case'roadmap':return<RoadmapView learningProgress={learningProgress} setProgress={setProgress} onToast={showToast}/>;
-case'projects':return<ProjectsView/>;
-case'license':return<LicenseView tools={TOOLS}/>;
-case'cost':return<CostView/>;
-case'lowresource':return<MalawiView/>;
-case'comparison':return<ComparisonView/>;
-default:return<OverviewView{...common}navigate={navigate}/>;
-}
-};
+  const navigate=useCallback((tab)=>{
+    setActiveTab(tab);
+    setMobileNavOpen(false);
+  },[]);
 
-return<div className="app-shell">
-{mobileNavOpen&&<button className="mobile-backdrop"aria-label="Close navigation"onClick={()=>setMobileNavOpen(false)}></button>}
-<aside className={`sidebar ${mobileNavOpen?'open':''}`}aria-label="Primary navigation">
-<div className="sidebar-brand">
-<div className="brand-row">
-<div style={{display:'flex',alignItems:'center',gap:11}}>
-<div className="brand-mark">{icon('fa-layer-group')}</div>
-<div><div className="brand-name">DEV STACK CANVAS</div><div className="brand-sub">Architecture Command Centre</div></div>
-</div>
-<button className="icon-button sidebar-close"aria-label="Close navigation"onClick={()=>setMobileNavOpen(false)}>{icon('fa-xmark')}</button>
-</div>
-</div>
-<nav className="nav">
-<NavGroup label="Overview">
-<NavItem active={activeTab==='overview'}label="Ecosystem Map"iconName="fa-diagram-project"onClick={()=>navigate('overview')}/>
-<NavItem active={activeTab==='directory'}label="Tool Directory"iconName="fa-layer-group"meta={`${TOOLS.length}`}onClick={()=>navigate('directory')}/>
-</NavGroup>
-<NavGroup label="Development">
-<NavItem active={activeTab==='ai-landscape'}label="AI Landscape"iconName="fa-microchip"onClick={()=>navigate('ai-landscape')}/>
-<NavItem active={activeTab==='editors'}label="Editors & IDEs"iconName="fa-code"onClick={()=>navigate('editors')}/>
-<NavItem active={activeTab==='frameworks'}label="Backend Frameworks"iconName="fa-box"onClick={()=>navigate('frameworks')}/>
-</NavGroup>
-<NavGroup label="Infrastructure">
-<NavItem active={activeTab==='backend-baas'}label="Backend & BaaS"iconName="fa-server"onClick={()=>navigate('backend-baas')}/>
-<NavItem active={activeTab==='architecture'}label="Architecture Patterns"iconName="fa-sitemap"onClick={()=>navigate('architecture')}/>
-<NavItem active={activeTab==='selfhosting'}label="Self-Hosting Matrix"iconName="fa-hard-drive"onClick={()=>navigate('selfhosting')}/>
-</NavGroup>
-<NavGroup label="Engineering">
-<NavItem active={activeTab==='devsecops'}label="DevSecOps"iconName="fa-shield-halved"onClick={()=>navigate('devsecops')}/>
-<NavItem active={activeTab==='stack-builder'}label="Stack Builder"iconName="fa-cubes"onClick={()=>navigate('stack-builder')}/>
-<NavItem active={activeTab==='decision'}label="Decision Tree"iconName="fa-code-branch"onClick={()=>navigate('decision')}/>
-<NavItem active={activeTab==='workflow'}label="Dev Workflow"iconName="fa-timeline"onClick={()=>navigate('workflow')}/>
-</NavGroup>
-<NavGroup label="Learning">
-<NavItem active={activeTab==='roadmap'}label="Learning Roadmap"iconName="fa-graduation-cap"onClick={()=>navigate('roadmap')}/>
-<NavItem active={activeTab==='projects'}label="Project Lab"iconName="fa-flask"onClick={()=>navigate('projects')}/>
-</NavGroup>
-<NavGroup label="Reference">
-<NavItem active={activeTab==='license'}label="License Matrix"iconName="fa-key"onClick={()=>navigate('license')}/>
-<NavItem active={activeTab==='cost'}label="Cost Model"iconName="fa-calculator"onClick={()=>navigate('cost')}/>
-<NavItem active={activeTab==='lowresource'}label="Low-Resource Context"iconName="fa-earth-africa"onClick={()=>navigate('lowresource')}/>
-<NavItem active={activeTab==='comparison'}label="Feature Matrix"iconName="fa-table"onClick={()=>navigate('comparison')}/>
-</NavGroup>
-</nav>
-<div className="sidebar-footer">
-<div className="status-line"><span><span className="status-dot"style={{display:'inline-block',marginRight:7}}></span>{TOOLS.length} tools curated</span><span>v2.0</span></div>
-<div className="copyright-line">&copy; {new Date().getFullYear()} DevStack Canvas. All rights reserved.</div>
-</div>
-</aside>
+  // Keyboard shortcuts. Dependencies are stable and do not need to include activeTab.
+  useEffect(()=>{
+    const handler=(event)=>{
+      if((event.ctrlKey||event.metaKey)&&event.key.toLowerCase()==='k'){
+        event.preventDefault();
+        const el=document.getElementById('globalSearch');
+        if(el&&typeof el.focus==='function')el.focus();
+      }
+      if(event.key==='Escape'){
+        setSelectedTool(null);
+        setMobileNavOpen(false);
+      }
+    };
+    document.addEventListener('keydown',handler);
+    return()=>document.removeEventListener('keydown',handler);
+  },[]);
 
-<div className="main-shell">
-<header className="topbar">
-<button className="icon-button mobile-menu"aria-label="Open navigation"onClick={()=>setMobileNavOpen(true)}>{icon('fa-bars')}</button>
-<div className="breadcrumbs"><span className="eyebrow">Developer platform</span><h1 className="topbar-title">{meta.label}</h1></div>
-<div className="global-search"><div className="search-shell">
-{icon('fa-magnifying-glass','search-icon')}
-<input id="globalSearch"className="search-input"aria-label="Search tools"placeholder="Search tools..."onFocus={()=>{if(activeTab!=='directory')navigate('directory');}}onChange={(e)=>window.dispatchEvent(new CustomEvent('directory-search',{detail:e.target.value}))}/>
-<span className="shortcut"><span className="keycap">Ctrl</span><span className="keycap">K</span></span>
-</div></div>
-<div className="topbar-actions">
-<button className="icon-button"aria-label="Toggle theme"onClick={()=>setTheme(theme==='dark'?'light':'dark')}title="Toggle theme">{icon(theme==='dark'?'fa-sun':'fa-moon')}</button>
-<button className="icon-button"aria-label="Reset preferences"title="Reset preferences"onClick={()=>{setFavorites([]);setLearningProgress({});setTheme('dark');showToast('Preferences reset.');}}>{icon('fa-rotate-left')}</button>
-</div>
-</header>
-<main className="main-content">
-<section className="page-head">
-<div className="page-head-copy">
-<div style={{display:'flex',alignItems:'center',gap:9}}><span style={{color:'var(--primary)',fontSize:11}}>{icon(meta.icon)}</span><h2 className="page-title">{meta.label}</h2></div>
-<p className="page-description">{meta.description}</p>
-</div>
-<div className="page-context">{icon('fa-circle-check')}<span>{TOOLS.length} tools in curated dataset</span></div>
-</section>
-{render()}
-</main>
-<footer className="site-footer">
-&copy; {new Date().getFullYear()} Developer Stack Canvas. All rights reserved. Built with open-source tools for the developer community.
-</footer>
-</div>
+  useEffect(()=>{
+    const prev=document.body.style.overflow;
+    document.body.style.overflow=(selectedTool||mobileNavOpen)?'hidden':'';
+    return()=>{document.body.style.overflow=prev;};
+  },[selectedTool,mobileNavOpen]);
 
-{selectedTool&&<ToolDrawer tool={selectedTool}favorite={favorites.includes(selectedTool.id)}onFavorite={()=>toggleFavorite(selectedTool.id)}onClose={()=>setSelectedTool(null)}onToast={showToast}learningProgress={learningProgress}setProgress={setProgress}/>}
-<div className="toast-region"aria-live="polite"aria-atomic="true">
-{toasts.map(t=><div className="toast"key={t.id}>{icon('fa-circle-check')}<p>{t.message}</p><button aria-label="Dismiss"onClick={()=>setToasts(c=>c.filter(x=>x.id!==t.id))}>{icon('fa-xmark')}</button></div>)}
-</div>
-</div>;
+  const handleGlobalSearchChange=(value)=>{
+    setSearchQuery(value);
+    if(activeTab!=='directory')setActiveTab('directory');
+  };
+
+  const common={tools:TOOLS,favorites,toggleFavorite,onSelect:setSelectedTool,onToast:showToast};
+
+  const render=()=>{
+    switch(activeTab){
+      case'directory':return <DirectoryView {...common} search={searchQuery} setSearch={setSearchQuery}/>;
+      case'ai-landscape':return <AIView {...common}/>;
+      case'editors':return <EditorsView {...common}/>;
+      case'frameworks':return <FrameworksView {...common}/>;
+      case'backend-baas':return <BackendBaaSView {...common}/>;
+      case'architecture':return <ArchitectureView/>;
+      case'selfhosting':return <SelfHostingView/>;
+      case'devsecops':return <DevSecOpsView/>;
+      case'stack-builder':return <StackView onToast={showToast}/>;
+      case'decision':return <DecisionView/>;
+      case'workflow':return <WorkflowView/>;
+      case'roadmap':return <RoadmapView learningProgress={learningProgress} setProgress={setProgress}/>;
+      case'projects':return <ProjectsView/>;
+      case'license':return <LicenseView tools={TOOLS}/>;
+      case'cost':return <CostView/>;
+      case'lowresource':return <MalawiView/>;
+      case'comparison':return <ComparisonView/>;
+      default:return <OverviewView {...common} navigate={navigate}/>;
+    }
+  };
+
+  return <div className="app-shell">
+    {mobileNavOpen&&<button className="mobile-backdrop"aria-label="Close navigation"onClick={()=>setMobileNavOpen(false)}></button>}
+    <aside className={`sidebar ${mobileNavOpen?'open':''}`}aria-label="Primary navigation">
+      <div className="sidebar-brand">
+        <div className="brand-row">
+          <div style={{display:'flex',alignItems:'center',gap:11}}>
+            <div className="brand-mark">{icon('fa-layer-group')}</div>
+            <div><div className="brand-name">DEV STACK CANVAS</div><div className="brand-sub">Architecture Command Centre</div></div>
+          </div>
+          <button className="icon-button sidebar-close"aria-label="Close navigation"onClick={()=>setMobileNavOpen(false)}>{icon('fa-xmark')}</button>
+        </div>
+      </div>
+      <nav className="nav">
+        <NavGroup label="Overview">
+          <NavItem active={activeTab==='overview'}label="Ecosystem Map"iconName="fa-diagram-project"onClick={()=>navigate('overview')}/>
+          <NavItem active={activeTab==='directory'}label="Tool Directory"iconName="fa-layer-group"meta={`${TOOLS.length}`}onClick={()=>navigate('directory')}/>
+        </NavGroup>
+        <NavGroup label="Development">
+          <NavItem active={activeTab==='ai-landscape'}label="AI Landscape"iconName="fa-microchip"onClick={()=>navigate('ai-landscape')}/>
+          <NavItem active={activeTab==='editors'}label="Editors & IDEs"iconName="fa-code"onClick={()=>navigate('editors')}/>
+          <NavItem active={activeTab==='frameworks'}label="Backend Frameworks"iconName="fa-box"onClick={()=>navigate('frameworks')}/>
+        </NavGroup>
+        <NavGroup label="Infrastructure">
+          <NavItem active={activeTab==='backend-baas'}label="Backend & BaaS"iconName="fa-server"onClick={()=>navigate('backend-baas')}/>
+          <NavItem active={activeTab==='architecture'}label="Architecture Patterns"iconName="fa-sitemap"onClick={()=>navigate('architecture')}/>
+          <NavItem active={activeTab==='selfhosting'}label="Self-Hosting Matrix"iconName="fa-hard-drive"onClick={()=>navigate('selfhosting')}/>
+        </NavGroup>
+        <NavGroup label="Engineering">
+          <NavItem active={activeTab==='devsecops'}label="DevSecOps"iconName="fa-shield-halved"onClick={()=>navigate('devsecops')}/>
+          <NavItem active={activeTab==='stack-builder'}label="Stack Builder"iconName="fa-cubes"onClick={()=>navigate('stack-builder')}/>
+          <NavItem active={activeTab==='decision'}label="Decision Tree"iconName="fa-code-branch"onClick={()=>navigate('decision')}/>
+          <NavItem active={activeTab==='workflow'}label="Dev Workflow"iconName="fa-timeline"onClick={()=>navigate('workflow')}/>
+        </NavGroup>
+        <NavGroup label="Learning">
+          <NavItem active={activeTab==='roadmap'}label="Learning Roadmap"iconName="fa-graduation-cap"onClick={()=>navigate('roadmap')}/>
+          <NavItem active={activeTab==='projects'}label="Project Lab"iconName="fa-flask"onClick={()=>navigate('projects')}/>
+        </NavGroup>
+        <NavGroup label="Reference">
+          <NavItem active={activeTab==='license'}label="License Matrix"iconName="fa-key"onClick={()=>navigate('license')}/>
+          <NavItem active={activeTab==='cost'}label="Cost Model"iconName="fa-calculator"onClick={()=>navigate('cost')}/>
+          <NavItem active={activeTab==='lowresource'}label="Low-Resource Context"iconName="fa-earth-africa"onClick={()=>navigate('lowresource')}/>
+          <NavItem active={activeTab==='comparison'}label="Feature Matrix"iconName="fa-table"onClick={()=>navigate('comparison')}/>
+        </NavGroup>
+      </nav>
+      <div className="sidebar-footer">
+        <div className="status-line"><span><span className="status-dot"style={{display:'inline-block',marginRight:7}}></span>{TOOLS.length} tools curated</span><span>v2.1</span></div>
+        <div className="copyright-line">&copy; {new Date().getFullYear()} DevStack Canvas. All rights reserved.</div>
+      </div>
+    </aside>
+
+    <div className="main-shell">
+      <header className="topbar">
+        <button className="icon-button mobile-menu"aria-label="Open navigation"onClick={()=>setMobileNavOpen(true)}>{icon('fa-bars')}</button>
+        <div className="breadcrumbs"><span className="eyebrow">Developer platform</span><h1 className="topbar-title">{meta.label}</h1></div>
+        <div className="global-search"><div className="search-shell">
+          {icon('fa-magnifying-glass','search-icon')}
+          <input
+            id="globalSearch"
+            className="search-input"
+            aria-label="Search tools"
+            placeholder="Search tools..."
+            value={searchQuery}
+            onFocus={()=>{if(activeTab!=='directory')setActiveTab('directory');}}
+            onChange={(e)=>handleGlobalSearchChange(e.target.value)}
+          />
+          <span className="shortcut"><span className="keycap">Ctrl</span><span className="keycap">K</span></span>
+        </div></div>
+        <div className="topbar-actions">
+          <button className="icon-button"aria-label="Toggle theme"title="Toggle theme"onClick={()=>setTheme(theme==='dark'?'light':'dark')}>{icon(theme==='dark'?'fa-sun':'fa-moon')}</button>
+          <button className="icon-button"aria-label="Reset preferences"title="Reset preferences"onClick={()=>{setFavorites([]);setLearningProgress({});setTheme('dark');showToast('Preferences reset.');}}>{icon('fa-rotate-left')}</button>
+        </div>
+      </header>
+      <main className="main-content">
+        <section className="page-head">
+          <div className="page-head-copy">
+            <div style={{display:'flex',alignItems:'center',gap:9}}><span style={{color:'var(--primary)',fontSize:11}}>{icon(meta.icon)}</span><h2 className="page-title">{meta.label}</h2></div>
+            <p className="page-description">{meta.description}</p>
+          </div>
+          <div className="page-context">{icon('fa-circle-check')}<span>{TOOLS.length} tools in curated dataset</span></div>
+        </section>
+        <ErrorBoundary key={activeTab}>
+          {render()}
+        </ErrorBoundary>
+      </main>
+      <footer className="site-footer">
+        &copy; {new Date().getFullYear()} Developer Stack Canvas. All rights reserved. Built with open-source tools for the developer community.
+      </footer>
+    </div>
+
+    {selectedTool&&<ToolDrawer tool={selectedTool}favorite={favorites.includes(selectedTool.id)}onFavorite={()=>toggleFavorite(selectedTool.id)}onClose={()=>setSelectedTool(null)}onToast={showToast}learningProgress={learningProgress}setProgress={setProgress}/>}
+    <div className="toast-region"aria-live="polite"aria-atomic="true">
+      {toasts.map(t=><div className="toast"key={t.id}>{icon('fa-circle-check')}<p>{t.message}</p><button aria-label="Dismiss"onClick={()=>setToasts(c=>c.filter(x=>x.id!==t.id))}>{icon('fa-xmark')}</button></div>)}
+    </div>
+  </div>;
 }
 
 function NavGroup({label,children}){return<div className="nav-group"><div className="nav-label">{label}</div>{children}</div>;}
 function NavItem({active,label,iconName,meta,onClick}){return<button className={`nav-item ${active?'active':''}`}aria-current={active?'page':undefined}onClick={onClick}>{icon(iconName)}<span>{label}</span>{meta&&<span className="nav-meta">{meta}</span>}</button>;}
 
-function OverviewView({tools,navigate,favorites,toggleFavorite,onSelect,learningProgress}){
-const osiCount=tools.filter(t=>t.licenseType===LICENSES.OSI).length;
-const backendCount=tools.filter(t=>t.sdlc.includes('Backend')).length;
-const aiCount=tools.filter(t=>t.category.startsWith('AI')).length;
-return<>
-<div className="hero-grid">
-<div className="panel hero-panel">
-<div className="hero-kicker">Curated engineering intelligence</div>
-<h3 className="hero-title">Choose a stack by architecture, not by hype.</h3>
-<p className="hero-text">Search tools by capability, delivery stage, licence model and hosting posture. The goal is a coherent engineering system that stays understandable as it grows.</p>
-<div className="hero-actions">
-<button className="btn btn-primary"onClick={()=>navigate('directory')}>{icon('fa-compass')} Explore all tools</button>
-<button className="btn btn-secondary"onClick={()=>navigate('stack-builder')}>{icon('fa-cubes')} Build a stack</button>
-</div>
-</div>
-<div className="panel hero-panel">
-<div className="hero-kicker">Coverage snapshot</div>
-<div className="quick-list"style={{marginTop:13}}>
-<div className="quick-item"><span className="quick-item-label">Open-source / OSI-labelled</span><span className="quick-item-value">{osiCount}</span></div>
-<div className="quick-item"><span className="quick-item-label">Backend-capable tools</span><span className="quick-item-value">{backendCount}</span></div>
-<div className="quick-item"><span className="quick-item-label">AI development tools</span><span className="quick-item-value">{aiCount}</span></div>
-<div className="quick-item"><span className="quick-item-label">Your saved tools</span><span className="quick-item-value">{favorites.length}</span></div>
-</div>
-</div>
-</div>
+function OverviewView({tools,navigate,favorites,onSelect}){
+  const osiCount=tools.filter(t=>t.licenseType===LICENSES.OSI).length;
+  const backendCount=tools.filter(t=>t.sdlc.includes('Backend')).length;
+  const aiCount=tools.filter(t=>t.category.startsWith('AI')).length;
+  return<>
+    <div className="hero-grid">
+      <div className="panel hero-panel">
+        <div className="hero-kicker">Curated engineering intelligence</div>
+        <h3 className="hero-title">Choose a stack by architecture, not by hype.</h3>
+        <p className="hero-text">Search tools by capability, delivery stage, licence model and hosting posture. The goal is a coherent engineering system that stays understandable as it grows.</p>
+        <div className="hero-actions">
+          <button className="btn btn-primary"onClick={()=>navigate('directory')}>{icon('fa-compass')} Explore all tools</button>
+          <button className="btn btn-secondary"onClick={()=>navigate('stack-builder')}>{icon('fa-cubes')} Build a stack</button>
+        </div>
+      </div>
+      <div className="panel hero-panel">
+        <div className="hero-kicker">Coverage snapshot</div>
+        <div className="quick-list"style={{marginTop:13}}>
+          <div className="quick-item"><span className="quick-item-label">Open-source / OSI-labelled</span><span className="quick-item-value">{osiCount}</span></div>
+          <div className="quick-item"><span className="quick-item-label">Backend-capable tools</span><span className="quick-item-value">{backendCount}</span></div>
+          <div className="quick-item"><span className="quick-item-label">AI development tools</span><span className="quick-item-value">{aiCount}</span></div>
+          <div className="quick-item"><span className="quick-item-label">Your saved tools</span><span className="quick-item-value">{favorites.length}</span></div>
+        </div>
+      </div>
+    </div>
 
-<div className="metric-grid">
-<Metric iconName="fa-layer-group"label="Catalogued tools"value={tools.length}note="Curated entries in this canvas"/>
-<Metric iconName="fa-tags"label="Categories"value={Object.values(CATEGORIES).length}note="Grouped by engineering role"/>
-<Metric iconName="fa-route"label="SDLC stages"value={SDLC_STAGES.length}note="From editor to maintenance"/>
-<Metric iconName="fa-star"label="Saved tools"value={favorites.length}note="Stored in this browser"/>
-</div>
+    <div className="metric-grid">
+      <Metric iconName="fa-layer-group"label="Catalogued tools"value={tools.length}note="Curated entries in this canvas"/>
+      <Metric iconName="fa-tags"label="Categories"value={Object.values(CATEGORIES).length}note="Grouped by engineering role"/>
+      <Metric iconName="fa-route"label="SDLC stages"value={SDLC_STAGES.length}note="From editor to maintenance"/>
+      <Metric iconName="fa-star"label="Saved tools"value={favorites.length}note="Stored in this browser"/>
+    </div>
 
-<div className="panel"style={{padding:24,marginBottom:18}}>
-<h2 style={{margin:'0 0 4px',fontSize:16,fontWeight:650,display:'flex',alignItems:'center',gap:8}}>{icon('fa-diagram-project')} Ecosystem Map</h2>
-<p style={{margin:'0 0 16px',fontSize:12,color:'var(--muted)'}}>Click any tool to view details</p>
-<div className="eco-grid">
-{ECOSYSTEM_BRANCHES.map(b=>{
-const branchTools=b.ids.map(id=>tools.find(t=>t.id===id)).filter(Boolean);
-return<div className="eco-branch"key={b.title}>
-<div className="eco-branch-head">
-<div className="eco-branch-icon"style={{background:b.bg,color:b.color}}>{icon(b.icon)}</div>
-<div><div className="eco-branch-title">{b.title}</div><div className="eco-branch-count">{branchTools.length} tools</div></div>
-</div>
-<div className="eco-tools">
-{branchTools.map(t=><button className="eco-tool-btn"key={t.id}onClick={()=>onSelect(t)}>{t.name}</button>)}
-</div>
-</div>;
-})}
-</div>
-</div>
+    <div className="panel"style={{padding:24,marginBottom:18}}>
+      <h2 style={{margin:'0 0 4px',fontSize:16,fontWeight:650,display:'flex',alignItems:'center',gap:8}}>{icon('fa-diagram-project')} Ecosystem Map</h2>
+      <p style={{margin:'0 0 16px',fontSize:12,color:'var(--muted)'}}>Click any tool to view details</p>
+      <div className="eco-grid">
+        {ECOSYSTEM_BRANCHES.map(b=>{
+          const branchTools=b.ids.map(id=>tools.find(t=>t.id===id)).filter(Boolean);
+          return<div className="eco-branch"key={b.title}>
+            <div className="eco-branch-head">
+              <div className="eco-branch-icon"style={{background:b.bg,color:b.color}}>{icon(b.icon)}</div>
+              <div><div className="eco-branch-title">{b.title}</div><div className="eco-branch-count">{branchTools.length} tools</div></div>
+            </div>
+            <div className="eco-tools">
+              {branchTools.map(t=><button className="eco-tool-btn"key={t.id}onClick={()=>onSelect(t)}>{t.name}</button>)}
+            </div>
+          </div>;
+        })}
+      </div>
+    </div>
 
-<div className="panel"style={{padding:24,marginBottom:18}}>
-<h2 style={{margin:'0 0 4px',fontSize:16,fontWeight:650,display:'flex',alignItems:'center',gap:8}}>{icon('fa-timeline')} Software Development Lifecycle</h2>
-<p style={{margin:'0 0 16px',fontSize:12,color:'var(--muted)'}}>How tools connect across the development process</p>
-<div className="flow-container">
-{['IDE / Editor','AI Coding','Planning','Source Control','Code Quality','Backend','Build','Deploy'].map((s,i,a)=><React.Fragment key={s}>
-<div className="flow-step">{s}</div>
-{i<a.length-1&&<div className="flow-arrow">{icon('fa-chevron-right')}</div>}
-</React.Fragment>)}
-</div>
-</div>
+    <div className="panel"style={{padding:24,marginBottom:18}}>
+      <h2 style={{margin:'0 0 4px',fontSize:16,fontWeight:650,display:'flex',alignItems:'center',gap:8}}>{icon('fa-timeline')} Software Development Lifecycle</h2>
+      <p style={{margin:'0 0 16px',fontSize:12,color:'var(--muted)'}}>How tools connect across the development process</p>
+      <div className="flow-container">
+        {['IDE / Editor','AI Coding','Planning','Source Control','Code Quality','Backend','Build','Deploy'].map((s,i,a)=><React.Fragment key={s}>
+          <div className="flow-step">{s}</div>
+          {i<a.length-1&&<div className="flow-arrow">{icon('fa-chevron-right')}</div>}
+        </React.Fragment>)}
+      </div>
+    </div>
 
-<div className="panel"style={{padding:24}}>
-<h2 style={{margin:'0 0 4px',fontSize:16,fontWeight:650,display:'flex',alignItems:'center',gap:8}}>{icon('fa-brain')} AI Coding: Levels of Autonomy</h2>
-<p style={{margin:'0 0 16px',fontSize:12,color:'var(--muted)'}}>From simple autocomplete to fully autonomous engineering</p>
-<div style={{display:'flex',flexDirection:'column',gap:8}}>
-{[{n:1,t:'AI Autocomplete',d:'Single-line suggestions as you type. Tab to accept.',tools:'Tabby, Continue',c:'var(--info)',bg:'var(--info-soft)'},{n:2,t:'AI Coding Assistant',d:'Chat-based help, code generation, explanations. Human drives.',tools:'Continue (chat), Tabby (chat)',c:'var(--primary)',bg:'var(--primary-soft)'},{n:3,t:'AI Coding Agent',d:'Multi-step execution with terminal, file editing. Human approves.',tools:'Cline, Aider',c:'var(--warning)',bg:'var(--warning-soft)'},{n:4,t:'Autonomous Engineer',d:'Plans, implements, tests, debugs with minimal intervention.',tools:'OpenHands',c:'var(--danger)',bg:'var(--danger-soft)'}].map(l=>
-<div key={l.n}style={{display:'flex',alignItems:'start',gap:12,padding:'12px 16px',borderRadius:'var(--radius-md)',background:'var(--surface-2)',border:'1px solid var(--border)'}}>
-<div style={{width:28,height:28,borderRadius:'var(--radius-sm)',background:l.bg,display:'grid',placeItems:'center',flexShrink:0}}><span style={{fontSize:12,fontWeight:700,color:l.c}}>{l.n}</span></div>
-<div style={{flex:1}}>
-<div style={{fontSize:13,fontWeight:600,marginBottom:2}}>{l.t}</div>
-<div style={{fontSize:12,color:'var(--muted)',marginBottom:4}}>{l.d}</div>
-<div style={{fontSize:11,color:'var(--text-2)',fontWeight:500}}>{l.tools}</div>
-</div>
-</div>
-)}
-</div>
-</div>
-</>;
+    <div className="panel"style={{padding:24}}>
+      <h2 style={{margin:'0 0 4px',fontSize:16,fontWeight:650,display:'flex',alignItems:'center',gap:8}}>{icon('fa-brain')} AI Coding: Levels of Autonomy</h2>
+      <p style={{margin:'0 0 16px',fontSize:12,color:'var(--muted)'}}>From simple autocomplete to fully autonomous engineering</p>
+      <div style={{display:'flex',flexDirection:'column',gap:8}}>
+        {[{n:1,t:'AI Autocomplete',d:'Single-line suggestions as you type. Tab to accept.',tools:'Tabby, Continue',c:'var(--info)',bg:'var(--info-soft)'},{n:2,t:'AI Coding Assistant',d:'Chat-based help, code generation, explanations. Human drives.',tools:'Continue (chat), Tabby (chat)',c:'var(--primary)',bg:'var(--primary-soft)'},{n:3,t:'AI Coding Agent',d:'Multi-step execution with terminal, file editing. Human approves.',tools:'Cline, Aider',c:'var(--warning)',bg:'var(--warning-soft)'},{n:4,t:'Autonomous Engineer',d:'Plans, implements, tests, debugs with minimal intervention.',tools:'OpenHands',c:'var(--danger)',bg:'var(--danger-soft)'}].map(l=>
+          <div key={l.n}style={{display:'flex',alignItems:'start',gap:12,padding:'12px 16px',borderRadius:'var(--radius-md)',background:'var(--surface-2)',border:'1px solid var(--border)'}}>
+            <div style={{width:28,height:28,borderRadius:'var(--radius-sm)',background:l.bg,display:'grid',placeItems:'center',flexShrink:0}}><span style={{fontSize:12,fontWeight:700,color:l.c}}>{l.n}</span></div>
+            <div style={{flex:1,minWidth:0}}>
+              <div style={{fontSize:13,fontWeight:600,marginBottom:2}}>{l.t}</div>
+              <div style={{fontSize:12,color:'var(--muted)',marginBottom:4}}>{l.d}</div>
+              <div style={{fontSize:11,color:'var(--text-2)',fontWeight:500}}>{l.tools}</div>
+            </div>
+          </div>
+        )}
+      </div>
+    </div>
+  </>;
 }
 
-function DirectoryView({tools,favorites,toggleFavorite,onSelect,onToast,learningProgress}){
-const[search,setSearch]=useState('');
-const[category,setCategory]=useState('All');
-const[license,setLicense]=useState('All');
-const[hosting,setHosting]=useState('All');
-const[sortBy,setSortBy]=useState('name');
-const[sortDir,setSortDir]=useState('asc');
-const[onlyFavorites,setOnlyFavorites]=useState(false);
+function DirectoryView({tools,favorites,toggleFavorite,onSelect,search,setSearch}){
+  const[category,setCategory]=useState('All');
+  const[license,setLicense]=useState('All');
+  const[hosting,setHosting]=useState('All');
+  const[sortBy,setSortBy]=useState('name');
+  const[sortDir,setSortDir]=useState('asc');
+  const[onlyFavorites,setOnlyFavorites]=useState(false);
 
-useEffect(()=>{const h=(e)=>setSearch(e.detail||'');window.addEventListener('directory-search',h);return()=>window.removeEventListener('directory-search',h);},[]);
+  const filtered=useMemo(()=>{
+    const q=search.trim().toLowerCase();
+    const rows=tools.filter(t=>{
+      const matchSearch=!q||(t._hay&&t._hay.includes(q));
+      const matchCat=category==='All'||t.category===category;
+      const matchLicense=license==='All'||t.licenseType===license;
+      const matchHosting=hosting==='All'||(hosting==='Self-hosted'?!['N/A',''].includes(t.selfHosted):!['N/A',''].includes(t.cloud));
+      const matchFav=!onlyFavorites||favorites.includes(t.id);
+      return matchSearch&&matchCat&&matchLicense&&matchHosting&&matchFav;
+    });
+    return[...rows].sort((a,b)=>{const av=(a[sortBy]||'').toString().toLowerCase();const bv=(b[sortBy]||'').toString().toLowerCase();return av.localeCompare(bv)*(sortDir==='asc'?1:-1);});
+  },[tools,search,category,license,hosting,favorites,onlyFavorites,sortBy,sortDir]);
 
-const filtered=useMemo(()=>{
-const q=search.trim().toLowerCase();
-const rows=tools.filter(t=>{
-const hay=[t.name,t.desc,t.category,t.architecture,...t.capabilities,...t.sdlc].join(' ').toLowerCase();
-return(!q||hay.includes(q))&&(category==='All'||t.category===category)&&(license==='All'||t.licenseType===license)&&(hosting==='All'||(hosting==='Self-hosted'?!['N/A',''].includes(t.selfHosted):!['N/A',''].includes(t.cloud)))&&(!onlyFavorites||favorites.includes(t.id));
-});
-return[...rows].sort((a,b)=>{const av=(a[sortBy]||'').toString().toLowerCase();const bv=(b[sortBy]||'').toString().toLowerCase();return av.localeCompare(bv)*(sortDir==='asc'?1:-1);});
-},[tools,search,category,license,hosting,favorites,onlyFavorites,sortBy,sortDir]);
+  const reset=()=>{setSearch('');setCategory('All');setLicense('All');setHosting('All');setOnlyFavorites(false);};
+  const toggleSort=(key)=>{if(sortBy===key)setSortDir(d=>d==='asc'?'desc':'asc');else{setSortBy(key);setSortDir('asc');}};
 
-const reset=()=>{setSearch('');setCategory('All');setLicense('All');setHosting('All');setOnlyFavorites(false);};
-const toggleSort=(key)=>{if(sortBy===key)setSortDir(d=>d==='asc'?'desc':'asc');else{setSortBy(key);setSortDir('asc');}};
+  return<>
+    <div className="hero-grid">
+      <div className="panel hero-panel">
+        <div className="hero-kicker">Curated engineering intelligence</div>
+        <h3 className="hero-title">Choose a stack by architecture, not by hype.</h3>
+        <p className="hero-text">Search tools by capability, delivery stage, licence model and hosting posture. The goal is a coherent engineering system that stays understandable as it grows.</p>
+        <div className="hero-actions">
+          <button className="btn btn-primary"onClick={()=>filtered[0]&&onSelect(filtered[0])}>{icon('fa-compass')} Explore matching tools</button>
+          <button className="btn btn-secondary"onClick={()=>setOnlyFavorites(v=>!v)}>{icon(onlyFavorites?'fa-star':'fa-star-half-stroke')}{onlyFavorites?'Show all tools':'Show favourites'}</button>
+        </div>
+      </div>
+      <div className="panel hero-panel">
+        <div className="hero-kicker">Coverage snapshot</div>
+        <div className="quick-list"style={{marginTop:13}}>
+          <div className="quick-item"><span className="quick-item-label">Open-source / OSI-labelled</span><span className="quick-item-value">{tools.filter(t=>t.licenseType===LICENSES.OSI).length}</span></div>
+          <div className="quick-item"><span className="quick-item-label">Backend-capable tools</span><span className="quick-item-value">{tools.filter(t=>t.sdlc.includes('Backend')).length}</span></div>
+          <div className="quick-item"><span className="quick-item-label">AI development tools</span><span className="quick-item-value">{tools.filter(t=>t.category.startsWith('AI')).length}</span></div>
+        </div>
+      </div>
+    </div>
 
-return<>
-<div className="hero-grid">
-<div className="panel hero-panel">
-<div className="hero-kicker">Curated engineering intelligence</div>
-<h3 className="hero-title">Choose a stack by architecture, not by hype.</h3>
-<p className="hero-text">Search tools by capability, delivery stage, licence model and hosting posture. The goal is a coherent engineering system that stays understandable as it grows.</p>
-<div className="hero-actions">
-<button className="btn btn-primary"onClick={()=>filtered[0]&&onSelect(filtered[0])}>{icon('fa-compass')} Explore matching tools</button>
-<button className="btn btn-secondary"onClick={()=>setOnlyFavorites(v=>!v)}>{icon(onlyFavorites?'fa-star':'fa-star-half-stroke')}{onlyFavorites?'Show all tools':'Show favourites'}</button>
-</div>
-</div>
-<div className="panel hero-panel">
-<div className="hero-kicker">Coverage snapshot</div>
-<div className="quick-list"style={{marginTop:13}}>
-<div className="quick-item"><span className="quick-item-label">Open-source / OSI-labelled</span><span className="quick-item-value">{tools.filter(t=>t.licenseType===LICENSES.OSI).length}</span></div>
-<div className="quick-item"><span className="quick-item-label">Backend-capable tools</span><span className="quick-item-value">{tools.filter(t=>t.sdlc.includes('Backend')).length}</span></div>
-<div className="quick-item"><span className="quick-item-label">AI development tools</span><span className="quick-item-value">{tools.filter(t=>t.category.startsWith('AI')).length}</span></div>
-</div>
-</div>
-</div>
+    <div className="metric-grid">
+      <Metric iconName="fa-layer-group"label="Catalogued tools"value={tools.length}note="Curated entries in this canvas"/>
+      <Metric iconName="fa-tags"label="Categories"value={Object.values(CATEGORIES).length}note="Grouped by engineering role"/>
+      <Metric iconName="fa-route"label="SDLC stages"value={SDLC_STAGES.length}note="From editor to maintenance"/>
+      <Metric iconName="fa-star"label="Saved tools"value={favorites.length}note="Stored in this browser"/>
+    </div>
 
-<div className="metric-grid">
-<Metric iconName="fa-layer-group"label="Catalogued tools"value={tools.length}note="Curated entries in this canvas"/>
-<Metric iconName="fa-tags"label="Categories"value={Object.values(CATEGORIES).length}note="Grouped by engineering role"/>
-<Metric iconName="fa-route"label="SDLC stages"value={SDLC_STAGES.length}note="From editor to maintenance"/>
-<Metric iconName="fa-star"label="Saved tools"value={favorites.length}note="Stored in this browser"/>
-</div>
+    <div className="panel toolbar">
+      <div className="toolbar-grid">
+        <div className="control"><input className="text-control"value={search}onChange={e=>setSearch(e.target.value)}aria-label="Search tools"placeholder="Search by name, capability, architecture or stage"/>{icon('fa-magnifying-glass')}</div>
+        <select className="filter-select"value={category}onChange={e=>setCategory(e.target.value)}aria-label="Filter by category"><option>All</option>{Object.values(CATEGORIES).map(c=><option key={c}>{c}</option>)}</select>
+        <select className="filter-select"value={license}onChange={e=>setLicense(e.target.value)}aria-label="Filter by licence"><option>All</option>{Object.values(LICENSES).map(c=><option key={c}>{c}</option>)}</select>
+        <select className="filter-select"value={hosting}onChange={e=>setHosting(e.target.value)}aria-label="Filter by hosting"><option>All</option><option>Self-hosted</option><option>Managed cloud</option></select>
+      </div>
+      <div className="toolbar-footer">
+        <span>Showing <strong style={{color:'var(--text)'}}>{filtered.length}</strong> of {tools.length} tools{onlyFavorites?' (favourites only)':''}</span>
+        <div className="toolbar-actions"><button className={`btn btn-sm ${onlyFavorites?'btn-secondary':'btn-ghost'}`}onClick={()=>setOnlyFavorites(v=>!v)}>{icon('fa-star')}Favourites</button><button className="btn btn-sm btn-ghost"onClick={reset}>{icon('fa-rotate-left')}Reset</button></div>
+      </div>
+    </div>
 
-<div className="panel toolbar">
-<div className="toolbar-grid">
-<div className="control"><input className="text-control"value={search}onChange={e=>setSearch(e.target.value)}aria-label="Search tools"placeholder="Search by name, capability, architecture or stage"/>{icon('fa-magnifying-glass')}</div>
-<select className="filter-select"value={category}onChange={e=>setCategory(e.target.value)}aria-label="Filter by category"><option>All</option>{Object.values(CATEGORIES).map(c=><option key={c}>{c}</option>)}</select>
-<select className="filter-select"value={license}onChange={e=>setLicense(e.target.value)}aria-label="Filter by licence"><option>All</option>{Object.values(LICENSES).map(c=><option key={c}>{c}</option>)}</select>
-<select className="filter-select"value={hosting}onChange={e=>setHosting(e.target.value)}aria-label="Filter by hosting"><option>All</option><option>Self-hosted</option><option>Managed cloud</option></select>
-</div>
-<div className="toolbar-footer">
-<span>Showing <strong style={{color:'var(--text)'}}>{filtered.length}</strong> of {tools.length} tools{onlyFavorites?' · favourites only':''}</span>
-<div className="toolbar-actions"><button className={`btn btn-sm ${onlyFavorites?'btn-secondary':'btn-ghost'}`}onClick={()=>setOnlyFavorites(v=>!v)}>{icon(onlyFavorites?'fa-star':'fa-star')}Favourites</button><button className="btn btn-sm btn-ghost"onClick={reset}>{icon('fa-rotate-left')}Reset</button></div>
-</div>
-</div>
-
-<div className="panel">
-<div className="panel-header"style={{display:'flex',alignItems:'center',justifyContent:'space-between',gap:12}}>
-<div><h3 className="panel-title">Tool registry</h3><p className="panel-subtitle">Dense on desktop, prioritised on mobile. Select a tool for full detail.</p></div>
-<span className="badge badge-slate">{sortBy} {sortDir==='asc'?'ascending':'descending'}</span>
-</div>
-{filtered.length===0?<EmptyState onReset={reset}/>:<>
-<div className="directory-table table-wrap">
-<table>
-<thead><tr>
-<th style={{width:30}}></th><th><button className="table-sort"onClick={()=>toggleSort('name')}>Tool</button></th><th><button className="table-sort"onClick={()=>toggleSort('category')}>Category</button></th><th>Licence</th><th>Hosting</th><th>Architecture</th><th>SDLC coverage</th>
-</tr></thead>
-<tbody>{filtered.map(tool=><tr key={tool.id}>
-<td><button className={`favorite-button ${favorites.includes(tool.id)?'active':''}`}aria-label={`${favorites.includes(tool.id)?'Remove':'Save'} ${tool.name}`}onClick={()=>toggleFavorite(tool.id)}>{icon('fa-star')}</button></td>
-<td><div className="tool-cell"onClick={()=>onSelect(tool)}>
-<span className="tool-avatar">{icon(tool.category.startsWith('AI')?'fa-microchip':tool.category===CATEGORIES.SEC?'fa-shield-halved':tool.category===CATEGORIES.IDE?'fa-code':'fa-cube')}</span>
-<span><span className="tool-name">{tool.name}</span><span className="tool-desc">{tool.desc}</span></span>
-</div></td>
-<td className="cell-compact">{tool.category}</td><td><LicenseBadge type={tool.licenseType}/></td><td className="cell-compact"><span className="cell-flex">{icon(tool.selfHosted!=='N/A'?'fa-server':'fa-cloud')}{tool.selfHosted!=='N/A'?'Self-hostable':'Managed / N/A'}</span></td><td className="cell-muted">{tool.architecture}</td>
-<td><div className="stage-stack">{tool.sdlc.slice(0,4).map(stage=><span className="stage-chip"key={stage}>{stage}</span>)}</div></td>
-</tr>)}</tbody>
-</table>
-</div>
-<div className="mobile-tool-list">{filtered.map(tool=><div className="mobile-tool-card"key={tool.id}>
-<div className="mobile-tool-top"><div style={{display:'flex',gap:10,alignItems:'flex-start'}}><span className="tool-avatar">{icon(tool.category.startsWith('AI')?'fa-microchip':tool.category===CATEGORIES.SEC?'fa-shield-halved':tool.category===CATEGORIES.IDE?'fa-code':'fa-cube')}</span><div><strong className="tool-name">{tool.name}</strong><div className="tool-desc"style={{whiteSpace:'normal'}}>{tool.desc}</div></div></div><button className={`favorite-button ${favorites.includes(tool.id)?'active':''}`}onClick={()=>toggleFavorite(tool.id)}>{icon('fa-star')}</button></div>
-<div className="mobile-tool-meta"><LicenseBadge type={tool.licenseType}/><span className="badge badge-slate">{tool.category}</span><span className="badge badge-slate">{tool.architecture}</span></div>
-<div className="mobile-tool-actions"><button className="btn btn-secondary btn-sm"onClick={()=>onSelect(tool)}>{icon('fa-arrow-up-right-from-square')}View details</button></div>
-</div>)}</div>
-</>}
-</div>
-</>;
+    <div className="panel">
+      <div className="panel-header"style={{display:'flex',alignItems:'center',justifyContent:'space-between',gap:12}}>
+        <div><h3 className="panel-title">Tool registry</h3><p className="panel-subtitle">Dense on desktop, prioritised on mobile. Select a tool for full detail.</p></div>
+        <span className="badge badge-slate">{sortBy} {sortDir==='asc'?'ascending':'descending'}</span>
+      </div>
+      {filtered.length===0?<EmptyState onReset={reset}/>:<>
+        <div className="directory-table table-wrap">
+          <table>
+            <thead><tr>
+              <th style={{width:30}}></th>
+              <th><button className="table-sort"onClick={()=>toggleSort('name')}>Tool</button></th>
+              <th><button className="table-sort"onClick={()=>toggleSort('category')}>Category</button></th>
+              <th>Licence</th>
+              <th>Hosting</th>
+              <th>Architecture</th>
+              <th>SDLC coverage</th>
+            </tr></thead>
+            <tbody>{filtered.map(tool=><tr key={tool.id}>
+              <td><button className={`favorite-button ${favorites.includes(tool.id)?'active':''}`}aria-label={`${favorites.includes(tool.id)?'Remove':'Save'} ${tool.name}`}onClick={()=>toggleFavorite(tool.id)}>{icon('fa-star')}</button></td>
+              <td><div className="tool-cell"onClick={()=>onSelect(tool)}>
+                <span className="tool-avatar">{icon(tool.category.startsWith('AI')?'fa-microchip':tool.category===CATEGORIES.SEC?'fa-shield-halved':tool.category===CATEGORIES.IDE?'fa-code':'fa-cube')}</span>
+                <span><span className="tool-name">{tool.name}</span><span className="tool-desc">{tool.desc}</span></span>
+              </div></td>
+              <td className="cell-compact">{tool.category}</td>
+              <td><LicenseBadge type={tool.licenseType}/></td>
+              <td className="cell-compact"><span className="cell-flex">{icon(tool.selfHosted!=='N/A'?'fa-server':'fa-cloud')}{tool.selfHosted!=='N/A'?'Self-hostable':'Managed / N/A'}</span></td>
+              <td className="cell-muted">{tool.architecture}</td>
+              <td><div className="stage-stack">{tool.sdlc.slice(0,4).map(stage=><span className="stage-chip"key={stage}>{stage}</span>)}</div></td>
+            </tr>)}</tbody>
+          </table>
+        </div>
+        <div className="mobile-tool-list">{filtered.map(tool=><div className="mobile-tool-card"key={tool.id}>
+          <div className="mobile-tool-top">
+            <div style={{display:'flex',gap:10,alignItems:'flex-start',minWidth:0}}>
+              <span className="tool-avatar">{icon(tool.category.startsWith('AI')?'fa-microchip':tool.category===CATEGORIES.SEC?'fa-shield-halved':tool.category===CATEGORIES.IDE?'fa-code':'fa-cube')}</span>
+              <div style={{minWidth:0}}><strong className="tool-name">{tool.name}</strong><div className="tool-desc"style={{whiteSpace:'normal'}}>{tool.desc}</div></div>
+            </div>
+            <button className={`favorite-button ${favorites.includes(tool.id)?'active':''}`}aria-label={`${favorites.includes(tool.id)?'Remove':'Save'} ${tool.name}`}onClick={()=>toggleFavorite(tool.id)}>{icon('fa-star')}</button>
+          </div>
+          <div className="mobile-tool-meta"><LicenseBadge type={tool.licenseType}/><span className="badge badge-slate">{tool.category}</span><span className="badge badge-slate">{tool.architecture}</span></div>
+          <div className="mobile-tool-actions"><button className="btn btn-secondary btn-sm"onClick={()=>onSelect(tool)}>{icon('fa-arrow-up-right-from-square')}View details</button></div>
+        </div>)}</div>
+      </>}
+    </div>
+  </>;
 }
 
 function Metric({iconName,label,value,note}){return<div className="panel metric-card"><div className="metric-top"><span className="metric-label">{label}</span><span className="metric-icon">{icon(iconName)}</span></div><div className="metric-value">{value}</div><div className="metric-note">{note}</div></div>;}
-function EmptyState({onReset}){return<div className="empty"><div className="empty-icon">{icon('fa-magnifying-glass')}</div><h3>No tools match those filters.</h3><p>Try a broader search, remove a filter, or reset the registry.</p><button className="btn btn-secondary"style={{marginTop:13}}onClick={onReset}>{icon('fa-rotate-left')}Reset filters</button></div>;};
+function EmptyState({onReset}){return<div className="empty"><div className="empty-icon">{icon('fa-magnifying-glass')}</div><h3>No tools match those filters.</h3><p>Try a broader search, remove a filter, or reset the registry.</p><button className="btn btn-secondary"style={{marginTop:13}}onClick={onReset}>{icon('fa-rotate-left')}Reset filters</button></div>;}
 
 function ToolDrawer({tool,favorite,onFavorite,onClose,onToast,learningProgress,setProgress}){
-const copy=async()=>{const text=`${tool.name}\n${tool.desc}\nCategory: ${tool.category}\nLicense: ${tool.license}\nArchitecture: ${tool.architecture}`;try{await navigator.clipboard.writeText(text);onToast('Tool summary copied.');}catch{onToast('Clipboard not available.');}};
-const progress=learningProgress[tool.id]||'';
-return<><button className="drawer-backdrop"aria-label="Close"onClick={onClose}></button><aside className="drawer"role="dialog"aria-modal="true"aria-labelledby="tool-drawer-title">
-<div className="drawer-header"><div className="drawer-title-row"><span className="drawer-tool-icon">{icon(tool.category.startsWith('AI')?'fa-microchip':tool.category===CATEGORIES.SEC?'fa-shield-halved':tool.category===CATEGORIES.IDE?'fa-code':'fa-cube')}</span><div><h2 id="tool-drawer-title"className="drawer-title">{tool.name}</h2><p className="drawer-desc">{tool.category}</p></div></div><button className="icon-button"aria-label="Close"onClick={onClose}>{icon('fa-xmark')}</button></div>
-<div className="drawer-body">
-<p style={{margin:0,color:'var(--text-2)',fontSize:13,lineHeight:1.65}}>{tool.desc}</p>
-<div className="detail-section"><p className="detail-label">Core profile</p><div className="detail-grid">
-<Detail label="Architecture"value={tool.architecture}/><Detail label="Licence"value={tool.license}/><Detail label="Self-hosting"value={tool.selfHosted}/><Detail label="Managed cloud"value={tool.cloud}/>
-{tool.bestFor&&<Detail label="Best for"value={tool.bestFor}/>}
-{tool.learningCurve&&<Detail label="Learning curve"value={tool.learningCurve}/>}
-</div></div>
-<div className="detail-section"><p className="detail-label">Capabilities</p><div className="capability-list">{tool.capabilities.map(c=><span className="badge badge-blue"key={c}>{c}</span>)}</div></div>
-<div className="detail-section"><p className="detail-label">Software delivery coverage</p><div className="capability-list">{tool.sdlc.map(c=><span className="badge badge-slate"key={c}>{c}</span>)}</div></div>
-<div className="detail-section"><p className="detail-label">Strengths</p><div className="detail-note">{tool.strengths}</div></div>
-<div className="detail-section"><p className="detail-label">Trade-offs</p><div className="detail-note">{tool.tradeoffs}</div></div>
-<div className="detail-section">
-<p className="detail-label">Track your progress</p>
-<div className="progress-btns">
-{['not-started','learning','used','comfortable','advanced'].map(s=><button key={s}className={`progress-btn ${progress===s?'active':''}`}onClick={()=>setProgress(tool.id,s)}>{s==='not-started'?'Not Started':s.charAt(0).toUpperCase()+s.slice(1)}</button>)}
-</div>
-</div>
-<div className="notice"style={{marginTop:18}}>{icon('fa-circle-info')}<span>Licensing labels are a planning aid. Review the project's current licence before making production or commercial decisions.</span></div>
-<div className="detail-actions">
-<button className="btn btn-primary"onClick={onFavorite}>{icon(favorite?'fa-star':'fa-star')}{favorite?'Saved':'Save tool'}</button>
-<button className="btn btn-secondary"onClick={copy}>{icon('fa-copy')}Copy summary</button>
-{tool.website&&<a className="btn btn-secondary"href={tool.website}target="_blank"rel="noopener noreferrer">{icon('fa-globe')}Official site</a>}
-{tool.github&&<a className="btn btn-secondary"href={tool.github}target="_blank"rel="noopener noreferrer">{icon('fa-brands fa-github')}GitHub</a>}
-</div>
-</div>
-</aside></>;
+  const drawerRef=useRef(null);
+  const closeRef=useRef(null);
+
+  useEffect(()=>{
+    const previouslyFocused=document.activeElement;
+    if(closeRef.current)closeRef.current.focus();
+    const handleKey=(e)=>{
+      if(e.key==='Escape'){e.preventDefault();onClose();return;}
+      if(e.key!=='Tab'||!drawerRef.current)return;
+      const focusables=drawerRef.current.querySelectorAll('a[href],button:not([disabled]),input:not([disabled]),select:not([disabled]),textarea:not([disabled]),[tabindex]:not([tabindex="-1"])');
+      if(!focusables.length)return;
+      const first=focusables[0];
+      const last=focusables[focusables.length-1];
+      if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus();}
+      else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus();}
+    };
+    document.addEventListener('keydown',handleKey);
+    return()=>{
+      document.removeEventListener('keydown',handleKey);
+      if(previouslyFocused&&typeof previouslyFocused.focus==='function'){try{previouslyFocused.focus();}catch{}}
+    };
+  },[onClose]);
+
+  const copy=async()=>{
+    const text=`${tool.name}\n${tool.desc}\nCategory: ${tool.category}\nLicense: ${tool.license}\nArchitecture: ${tool.architecture}`;
+    const ok=await copyText(text);
+    onToast(ok?'Tool summary copied.':'Copy failed. Please select and copy manually.');
+  };
+
+  const progress=learningProgress[tool.id]||'';
+
+  return<>
+    <button className="drawer-backdrop"aria-label="Close"onClick={onClose}></button>
+    <aside className="drawer"role="dialog"aria-modal="true"aria-labelledby="tool-drawer-title"ref={drawerRef}>
+      <div className="drawer-header">
+        <div className="drawer-title-row">
+          <span className="drawer-tool-icon">{icon(tool.category.startsWith('AI')?'fa-microchip':tool.category===CATEGORIES.SEC?'fa-shield-halved':tool.category===CATEGORIES.IDE?'fa-code':'fa-cube')}</span>
+          <div style={{minWidth:0}}><h2 id="tool-drawer-title"className="drawer-title">{tool.name}</h2><p className="drawer-desc">{tool.category}</p></div>
+        </div>
+        <button className="icon-button"aria-label="Close"onClick={onClose}ref={closeRef}>{icon('fa-xmark')}</button>
+      </div>
+      <div className="drawer-body">
+        <p style={{margin:0,color:'var(--text-2)',fontSize:13,lineHeight:1.65,overflowWrap:'anywhere'}}>{tool.desc}</p>
+        <div className="detail-section"><p className="detail-label">Core profile</p><div className="detail-grid">
+          <Detail label="Architecture"value={tool.architecture}/>
+          <Detail label="Licence"value={tool.license}/>
+          <Detail label="Self-hosting"value={tool.selfHosted}/>
+          <Detail label="Managed cloud"value={tool.cloud}/>
+          {tool.bestFor&&<Detail label="Best for"value={tool.bestFor}/>}
+          {tool.learningCurve&&<Detail label="Learning curve"value={tool.learningCurve}/>}
+        </div></div>
+        <div className="detail-section"><p className="detail-label">Capabilities</p><div className="capability-list">{tool.capabilities.map(c=><span className="badge badge-blue"key={c}>{c}</span>)}</div></div>
+        <div className="detail-section"><p className="detail-label">Software delivery coverage</p><div className="capability-list">{tool.sdlc.map(c=><span className="badge badge-slate"key={c}>{c}</span>)}</div></div>
+        <div className="detail-section"><p className="detail-label">Strengths</p><div className="detail-note">{tool.strengths}</div></div>
+        <div className="detail-section"><p className="detail-label">Trade-offs</p><div className="detail-note">{tool.tradeoffs}</div></div>
+        <div className="detail-section">
+          <p className="detail-label">Track your progress</p>
+          <div className="progress-btns">
+            {['not-started','learning','used','comfortable','advanced'].map(s=><button key={s}className={`progress-btn ${progress===s?'active':''}`}onClick={()=>setProgress(tool.id,s)}>{s==='not-started'?'Not Started':s.charAt(0).toUpperCase()+s.slice(1)}</button>)}
+          </div>
+        </div>
+        <div className="notice"style={{marginTop:18}}>{icon('fa-circle-info')}<span>Licensing labels are a planning aid. Review the project's current licence before making production or commercial decisions.</span></div>
+        <div className="detail-actions">
+          <button className="btn btn-primary"onClick={onFavorite}>{icon('fa-star')}{favorite?'Saved':'Save tool'}</button>
+          <button className="btn btn-secondary"onClick={copy}>{icon('fa-copy')}Copy summary</button>
+          {tool.website&&<a className="btn btn-secondary"href={tool.website}target="_blank"rel="noopener noreferrer">{icon('fa-globe')}Official site</a>}
+          {tool.github&&<a className="btn btn-secondary"href={tool.github}target="_blank"rel="noopener noreferrer">{icon('fa-brands fa-github')}GitHub</a>}
+        </div>
+      </div>
+    </aside>
+  </>;
 }
 function Detail({label,value}){return<div className="detail-item"><div className="detail-item-label">{label}</div><div className="detail-item-value">{value}</div></div>;}
 
 function AIView({tools,onSelect}){
-return<>
-<div className="panel"style={{marginBottom:18}}>
-<div className="panel-header"><h3 className="panel-title">AI development landscape</h3><p className="panel-subtitle">A practical mental model: faster feedback first, broader autonomy later.</p></div>
-<div className="panel-body">
-<div className="landscape-grid">
-{LANDSCAPE.map(l=><div className="landscape-card"key={l.title}>
-<div className="landscape-icon">{icon(l.icon)}</div>
-<h3>{l.title}</h3><p>{l.desc}</p>
-<div className="landscape-tools">{l.tools.map(t=>{const tool=tools.find(x=>x.name===t);return tool?<button className="badge badge-slate"key={t}onClick={()=>onSelect(tool)} style={{cursor:'pointer',border:0}}>{t}</button>:<span className="badge badge-slate"key={t}>{t}</span>})}</div>
-</div>)}
-</div>
-</div>
-</div>
+  return<>
+    <div className="panel"style={{marginBottom:18}}>
+      <div className="panel-header"><h3 className="panel-title">AI development landscape</h3><p className="panel-subtitle">A practical mental model: faster feedback first, broader autonomy later.</p></div>
+      <div className="panel-body">
+        <div className="landscape-grid">
+          {LANDSCAPE.map(l=><div className="landscape-card"key={l.title}>
+            <div className="landscape-icon">{icon(l.icon)}</div>
+            <h3>{l.title}</h3><p>{l.desc}</p>
+            <div className="landscape-tools">{l.tools.map(t=>{const tool=tools.find(x=>x.name===t);return tool?<button className="badge badge-slate"key={t}onClick={()=>onSelect(tool)} style={{cursor:'pointer',border:0}}>{t}</button>:<span className="badge badge-slate"key={t}>{t}</span>})}</div>
+          </div>)}
+        </div>
+      </div>
+    </div>
 
-<div className="panel"style={{marginBottom:18}}>
-<div className="panel-header"><h3 className="panel-title">OpenHands: Autonomous Workflow</h3><p className="panel-subtitle">From human request to completed implementation</p></div>
-<div className="panel-body">
-<div className="flow-container">
-{['Human Request','Planning','Repo Inspection','Code Changes','Terminal','Testing','Debugging','Iteration','Complete'].map((s,i,a)=><React.Fragment key={s}>
-<div className="flow-step"><div style={{fontSize:9,color:'var(--muted)',marginBottom:2}}>Step {i+1}</div>{s}</div>
-{i<a.length-1&&<div className="flow-arrow">{icon('fa-chevron-right')}</div>}
-</React.Fragment>)}
-</div>
-</div>
-</div>
+    <div className="panel"style={{marginBottom:18}}>
+      <div className="panel-header"><h3 className="panel-title">OpenHands: Autonomous Workflow</h3><p className="panel-subtitle">From human request to completed implementation</p></div>
+      <div className="panel-body">
+        <div className="flow-container">
+          {['Human Request','Planning','Repo Inspection','Code Changes','Terminal','Testing','Debugging','Iteration','Complete'].map((s,i,a)=><React.Fragment key={s}>
+            <div className="flow-step"><div style={{fontSize:9,color:'var(--muted)',marginBottom:2}}>Step {i+1}</div>{s}</div>
+            {i<a.length-1&&<div className="flow-arrow">{icon('fa-chevron-right')}</div>}
+          </React.Fragment>)}
+        </div>
+      </div>
+    </div>
 
-<div className="panel"style={{marginBottom:18}}>
-<div className="panel-header"><h3 className="panel-title">AI Tool Comparison</h3><p className="panel-subtitle">Capabilities across the AI coding spectrum</p></div>
-<div className="panel-body">
-<div className="table-wrap"><table style={{minWidth:700}}>
-<thead><tr><th>Capability</th><th>Continue</th><th>Tabby</th><th>Cline</th><th>Aider</th><th>OpenHands</th></tr></thead>
-<tbody>
-{[['Context','File + chat','Project-wide','Full codebase','Full repo map','Full repo + sandbox'],['Repo Awareness','●','●','●●','●●●','●●●'],['Terminal Access','—','—','●●●','●●●','●●●'],['File Editing','●●','●','●●●','●●●','●●●'],['Autonomous','—','—','●●','●●','●●●'],['Testing','—','—','●●','●●','●●●'],['Git Integration','—','—','●','●●●','●●●'],['Human Approval','Always','Always','Per action','Per commit','Configurable'],['Local Models','●●●','●●●','●●','●●','●●'],['Privacy','●●●','●●●','●●●','●●','●●●']].map(([l,...v])=><tr key={l}><td style={{fontWeight:500}}>{l}</td>{v.map((x,i)=><td key={i}style={{textAlign:'center'}}>{x}</td>)}</tr>)}
-</tbody>
-</table></div>
-</div>
-</div>
+    <div className="panel"style={{marginBottom:18}}>
+      <div className="panel-header"><h3 className="panel-title">AI Tool Comparison</h3><p className="panel-subtitle">Capabilities across the AI coding spectrum</p></div>
+      <div className="panel-body">
+        <div className="table-wrap"><table style={{minWidth:700}}>
+          <thead><tr><th>Capability</th><th>Continue</th><th>Tabby</th><th>Cline</th><th>Aider</th><th>OpenHands</th></tr></thead>
+          <tbody>
+            {[['Context','File + chat','Project-wide','Full codebase','Full repo map','Full repo + sandbox'],['Repo Awareness','Basic','Basic','Strong','Strong','Strong'],['Terminal Access','No','No','Yes','Yes','Yes'],['File Editing','Yes','Yes','Yes','Yes','Yes'],['Autonomous','No','No','Partial','Partial','Yes'],['Testing','No','No','Yes','Yes','Yes'],['Git Integration','No','No','Partial','Strong','Strong'],['Human Approval','Always','Always','Per action','Per commit','Configurable'],['Local Models','Yes','Yes','Partial','Partial','Partial'],['Privacy','Strong','Strong','Strong','Moderate','Strong']].map(([l,...v])=><tr key={l}><td style={{fontWeight:500}}>{l}</td>{v.map((x,i)=><td key={i}style={{textAlign:'center'}}>{x}</td>)}</tr>)}
+          </tbody>
+        </table></div>
+      </div>
+    </div>
 
-<div className="panel">
-<div className="panel-header"><h3 className="panel-title">Agent operating principles</h3><p className="panel-subtitle">Keep agentic development inspectable and reversible.</p></div>
-<div className="panel-body">
-<div className="resource-grid">
-<InfoCard iconName="fa-lock"title="Permission boundaries"><p className="muted"style={{margin:0,fontSize:11}}>Give agents only the filesystem, network and credential access required for the task. Review command execution and generated diffs.</p></InfoCard>
-<InfoCard iconName="fa-code-branch"title="Git as the rollback layer"><p className="muted"style={{margin:0,fontSize:11}}>Small commits, clean branches and visible diffs make agent-assisted changes easier to review, test and reverse.</p></InfoCard>
-</div>
-</div>
-</div>
-</>;
+    <div className="panel">
+      <div className="panel-header"><h3 className="panel-title">Agent operating principles</h3><p className="panel-subtitle">Keep agentic development inspectable and reversible.</p></div>
+      <div className="panel-body">
+        <div className="resource-grid">
+          <InfoCard iconName="fa-lock"title="Permission boundaries"><p className="muted"style={{margin:0,fontSize:11}}>Give agents only the filesystem, network and credential access required for the task. Review command execution and generated diffs.</p></InfoCard>
+          <InfoCard iconName="fa-code-branch"title="Git as the rollback layer"><p className="muted"style={{margin:0,fontSize:11}}>Small commits, clean branches and visible diffs make agent-assisted changes easier to review, test and reverse.</p></InfoCard>
+        </div>
+      </div>
+    </div>
+  </>;
 }
 function InfoCard({iconName,title,children}){return<div className="resource-card"><h3>{icon(iconName)}{title}</h3><div style={{marginTop:10}}>{children}</div></div>;}
 
 function EditorsView({tools,onSelect}){
-const eds=tools.filter(t=>t.category===CATEGORIES.IDE);
-return<div style={{display:'grid',gridTemplateColumns:'repeat(auto-fill,minmax(320px,1fr))',gap:12}}>
-{eds.map(t=><div className="panel"key={t.id}style={{padding:20,cursor:'pointer'}}onClick={()=>onSelect(t)}>
-<h3 style={{margin:'0 0 8px',fontSize:15,fontWeight:650}}>{t.name}</h3>
-<p style={{margin:'0 0 12px',fontSize:12,color:'var(--muted)',lineHeight:1.5}}>{t.desc}</p>
-<div style={{display:'flex',flexDirection:'column',gap:4,marginBottom:12}}>
-<div style={{fontSize:11,color:'var(--muted)'}}>License: <span style={{color:'var(--text-2)'}}>{t.license}</span></div>
-<div style={{fontSize:11,color:'var(--muted)'}}>Learning Curve: <span style={{color:'var(--text-2)'}}>{t.learningCurve}</span></div>
-<div style={{fontSize:11,color:'var(--muted)'}}>Best For: <span style={{color:'var(--text-2)'}}>{t.bestFor}</span></div>
-</div>
-<div style={{display:'flex',flexWrap:'wrap',gap:4}}>{t.capabilities.slice(0,4).map(c=><span className="badge badge-blue"key={c}>{c}</span>)}</div>
-</div>)}
-</div>;
+  const eds=tools.filter(t=>t.category===CATEGORIES.IDE);
+  return<div style={{display:'grid',gridTemplateColumns:'repeat(auto-fill,minmax(280px,1fr))',gap:12}}>
+    {eds.map(t=><div className="panel"key={t.id}style={{padding:20,cursor:'pointer'}}onClick={()=>onSelect(t)}>
+      <h3 style={{margin:'0 0 8px',fontSize:15,fontWeight:650}}>{t.name}</h3>
+      <p style={{margin:'0 0 12px',fontSize:12,color:'var(--muted)',lineHeight:1.5}}>{t.desc}</p>
+      <div style={{display:'flex',flexDirection:'column',gap:4,marginBottom:12}}>
+        <div style={{fontSize:11,color:'var(--muted)'}}>License: <span style={{color:'var(--text-2)'}}>{t.license}</span></div>
+        <div style={{fontSize:11,color:'var(--muted)'}}>Learning Curve: <span style={{color:'var(--text-2)'}}>{t.learningCurve}</span></div>
+        <div style={{fontSize:11,color:'var(--muted)'}}>Best For: <span style={{color:'var(--text-2)'}}>{t.bestFor}</span></div>
+      </div>
+      <div style={{display:'flex',flexWrap:'wrap',gap:4}}>{t.capabilities.slice(0,4).map(c=><span className="badge badge-blue"key={c}>{c}</span>)}</div>
+    </div>)}
+  </div>;
 }
 
 function FrameworksView({tools}){
-const fws=tools.filter(t=>t.category===CATEGORIES.FRAMEWORK);
-return<>
-<div className="panel"style={{padding:4,marginBottom:18}}>
-<div className="table-wrap"style={{border:'none'}}>
-<table>
-<thead><tr><th>Framework</th><th>Language</th><th>Architecture</th><th>Curve</th><th>Performance</th><th>Realtime</th><th>Scale</th></tr></thead>
-<tbody>{fws.map(f=><tr key={f.id}>
-<td style={{fontWeight:600}}><a href={f.website}target="_blank"rel="noopener noreferrer"style={{color:'var(--text)'}}>{f.name}</a></td>
-<td><span className="badge badge-blue">{f.architecture.split('/')[0].trim()}</span></td>
-<td className="cell-compact">{f.architecture}</td>
-<td><span className={`badge ${f.learningCurve.includes('Very Low')||f.learningCurve==='Low'?'badge-green':f.learningCurve.includes('High')?'badge-red':'badge-yellow'}`}>{f.learningCurve}</span></td>
-<td className="cell-muted">{f.strengths.split('.')[0]}</td>
-<td className="cell-compact">{f.sdlc.includes('Realtime')?'Native':'Via integration'}</td>
-<td className="cell-compact">{f.sdlc.length>1?'Small to Enterprise':'Small to Large'}</td>
-</tr>)}</tbody>
-</table>
-</div>
-</div>
-<div style={{display:'grid',gridTemplateColumns:'repeat(auto-fill,minmax(340px,1fr))',gap:12}}>
-{fws.map(f=><div className="panel"key={f.id}style={{padding:16}}>
-<div style={{display:'flex',alignItems:'center',justifyContent:'space-between',marginBottom:8}}>
-<h3 style={{margin:0,fontSize:14,fontWeight:650}}>{f.name}</h3>
-<span className="badge badge-blue">{f.architecture.split('/')[0].trim()}</span>
-</div>
-<p style={{margin:'0 0 8px',fontSize:12,color:'var(--muted)'}}>{f.desc}</p>
-<div style={{fontSize:11,color:'var(--muted)',marginBottom:4}}><strong style={{color:'var(--text-2)'}}>Built-in:</strong> {f.capabilities.join(', ')}</div>
-<div style={{fontSize:11,color:'var(--muted)',marginBottom:4}}><strong style={{color:'var(--text-2)'}}>Trade-offs:</strong> {f.tradeoffs}</div>
-<div style={{fontSize:11,color:'var(--muted)'}}><strong style={{color:'var(--text-2)'}}>Best for:</strong> {f.bestFor}</div>
-</div>)}
-</div>
-</>;
+  const fws=tools.filter(t=>t.category===CATEGORIES.FRAMEWORK);
+  return<>
+    <div className="panel"style={{padding:4,marginBottom:18}}>
+      <div className="table-wrap"style={{border:'none'}}>
+        <table>
+          <thead><tr>
+            <th>Framework</th>
+            <th>Language</th>
+            <th>Learning curve</th>
+            <th>Realtime</th>
+            <th>Built-in features</th>
+            <th>Best for</th>
+          </tr></thead>
+          <tbody>{fws.map(f=>{
+            const rt=REALTIME_SUPPORT[f.id]||{level:'Not built-in',note:'',cls:'badge-slate'};
+            const curveCls=(f.learningCurve==='Very Low'||f.learningCurve==='Low')?'badge-green':f.learningCurve.includes('High')?'badge-red':'badge-yellow';
+            return<tr key={f.id}>
+              <td style={{fontWeight:600}}><a href={f.website}target="_blank"rel="noopener noreferrer"style={{color:'var(--text)'}}>{f.name}</a></td>
+              <td><span className="badge badge-blue">{f.architecture}</span></td>
+              <td><span className={`badge ${curveCls}`}>{f.learningCurve}</span></td>
+              <td><span className={`badge ${rt.cls}`} title={rt.note}>{rt.level}</span></td>
+              <td className="cell-muted">{f.capabilities.slice(0,3).join(', ')}</td>
+              <td className="cell-muted">{f.bestFor}</td>
+            </tr>;
+          })}</tbody>
+        </table>
+      </div>
+    </div>
+    <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fill,minmax(300px,1fr))',gap:12}}>
+      {fws.map(f=>{
+        const rt=REALTIME_SUPPORT[f.id]||{level:'Not built-in',note:''};
+        return<div className="panel"key={f.id}style={{padding:16,minWidth:0}}>
+          <div style={{display:'flex',alignItems:'center',justifyContent:'space-between',marginBottom:8,gap:8,flexWrap:'wrap'}}>
+            <h3 style={{margin:0,fontSize:14,fontWeight:650}}>{f.name}</h3>
+            <span className="badge badge-blue">{f.architecture}</span>
+          </div>
+          <p style={{margin:'0 0 8px',fontSize:12,color:'var(--muted)'}}>{f.desc}</p>
+          <div style={{fontSize:11,color:'var(--muted)',marginBottom:4}}><strong style={{color:'var(--text-2)'}}>Built-in:</strong> {f.capabilities.join(', ')}</div>
+          <div style={{fontSize:11,color:'var(--muted)',marginBottom:4}}><strong style={{color:'var(--text-2)'}}>Realtime:</strong> {rt.level}{rt.note?` (${rt.note})`:''}</div>
+          <div style={{fontSize:11,color:'var(--muted)',marginBottom:4}}><strong style={{color:'var(--text-2)'}}>Trade-offs:</strong> {f.tradeoffs}</div>
+          <div style={{fontSize:11,color:'var(--muted)'}}><strong style={{color:'var(--text-2)'}}>Best for:</strong> {f.bestFor}</div>
+        </div>;
+      })}
+    </div>
+  </>;
 }
 
 function BackendBaaSView({tools,onSelect}){
-const baasTools=tools.filter(t=>t.category===CATEGORIES.BAAS||t.category===CATEGORIES.FULL);
-return<>
-<div className="panel"style={{padding:20,marginBottom:18}}>
-<h2 style={{margin:'0 0 12px',fontSize:14,fontWeight:650}}>Quick Picks</h2>
-<div style={{display:'grid',gridTemplateColumns:'repeat(auto-fill,minmax(200px,1fr))',gap:8}}>
-{[{l:'Smallest footprint',t:'PocketBase'},{l:'Firebase alternative',t:'Supabase'},{l:'Multi-tenant',t:'Appwrite'},{l:'SQL DB to API',t:'Directus'},{l:'GraphQL-first',t:'Nhost'},{l:'Headless CMS',t:'Strapi'}].map(p=>
-<div key={p.t}style={{padding:'10px 12px',borderRadius:'var(--radius-md)',background:'var(--surface-2)',border:'1px solid var(--border)'}}>
-<div style={{fontSize:10,color:'var(--muted)',marginBottom:2}}>{p.l}</div>
-<div style={{fontSize:13,fontWeight:600}}>{p.t}</div>
-</div>)}
-</div>
-</div>
+  const baasTools=tools.filter(t=>t.category===CATEGORIES.BAAS||t.category===CATEGORIES.FULL);
+  return<>
+    <div className="panel"style={{padding:20,marginBottom:18}}>
+      <h2 style={{margin:'0 0 12px',fontSize:14,fontWeight:650}}>Quick Picks</h2>
+      <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fill,minmax(160px,1fr))',gap:8}}>
+        {[{l:'Smallest footprint',t:'PocketBase'},{l:'Firebase alternative',t:'Supabase'},{l:'Multi-tenant',t:'Appwrite'},{l:'SQL DB to API',t:'Directus'},{l:'GraphQL-first',t:'Nhost'},{l:'Headless CMS',t:'Strapi'}].map(p=>
+          <div key={p.t}style={{padding:'10px 12px',borderRadius:'var(--radius-md)',background:'var(--surface-2)',border:'1px solid var(--border)',minWidth:0}}>
+            <div style={{fontSize:10,color:'var(--muted)',marginBottom:2}}>{p.l}</div>
+            <div style={{fontSize:13,fontWeight:600}}>{p.t}</div>
+          </div>)}
+      </div>
+    </div>
 
-<div className="panel"style={{padding:20,marginBottom:18}}>
-<h2 style={{margin:'0 0 12px',fontSize:14,fontWeight:650}}>Directus: Database-First Architecture</h2>
-<div className="flow-container">
-{['Existing SQL Database','Directus','REST / GraphQL API','Web / Mobile Clients'].map((s,i,a)=><React.Fragment key={s}>
-<div className="flow-step">{s}</div>{i<a.length-1&&<div className="flow-arrow">{icon('fa-chevron-right')}</div>}
-</React.Fragment>)}
-</div>
-</div>
+    <div className="panel"style={{padding:20,marginBottom:18}}>
+      <h2 style={{margin:'0 0 12px',fontSize:14,fontWeight:650}}>Directus: Database-First Architecture</h2>
+      <div className="flow-container">
+        {['Existing SQL Database','Directus','REST / GraphQL API','Web / Mobile Clients'].map((s,i,a)=><React.Fragment key={s}>
+          <div className="flow-step">{s}</div>{i<a.length-1&&<div className="flow-arrow">{icon('fa-chevron-right')}</div>}
+        </React.Fragment>)}
+      </div>
+    </div>
 
-<div style={{display:'grid',gridTemplateColumns:'repeat(auto-fill,minmax(340px,1fr))',gap:12}}>
-{baasTools.map(t=><div className="panel"key={t.id}style={{padding:20,cursor:'pointer'}}onClick={()=>onSelect(t)}>
-<div style={{display:'flex',alignItems:'center',justifyContent:'space-between',marginBottom:8}}>
-<h3 style={{margin:0,fontSize:14,fontWeight:650}}>{t.name}</h3>
-<span className="badge badge-cyan">{t.category.toUpperCase()}</span>
-</div>
-<p style={{margin:'0 0 10px',fontSize:12,color:'var(--muted)',lineHeight:1.5}}>{t.desc}</p>
-<div style={{display:'flex',flexWrap:'wrap',gap:4,marginBottom:10}}>{t.capabilities.slice(0,5).map(c=><span className="badge badge-slate"key={c}>{c}</span>)}</div>
-<div style={{display:'flex',alignItems:'center',justifyContent:'space-between'}}>
-<span style={{fontSize:10,color:'var(--muted)'}}>{t.license}</span>
-<div style={{display:'flex',gap:4}}>{t.selfHosted!=='N/A'&&<span className="badge badge-green"style={{fontSize:10}}>Self-host</span>}{t.cloud!=='N/A'&&<span className="badge badge-blue"style={{fontSize:10}}>Cloud</span>}</div>
-</div>
-</div>)}
-</div>
-</>;
+    <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fill,minmax(300px,1fr))',gap:12}}>
+      {baasTools.map(t=><div className="panel"key={t.id}style={{padding:20,cursor:'pointer',minWidth:0}}onClick={()=>onSelect(t)}>
+        <div style={{display:'flex',alignItems:'center',justifyContent:'space-between',marginBottom:8,gap:8,flexWrap:'wrap'}}>
+          <h3 style={{margin:0,fontSize:14,fontWeight:650}}>{t.name}</h3>
+          <span className="badge badge-cyan">{t.category.toUpperCase()}</span>
+        </div>
+        <p style={{margin:'0 0 10px',fontSize:12,color:'var(--muted)',lineHeight:1.5}}>{t.desc}</p>
+        <div style={{display:'flex',flexWrap:'wrap',gap:4,marginBottom:10}}>{t.capabilities.slice(0,5).map(c=><span className="badge badge-slate"key={c}>{c}</span>)}</div>
+        <div style={{display:'flex',alignItems:'center',justifyContent:'space-between',gap:8,flexWrap:'wrap'}}>
+          <span style={{fontSize:10,color:'var(--muted)'}}>{t.license}</span>
+          <div style={{display:'flex',gap:4}}>{t.selfHosted!=='N/A'&&<span className="badge badge-green"style={{fontSize:10}}>Self-host</span>}{t.cloud!=='N/A'&&<span className="badge badge-blue"style={{fontSize:10}}>Cloud</span>}</div>
+        </div>
+      </div>)}
+    </div>
+  </>;
 }
 
 function ArchitectureView(){
-return<div className="pattern-grid">
-{ARCH_PATTERNS.map(p=><div className="pattern-card"key={p.name}>
-<div style={{display:'flex',alignItems:'center',gap:8,marginBottom:8}}>
-<div style={{width:32,height:32,borderRadius:'var(--radius-md)',background:'var(--primary-soft)',display:'grid',placeItems:'center'}}>{icon(p.icon)}</div>
-<h3 style={{margin:0}}>{p.name}</h3>
-</div>
-<p>{p.desc}</p>
-<div className="pattern-cols">
-<div><div className="pattern-col-title"style={{color:'var(--success)'}}>Advantages</div>{p.pros.map(x=><div className="pattern-item"key={x}><span style={{color:'var(--success)'}}>+</span>{x}</div>)}</div>
-<div><div className="pattern-col-title"style={{color:'var(--danger)'}}>Trade-offs</div>{p.cons.map(x=><div className="pattern-item"key={x}><span style={{color:'var(--danger)'}}>−</span>{x}</div>)}</div>
-</div>
-<div style={{display:'flex',flexWrap:'wrap',gap:4}}>{p.tools.map(t=><span className="badge badge-blue"key={t}>{t}</span>)}</div>
-</div>)}
-</div>;
+  return<div className="pattern-grid">
+    {ARCH_PATTERNS.map(p=><div className="pattern-card"key={p.name}>
+      <div style={{display:'flex',alignItems:'center',gap:8,marginBottom:8}}>
+        <div style={{width:32,height:32,borderRadius:'var(--radius-md)',background:'var(--primary-soft)',display:'grid',placeItems:'center'}}>{icon(p.icon)}</div>
+        <h3 style={{margin:0}}>{p.name}</h3>
+      </div>
+      <p>{p.desc}</p>
+      <div className="pattern-cols">
+        <div><div className="pattern-col-title"style={{color:'var(--success)'}}>Advantages</div>{p.pros.map(x=><div className="pattern-item"key={x}><span style={{color:'var(--success)'}}>+</span>{x}</div>)}</div>
+        <div><div className="pattern-col-title"style={{color:'var(--danger)'}}>Trade-offs</div>{p.cons.map(x=><div className="pattern-item"key={x}><span style={{color:'var(--danger)'}}>−</span>{x}</div>)}</div>
+      </div>
+      <div style={{display:'flex',flexWrap:'wrap',gap:4}}>{p.tools.map(t=><span className="badge badge-blue"key={t}>{t}</span>)}</div>
+    </div>)}
+  </div>;
 }
 
 function SelfHostingView(){
-return<>
-<div className="panel"style={{padding:20,marginBottom:18}}>
-<h2 style={{margin:'0 0 10px',fontSize:14,fontWeight:650}}>Deployment Models</h2>
-<div style={{display:'flex',flexWrap:'wrap',gap:12}}>
-<div style={{display:'flex',alignItems:'center',gap:6}}><div style={{width:10,height:10,borderRadius:'50%',background:'var(--success)'}}></div><span style={{fontSize:12,color:'var(--text-2)'}}>Fully self-hostable</span></div>
-<div style={{display:'flex',alignItems:'center',gap:6}}><div style={{width:10,height:10,borderRadius:'50%',background:'var(--info)'}}></div><span style={{fontSize:12,color:'var(--text-2)'}}>Cloud + self-hosting</span></div>
-<div style={{display:'flex',alignItems:'center',gap:6}}><div style={{width:10,height:10,borderRadius:'50%',background:'var(--warning)'}}></div><span style={{fontSize:12,color:'var(--text-2)'}}>Cloud only</span></div>
-</div>
-</div>
-<div className="panel"style={{padding:4}}>
-<div className="table-wrap selfhost-table"style={{border:'none'}}>
-<table>
-<thead><tr><th>Tool</th><th>Model</th><th>Docker</th><th>Database</th><th>Infra</th><th>Maintenance</th><th>Notes</th></tr></thead>
-<tbody>{SELFHOST_DATA.map(r=><tr key={r.tool}>
-<td style={{fontWeight:600}}>{r.tool}</td>
-<td><span className={`badge ${r.model.includes('Fully')?'badge-green':r.model.includes('Cloud only')?'badge-orange':'badge-blue'}`}>{r.model}</span></td>
-<td>{r.docker}</td><td className="cell-muted">{r.db}</td><td className="cell-muted">{r.infra}</td>
-<td><span className={`badge ${r.maint.includes('Very Low')?'badge-green':r.maint.includes('High')?'badge-red':'badge-yellow'}`}>{r.maint}</span></td>
-<td className="cell-muted">{r.notes}</td>
-</tr>)}</tbody>
-</table>
-</div>
-</div>
-</>;
+  return<>
+    <div className="panel"style={{padding:20,marginBottom:18}}>
+      <h2 style={{margin:'0 0 10px',fontSize:14,fontWeight:650}}>Deployment Models</h2>
+      <div style={{display:'flex',flexWrap:'wrap',gap:12}}>
+        <div style={{display:'flex',alignItems:'center',gap:6}}><div style={{width:10,height:10,borderRadius:'50%',background:'var(--success)'}}></div><span style={{fontSize:12,color:'var(--text-2)'}}>Fully self-hostable</span></div>
+        <div style={{display:'flex',alignItems:'center',gap:6}}><div style={{width:10,height:10,borderRadius:'50%',background:'var(--info)'}}></div><span style={{fontSize:12,color:'var(--text-2)'}}>Cloud + self-hosting</span></div>
+        <div style={{display:'flex',alignItems:'center',gap:6}}><div style={{width:10,height:10,borderRadius:'50%',background:'var(--warning)'}}></div><span style={{fontSize:12,color:'var(--text-2)'}}>Cloud only</span></div>
+      </div>
+    </div>
+    <div className="panel"style={{padding:4}}>
+      <div className="table-wrap selfhost-table"style={{border:'none'}}>
+        <table>
+          <thead><tr><th>Tool</th><th>Model</th><th>Docker</th><th>Database</th><th>Infra</th><th>Maintenance</th><th>Notes</th></tr></thead>
+          <tbody>{SELFHOST_DATA.map(r=><tr key={r.tool}>
+            <td style={{fontWeight:600}}>{r.tool}</td>
+            <td><span className={`badge ${r.model.includes('Fully')?'badge-green':r.model.includes('Cloud only')?'badge-orange':'badge-blue'}`}>{r.model}</span></td>
+            <td>{r.docker}</td>
+            <td className="cell-muted">{r.db}</td>
+            <td className="cell-muted">{r.infra}</td>
+            <td><span className={`badge ${r.maint.includes('Very Low')?'badge-green':r.maint.includes('High')?'badge-red':'badge-yellow'}`}>{r.maint}</span></td>
+            <td className="cell-muted">{r.notes}</td>
+          </tr>)}</tbody>
+        </table>
+      </div>
+    </div>
+  </>;
 }
 
 function DevSecOpsView(){
-return<>
-<div className="panel"style={{marginBottom:18}}>
-<div className="panel-header"><h3 className="panel-title">DevSecOps delivery layer</h3><p className="panel-subtitle">Make security and quality feedback part of the normal engineering path.</p></div>
-<div className="panel-body">
-<div className="pipeline">{PIPELINE.map(([name,desc],i)=><div className="pipeline-step"key={name}><div className="pipeline-num">{i+1}</div><div className="pipeline-name">{name}</div><div className="pipeline-desc">{desc}</div></div>)}</div>
-</div>
-</div>
-<div className="resource-grid"style={{marginBottom:18}}>
-<InfoCard iconName="fa-shield-halved"title="Security controls"><ul className="resource-list">
-<li>{icon('fa-check')}<span><strong>Dependency hygiene.</strong> Keep manifests locked and review known-risk packages.</span></li>
-<li>{icon('fa-check')}<span><strong>Static analysis.</strong> Catch policy violations before deployment.</span></li>
-<li>{icon('fa-check')}<span><strong>Secret handling.</strong> Keep tokens and credentials out of source control.</span></li>
-</ul></InfoCard>
-<InfoCard iconName="fa-chart-line"title="Quality controls"><ul className="resource-list">
-<li>{icon('fa-check')}<span><strong>Automated tests.</strong> Protect core behaviour before refactoring.</span></li>
-<li>{icon('fa-check')}<span><strong>Quality gates.</strong> Make release criteria visible and repeatable.</span></li>
-<li>{icon('fa-check')}<span><strong>Observability.</strong> Instrument important user and system paths.</span></li>
-</ul></InfoCard>
-</div>
-<div className="resource-grid">
-<InfoCard iconName="fa-magnifying-glass"title="Static Analysis & SAST"><ul className="resource-list">
-<li>{icon('fa-check')}<span><strong>Static Analysis:</strong> Examining source code without executing it.</span></li>
-<li>{icon('fa-check')}<span><strong>SAST:</strong> Static analysis focused on security vulnerabilities.</span></li>
-<li>{icon('fa-check')}<span><strong>Code Smells:</strong> Indicators of deeper problems in code.</span></li>
-<li>{icon('fa-check')}<span><strong>Vulnerability Detection:</strong> Identifying known security weaknesses.</span></li>
-</ul></InfoCard>
-<InfoCard iconName="fa-link"title="Supply-Chain Security"><ul className="resource-list">
-<li>{icon('fa-check')}<span><strong>Dependency Security:</strong> Scan for known CVEs. Lock files. Regular updates.</span></li>
-<li>{icon('fa-check')}<span><strong>Branch Protection:</strong> Require reviews and passing CI before merge.</span></li>
-<li>{icon('fa-check')}<span><strong>Least Privilege:</strong> Minimal permissions for CI tokens and service accounts.</span></li>
-</ul></InfoCard>
-</div>
-</>;
+  return<>
+    <div className="panel"style={{marginBottom:18}}>
+      <div className="panel-header"><h3 className="panel-title">DevSecOps delivery layer</h3><p className="panel-subtitle">Make security and quality feedback part of the normal engineering path.</p></div>
+      <div className="panel-body">
+        <div className="pipeline">{PIPELINE.map(([name,desc],i)=><div className="pipeline-step"key={name}><div className="pipeline-num">{i+1}</div><div className="pipeline-name">{name}</div><div className="pipeline-desc">{desc}</div></div>)}</div>
+      </div>
+    </div>
+    <div className="resource-grid"style={{marginBottom:18}}>
+      <InfoCard iconName="fa-shield-halved"title="Security controls"><ul className="resource-list">
+        <li>{icon('fa-check')}<span><strong>Dependency hygiene.</strong> Keep manifests locked and review known-risk packages.</span></li>
+        <li>{icon('fa-check')}<span><strong>Static analysis.</strong> Catch policy violations before deployment.</span></li>
+        <li>{icon('fa-check')}<span><strong>Secret handling.</strong> Keep tokens and credentials out of source control.</span></li>
+      </ul></InfoCard>
+      <InfoCard iconName="fa-chart-line"title="Quality controls"><ul className="resource-list">
+        <li>{icon('fa-check')}<span><strong>Automated tests.</strong> Protect core behaviour before refactoring.</span></li>
+        <li>{icon('fa-check')}<span><strong>Quality gates.</strong> Make release criteria visible and repeatable.</span></li>
+        <li>{icon('fa-check')}<span><strong>Observability.</strong> Instrument important user and system paths.</span></li>
+      </ul></InfoCard>
+    </div>
+    <div className="resource-grid">
+      <InfoCard iconName="fa-magnifying-glass"title="Static Analysis & SAST"><ul className="resource-list">
+        <li>{icon('fa-check')}<span><strong>Static Analysis:</strong> Examining source code without executing it.</span></li>
+        <li>{icon('fa-check')}<span><strong>SAST:</strong> Static analysis focused on security vulnerabilities.</span></li>
+        <li>{icon('fa-check')}<span><strong>Code Smells:</strong> Indicators of deeper problems in code.</span></li>
+        <li>{icon('fa-check')}<span><strong>Vulnerability Detection:</strong> Identifying known security weaknesses.</span></li>
+      </ul></InfoCard>
+      <InfoCard iconName="fa-link"title="Supply-Chain Security"><ul className="resource-list">
+        <li>{icon('fa-check')}<span><strong>Dependency Security:</strong> Scan for known CVEs. Lock files. Regular updates.</span></li>
+        <li>{icon('fa-check')}<span><strong>Branch Protection:</strong> Require reviews and passing CI before merge.</span></li>
+        <li>{icon('fa-check')}<span><strong>Least Privilege:</strong> Minimal permissions for CI tokens and service accounts.</span></li>
+      </ul></InfoCard>
+    </div>
+  </>;
 }
 
 function StackView({onToast}){
-const[active,setActive]=useState(STACKS[0].id);
-const stack=STACKS.find(s=>s.id===active)||STACKS[0];
-const copy=async()=>{try{await navigator.clipboard.writeText(`${stack.name}\n\n${stack.tools.map(([n,t])=>`• ${n}: ${t}`).join('\n')}`);onToast('Stack copied.');}catch{onToast('Clipboard not available.');}};
-return<div className="stack-layout">
-<div className="panel stack-nav">
-<div className="panel-header"style={{padding:'14px 13px'}}><h3 className="panel-title">Presets</h3><p className="panel-subtitle">Starting points, not rigid recipes.</p></div>
-{STACKS.map(s=><button className={`stack-tab ${s.id===active?'active':''}`}key={s.id}onClick={()=>setActive(s.id)}><span className="stack-tab-name">{s.name}</span><span className="stack-tab-desc">{s.desc}</span></button>)}
-</div>
-<div className="panel stack-panel">
-<div className="stack-head"><div><h3>{stack.name}</h3><p>{stack.desc}</p></div><button className="btn btn-secondary"onClick={copy}>{icon('fa-copy')}Copy stack</button></div>
-<div className="license-legend"style={{marginTop:12}}>{stack.tags.map(t=><span className="badge badge-slate"key={t}>{t}</span>)}</div>
-<div className="stack-flow">{stack.tools.map(([name,type],i)=><div className="stack-node"key={name}><span className="stack-node-icon">{icon(i===0?'fa-pen-to-square':i===stack.tools.length-1?'fa-cloud-arrow-up':'fa-cube')}</span><div className="stack-node-main"><strong>{name}</strong><span>{type}</span></div><span className="stack-node-type">Layer {i+1}</span></div>)}</div>
-<div className="notice"style={{marginTop:12}}>{icon('fa-lightbulb')}<span>Presets intentionally combine tools across layers. Replace individual nodes when your workload, budget or constraints call for a different trade-off.</span></div>
-</div>
-</div>;
+  const[active,setActive]=useState(STACKS[0].id);
+  const stack=STACKS.find(s=>s.id===active)||STACKS[0];
+  const copy=async()=>{
+    const text=`${stack.name}\n\n${stack.tools.map(([n,t])=>`• ${n}: ${t}`).join('\n')}`;
+    const ok=await copyText(text);
+    onToast(ok?'Stack copied.':'Copy failed. Please select and copy manually.');
+  };
+  return<div className="stack-layout">
+    <div className="panel stack-nav">
+      <div className="panel-header"style={{padding:'14px 13px'}}><h3 className="panel-title">Presets</h3><p className="panel-subtitle">Starting points, not rigid recipes.</p></div>
+      {STACKS.map(s=><button className={`stack-tab ${s.id===active?'active':''}`}key={s.id}onClick={()=>setActive(s.id)}><span className="stack-tab-name">{s.name}</span><span className="stack-tab-desc">{s.desc}</span></button>)}
+    </div>
+    <div className="panel stack-panel">
+      <div className="stack-head"><div><h3>{stack.name}</h3><p>{stack.desc}</p></div><button className="btn btn-secondary"onClick={copy}>{icon('fa-copy')}Copy stack</button></div>
+      <div className="license-legend"style={{marginTop:12}}>{stack.tags.map(t=><span className="badge badge-slate"key={t}>{t}</span>)}</div>
+      <div className="stack-flow">{stack.tools.map(([name,type],i)=><div className="stack-node"key={name}><span className="stack-node-icon">{icon(i===0?'fa-pen-to-square':i===stack.tools.length-1?'fa-cloud-arrow-up':'fa-cube')}</span><div className="stack-node-main"><strong>{name}</strong><span>{type}</span></div><span className="stack-node-type">Layer {i+1}</span></div>)}</div>
+      <div className="notice"style={{marginTop:12}}>{icon('fa-lightbulb')}<span>Presets intentionally combine tools across layers. Replace individual nodes when your workload, budget or constraints call for a different trade-off.</span></div>
+    </div>
+  </div>;
 }
 
 function DecisionView(){
-const[query,setQuery]=useState('');
-const rows=DECISIONS.filter(d=>`${d.q} ${d.a} ${d.tag}`.toLowerCase().includes(query.toLowerCase()));
-return<div className="panel"><div className="panel-header"><h3 className="panel-title">Architecture decision map</h3><p className="panel-subtitle">Use the constraints first. The tool choice follows from the workload, operational model and team capacity.</p></div><div className="panel-body">
-<div className="search-mini control"><input className="text-control"style={{paddingRight:12}}placeholder="Search decisions..."value={query}onChange={e=>setQuery(e.target.value)}aria-label="Search decisions"/>{icon('fa-magnifying-glass')}</div>
-<div className="decision-list">{rows.map((d,i)=><div className="decision-card"key={i}><div><span className="decision-tag">{d.tag}</span><div className="decision-q">{d.q}</div></div><div className="decision-arrow">{icon('fa-arrow-right')}</div><div className="decision-a">{d.a}</div></div>)}</div>
-{!rows.length&&<EmptyState onReset={()=>setQuery('')}/>}
-</div></div>;
+  const[query,setQuery]=useState('');
+  const rows=DECISIONS.filter(d=>`${d.q} ${d.a} ${d.tag}`.toLowerCase().includes(query.toLowerCase()));
+  return<div className="panel"><div className="panel-header"><h3 className="panel-title">Architecture decision map</h3><p className="panel-subtitle">Use the constraints first. The tool choice follows from the workload, operational model and team capacity.</p></div><div className="panel-body">
+    <div className="search-mini control"><input className="text-control"style={{paddingRight:12}}placeholder="Search decisions..."value={query}onChange={e=>setQuery(e.target.value)}aria-label="Search decisions"/>{icon('fa-magnifying-glass')}</div>
+    <div className="decision-list">{rows.map((d,i)=><div className="decision-card"key={i}><div style={{minWidth:0}}><span className="decision-tag">{d.tag}</span><div className="decision-q">{d.q}</div></div><div className="decision-arrow">{icon('fa-arrow-right')}</div><div className="decision-a">{d.a}</div></div>)}</div>
+    {!rows.length&&<EmptyState onReset={()=>setQuery('')}/>}
+  </div></div>;
 }
 
 function WorkflowView(){
-return<div style={{display:'flex',flexDirection:'column',gap:8}}>
-{LIFECYCLE_STAGES.map((s,i)=><div className="panel"key={s.name}style={{padding:16,display:'flex',alignItems:'start',gap:16}}>
-<div style={{display:'flex',flexDirection:'column',alignItems:'center'}}>
-<div style={{width:40,height:40,borderRadius:'var(--radius-lg)',background:'var(--primary-soft)',border:'1px solid rgba(50,216,244,.2)',display:'grid',placeItems:'center',flexShrink:0}}>{icon(s.icon)}</div>
-{i<LIFECYCLE_STAGES.length-1&&<div style={{width:1.5,flex:1,background:'var(--border)',marginTop:4,minHeight:12}}></div>}
-</div>
-<div style={{flex:1,paddingTop:2}}>
-<div style={{display:'flex',alignItems:'center',gap:8,marginBottom:4}}>
-<span style={{fontSize:10,color:'var(--muted)'}}>Stage {i+1}</span>
-<h3 style={{margin:0,fontSize:14,fontWeight:650}}>{s.name}</h3>
-</div>
-<p style={{margin:'0 0 4px',fontSize:12,color:'var(--muted)'}}>{s.desc}</p>
-<div style={{fontSize:11,color:'var(--text-2)'}}><strong style={{color:'var(--muted)'}}>Tools:</strong> {s.tools}</div>
-</div>
-</div>)}
-</div>;
+  return<div style={{display:'flex',flexDirection:'column',gap:8}}>
+    {LIFECYCLE_STAGES.map((s,i)=><div className="panel"key={s.name}style={{padding:16,display:'flex',alignItems:'start',gap:16,minWidth:0}}>
+      <div style={{display:'flex',flexDirection:'column',alignItems:'center'}}>
+        <div style={{width:40,height:40,borderRadius:'var(--radius-lg)',background:'var(--primary-soft)',border:'1px solid rgba(50,216,244,.2)',display:'grid',placeItems:'center',flexShrink:0}}>{icon(s.icon)}</div>
+        {i<LIFECYCLE_STAGES.length-1&&<div style={{width:1.5,flex:1,background:'var(--border)',marginTop:4,minHeight:12}}></div>}
+      </div>
+      <div style={{flex:1,paddingTop:2,minWidth:0}}>
+        <div style={{display:'flex',alignItems:'center',gap:8,marginBottom:4,flexWrap:'wrap'}}>
+          <span style={{fontSize:10,color:'var(--muted)'}}>Stage {i+1}</span>
+          <h3 style={{margin:0,fontSize:14,fontWeight:650}}>{s.name}</h3>
+        </div>
+        <p style={{margin:'0 0 4px',fontSize:12,color:'var(--muted)'}}>{s.desc}</p>
+        <div style={{fontSize:11,color:'var(--text-2)'}}><strong style={{color:'var(--muted)'}}>Tools:</strong> {s.tools}</div>
+      </div>
+    </div>)}
+  </div>;
 }
 
-function RoadmapView({learningProgress,setProgress,onToast}){
-return<div style={{display:'flex',flexDirection:'column',gap:12}}>
-{LEARNING_LEVELS.map(lv=><div className="panel"key={lv.l}style={{padding:20,borderLeft:`3px solid ${lv.c}`}}>
-<div style={{display:'flex',alignItems:'center',gap:12,marginBottom:14}}>
-<div style={{width:36,height:36,borderRadius:'var(--radius-md)',background:`color-mix(in srgb,${lv.c} 15%,transparent)`,display:'grid',placeItems:'center'}}>
-<span style={{fontSize:16,fontWeight:700,color:lv.c}}>{lv.l}</span>
-</div>
-<div><h3 style={{margin:0,fontSize:15,fontWeight:650}}>{lv.t}</h3><div style={{fontSize:10,color:'var(--muted)'}}>Level {lv.l}</div></div>
-</div>
-<div className="level-grid">
-<div>
-<div style={{fontSize:10,fontWeight:600,color:'var(--muted)',textTransform:'uppercase',letterSpacing:'0.04em',marginBottom:6}}>Skills</div>
-<div style={{display:'flex',flexWrap:'wrap',gap:4}}>{lv.skills.map(s=><span className="badge badge-blue"key={s}>{s}</span>)}</div>
-</div>
-<div>
-<div style={{fontSize:10,fontWeight:600,color:'var(--muted)',textTransform:'uppercase',letterSpacing:'0.04em',marginBottom:6}}>Build This</div>
-<div style={{fontSize:13,fontWeight:600,marginBottom:2}}>{lv.project}</div>
-<div style={{fontSize:11,color:'var(--muted)'}}>{lv.desc}</div>
-</div>
-<div>
-<div style={{fontSize:10,fontWeight:600,color:'var(--muted)',textTransform:'uppercase',letterSpacing:'0.04em',marginBottom:6}}>Progress</div>
-<div className="progress-btns">
-{['not-started','learning','used','comfortable','advanced'].map(s=><button key={s}className={`progress-btn ${(learningProgress['level-'+lv.l]||'')===s?'active':''}`}onClick={()=>{setProgress('level-'+lv.l,s);onToast('Progress saved.');}}>{s==='not-started'?'Not Started':s.charAt(0).toUpperCase()+s.slice(1)}</button>)}
-</div>
-</div>
-</div>
-</div>)}
-</div>;
+function RoadmapView({learningProgress,setProgress}){
+  return<div style={{display:'flex',flexDirection:'column',gap:12}}>
+    {LEARNING_LEVELS.map(lv=><div className="panel"key={lv.l}style={{padding:20,borderLeft:`3px solid ${lv.c}`}}>
+      <div style={{display:'flex',alignItems:'center',gap:12,marginBottom:14}}>
+        <div style={{width:36,height:36,borderRadius:'var(--radius-md)',background:`color-mix(in srgb,${lv.c} 15%,transparent)`,display:'grid',placeItems:'center'}}>
+          <span style={{fontSize:16,fontWeight:700,color:lv.c}}>{lv.l}</span>
+        </div>
+        <div><h3 style={{margin:0,fontSize:15,fontWeight:650}}>{lv.t}</h3><div style={{fontSize:10,color:'var(--muted)'}}>Level {lv.l}</div></div>
+      </div>
+      <div className="level-grid">
+        <div>
+          <div style={{fontSize:10,fontWeight:600,color:'var(--muted)',textTransform:'uppercase',letterSpacing:'0.04em',marginBottom:6}}>Skills</div>
+          <div style={{display:'flex',flexWrap:'wrap',gap:4}}>{lv.skills.map(s=><span className="badge badge-blue"key={s}>{s}</span>)}</div>
+        </div>
+        <div>
+          <div style={{fontSize:10,fontWeight:600,color:'var(--muted)',textTransform:'uppercase',letterSpacing:'0.04em',marginBottom:6}}>Build This</div>
+          <div style={{fontSize:13,fontWeight:600,marginBottom:2}}>{lv.project}</div>
+          <div style={{fontSize:11,color:'var(--muted)'}}>{lv.desc}</div>
+        </div>
+        <div>
+          <div style={{fontSize:10,fontWeight:600,color:'var(--muted)',textTransform:'uppercase',letterSpacing:'0.04em',marginBottom:6}}>Progress</div>
+          <div className="progress-btns">
+            {['not-started','learning','used','comfortable','advanced'].map(s=><button key={s}className={`progress-btn ${(learningProgress['level-'+lv.l]||'')===s?'active':''}`}onClick={()=>setProgress('level-'+lv.l,s)}>{s==='not-started'?'Not Started':s.charAt(0).toUpperCase()+s.slice(1)}</button>)}
+          </div>
+        </div>
+      </div>
+    </div>)}
+  </div>;
 }
 
 function ProjectsView(){
-return<div className="project-grid">
-{PROJECTS.map((p,i)=><div className="project-card"key={i}>
-<h4>{`Project ${i+1}: ${p.name}`}<span className={`badge ${p.diff.includes('Beginner')&&!p.diff.includes('Intermediate')?'badge-green':p.diff.includes('Expert')?'badge-red':p.diff.includes('Advanced')?'badge-orange':'badge-blue'}`}>{p.diff}</span></h4>
-<div className="project-meta">
-<span><strong>Stack:</strong> {p.stack}</span>
-<span><strong>Tools:</strong> {p.tools}</span>
-<span><strong>Deploy:</strong> {p.deploy}</span>
-<span><strong>Skills:</strong> {p.skills}</span>
-</div>
-</div>)}
-</div>;
+  return<div className="project-grid">
+    {PROJECTS.map((p,i)=><div className="project-card"key={i}>
+      <h4>{`Project ${i+1}: ${p.name}`}<span className={`badge ${p.diff.includes('Beginner')&&!p.diff.includes('Intermediate')?'badge-green':p.diff.includes('Expert')?'badge-red':p.diff.includes('Advanced')?'badge-orange':'badge-blue'}`}>{p.diff}</span></h4>
+      <div className="project-meta">
+        <span><strong>Stack:</strong> {p.stack}</span>
+        <span><strong>Tools:</strong> {p.tools}</span>
+        <span><strong>Deploy:</strong> {p.deploy}</span>
+        <span><strong>Skills:</strong> {p.skills}</span>
+      </div>
+    </div>)}
+  </div>;
 }
 
 function LicenseView({tools}){
-const[query,setQuery]=useState('');
-const rows=tools.filter(t=>`${t.name} ${t.license} ${t.licenseType}`.toLowerCase().includes(query.toLowerCase()));
-return<div className="panel"><div className="panel-header"><h3 className="panel-title">Licence matrix</h3><p className="panel-subtitle">Use this as a screening layer. Licence wording can change; commercial terms need direct review.</p></div><div className="panel-body">
-<div className="license-legend"><span className="badge badge-green">OSI-labelled</span><span className="badge badge-blue">Open core</span><span className="badge badge-orange">Source available</span><span className="badge badge-slate">Managed service</span></div>
-<div className="notice notice-warning"style={{marginBottom:13}}>{icon('fa-triangle-exclamation')}<span>"Open source" is not the same as "free to use however you want". Review the actual licence before redistribution or commercial deployment.</span></div>
-<div style={{marginBottom:18}}>
-<div style={{display:'grid',gridTemplateColumns:'repeat(auto-fill,minmax(300px,1fr))',gap:12}}>
-<div className="panel"style={{padding:16,borderLeft:'3px solid var(--success)'}}>
-<h4 style={{margin:'0 0 6px',fontSize:13,color:'var(--success)'}}>Fully Open Source (OSI)</h4>
-<p style={{margin:'0 0 8px',fontSize:11,color:'var(--muted)'}}>MIT, Apache-2.0, BSD, LGPL, MPL-2.0, EPL-2.0</p>
-<div style={{display:'flex',flexWrap:'wrap',gap:4}}>{tools.filter(t=>t.licenseType===LICENSES.OSI).map(t=><span className="badge badge-green"key={t.id}style={{fontSize:9}}>{t.name}</span>)}</div>
-</div>
-<div className="panel"style={{padding:16,borderLeft:'3px solid var(--warning)'}}>
-<h4 style={{margin:'0 0 6px',fontSize:13,color:'var(--warning)'}}>Source Available</h4>
-<p style={{margin:'0 0 8px',fontSize:11,color:'var(--muted)'}}>Code visible but license restricts certain uses.</p>
-<div style={{display:'flex',flexWrap:'wrap',gap:4}}>{tools.filter(t=>t.licenseType===LICENSES.SA).map(t=><span className="badge badge-orange"key={t.id}style={{fontSize:9}}>{t.name} ({t.license})</span>)}</div>
-</div>
-<div className="panel"style={{padding:16,borderLeft:'3px solid var(--info)'}}>
-<h4 style={{margin:'0 0 6px',fontSize:13,color:'var(--info)'}}>Open Core</h4>
-<p style={{margin:'0 0 8px',fontSize:11,color:'var(--muted)'}}>Community edition open source. Enterprise proprietary.</p>
-<div style={{display:'flex',flexWrap:'wrap',gap:4}}>{tools.filter(t=>t.licenseType===LICENSES.OC).map(t=><span className="badge badge-blue"key={t.id}style={{fontSize:9}}>{t.name}</span>)}</div>
-</div>
-<div className="panel"style={{padding:16,borderLeft:'3px solid var(--purple)'}}>
-<h4 style={{margin:'0 0 6px',fontSize:13,color:'var(--purple)'}}>Managed / Proprietary</h4>
-<p style={{margin:'0 0 8px',fontSize:11,color:'var(--muted)'}}>Cloud-only. Not open source.</p>
-<div style={{display:'flex',flexWrap:'wrap',gap:4}}>{tools.filter(t=>t.licenseType===LICENSES.FREE).map(t=><span className="badge badge-purple"key={t.id}style={{fontSize:9}}>{t.name}</span>)}</div>
-</div>
-</div>
-</div>
-<div className="search-mini control"><input className="text-control"placeholder="Search the licence matrix..."value={query}onChange={e=>setQuery(e.target.value)}aria-label="Search licences"/>{icon('fa-magnifying-glass')}</div>
-<div className="table-wrap"><table style={{minWidth:720}}>
-<thead><tr><th>Tool</th><th>Licence type</th><th>Specific licence</th><th>Self-hosting</th></tr></thead>
-<tbody>{rows.map(t=><tr key={t.id}><td style={{fontWeight:600}}>{t.name}</td><td><LicenseBadge type={t.licenseType}/></td><td className="cell-muted">{t.license}</td><td className="cell-compact">{t.selfHosted}</td></tr>)}</tbody>
-</table></div>
-</div></div>;
+  const[query,setQuery]=useState('');
+  const rows=tools.filter(t=>`${t.name} ${t.license} ${t.licenseType}`.toLowerCase().includes(query.toLowerCase()));
+  return<div className="panel"><div className="panel-header"><h3 className="panel-title">Licence matrix</h3><p className="panel-subtitle">Use this as a screening layer. Licence wording can change; commercial terms need direct review.</p></div><div className="panel-body">
+    <div className="license-legend"><span className="badge badge-green">OSI-labelled</span><span className="badge badge-blue">Open core</span><span className="badge badge-orange">Source available</span><span className="badge badge-slate">Managed service</span></div>
+    <div className="notice notice-warning"style={{marginBottom:13}}>{icon('fa-triangle-exclamation')}<span>"Open source" is not the same as "free to use however you want". Review the actual licence before redistribution or commercial deployment.</span></div>
+    <div style={{marginBottom:18}}>
+      <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fill,minmax(260px,1fr))',gap:12}}>
+        <div className="panel"style={{padding:16,borderLeft:'3px solid var(--success)'}}>
+          <h4 style={{margin:'0 0 6px',fontSize:13,color:'var(--success)'}}>Fully Open Source (OSI)</h4>
+          <p style={{margin:'0 0 8px',fontSize:11,color:'var(--muted)'}}>MIT, Apache-2.0, BSD, LGPL, MPL-2.0, EPL-2.0</p>
+          <div style={{display:'flex',flexWrap:'wrap',gap:4}}>{tools.filter(t=>t.licenseType===LICENSES.OSI).map(t=><span className="badge badge-green"key={t.id}style={{fontSize:9}}>{t.name}</span>)}</div>
+        </div>
+        <div className="panel"style={{padding:16,borderLeft:'3px solid var(--warning)'}}>
+          <h4 style={{margin:'0 0 6px',fontSize:13,color:'var(--warning)'}}>Source Available</h4>
+          <p style={{margin:'0 0 8px',fontSize:11,color:'var(--muted)'}}>Code visible but license restricts certain uses.</p>
+          <div style={{display:'flex',flexWrap:'wrap',gap:4}}>{tools.filter(t=>t.licenseType===LICENSES.SA).map(t=><span className="badge badge-orange"key={t.id}style={{fontSize:9}}>{t.name} ({t.license})</span>)}</div>
+        </div>
+        <div className="panel"style={{padding:16,borderLeft:'3px solid var(--info)'}}>
+          <h4 style={{margin:'0 0 6px',fontSize:13,color:'var(--info)'}}>Open Core</h4>
+          <p style={{margin:'0 0 8px',fontSize:11,color:'var(--muted)'}}>Community edition open source. Enterprise proprietary.</p>
+          <div style={{display:'flex',flexWrap:'wrap',gap:4}}>{tools.filter(t=>t.licenseType===LICENSES.OC).map(t=><span className="badge badge-blue"key={t.id}style={{fontSize:9}}>{t.name}</span>)}</div>
+        </div>
+        <div className="panel"style={{padding:16,borderLeft:'3px solid var(--purple)'}}>
+          <h4 style={{margin:'0 0 6px',fontSize:13,color:'var(--purple)'}}>Managed / Proprietary</h4>
+          <p style={{margin:'0 0 8px',fontSize:11,color:'var(--muted)'}}>Cloud-only. Not open source.</p>
+          <div style={{display:'flex',flexWrap:'wrap',gap:4}}>{tools.filter(t=>t.licenseType===LICENSES.FREE).map(t=><span className="badge badge-purple"key={t.id}style={{fontSize:9}}>{t.name}</span>)}</div>
+        </div>
+      </div>
+    </div>
+    <div className="search-mini control"><input className="text-control"placeholder="Search the licence matrix..."value={query}onChange={e=>setQuery(e.target.value)}aria-label="Search licences"/>{icon('fa-magnifying-glass')}</div>
+    <div className="table-wrap"><table style={{minWidth:720}}>
+      <thead><tr><th>Tool</th><th>Licence type</th><th>Specific licence</th><th>Self-hosting</th></tr></thead>
+      <tbody>{rows.map(t=><tr key={t.id}><td style={{fontWeight:600}}>{t.name}</td><td><LicenseBadge type={t.licenseType}/></td><td className="cell-muted">{t.license}</td><td className="cell-compact">{t.selfHosted}</td></tr>)}</tbody>
+    </table></div>
+  </div></div>;
 }
 
 function CostView(){
-return<>
-<div className="panel"style={{padding:20,marginBottom:18,borderLeft:'3px solid var(--warning)'}}>
-<h2 style={{margin:'0 0 6px',fontSize:14,fontWeight:650}}>Key Insight</h2>
-<p style={{margin:0,fontSize:13,color:'var(--text-2)'}}>"Free software" does not mean "zero-cost production." The total cost of ownership includes infrastructure, maintenance, engineering time, and opportunity costs.</p>
-</div>
-<div className="cost-grid"style={{marginBottom:18}}>
-{[{t:'Free / Open Source Software',i:'fa-gift',c:'var(--success)',items:['License cost: $0','What is free: VS Code, Git, PocketBase, Supabase CE, Appwrite, Semgrep, SonarQube CE','Hidden costs: Setup time, learning curve, community support (no SLA)']},{t:'Infrastructure Cost',i:'fa-server',c:'var(--info)',items:['Self-hosting: VPS ($5-50/mo), domain ($10-15/yr), SSL (free)','Scaling: More CPU/RAM as traffic grows','Backups: Storage costs for database backups']},{t:'Managed Cloud Cost',i:'fa-cloud',c:'var(--primary)',items:['Supabase: Free tier to $25/mo (Pro) to usage-based','Koyeb: Free tier to usage-based (GPU is expensive)','Trade-off: Pay money, save time on operations']},{t:'AI Model / API Cost',i:'fa-microchip',c:'var(--warning)',items:['Cloud LLMs: OpenAI, Anthropic, pay per token','Local models: Free but need GPU hardware','Budget: $10-100+/month depending on usage']}].map(s=>
-<div className="cost-card"key={s.t}>
-<h3>{icon(s.i)}{s.t}</h3>
-{s.items.map((x,j)=><div className="cost-item"key={j}>{x}</div>)}
-</div>)}
-</div>
-<div className="panel"style={{padding:20}}>
-<h3 style={{margin:'0 0 12px',fontSize:14,fontWeight:650,display:'flex',alignItems:'center',gap:8}}>{icon('fa-clock')}Engineering / Maintenance Cost</h3>
-<p style={{margin:'0 0 12px',fontSize:13,color:'var(--text-2)'}}>The largest cost is always <strong>engineering time</strong>.</p>
-<div style={{display:'grid',gridTemplateColumns:'repeat(auto-fill,minmax(180px,1fr))',gap:8}}>
-{[{t:'Learning',d:'Time to become productive with each tool'},{t:'Maintenance',d:'Updates, security patches, configuration'},{t:'Debugging',d:'Troubleshooting self-hosted infrastructure'}].map(x=><div key={x.t}style={{padding:12,borderRadius:'var(--radius-md)',background:'var(--surface-2)',border:'1px solid var(--border)'}}><div style={{fontSize:10,color:'var(--muted)',marginBottom:2}}>{x.t}</div><div style={{fontSize:12,color:'var(--text-2)'}}>{x.d}</div></div>)}
-</div>
-</div>
-</>;
+  return<>
+    <div className="panel"style={{padding:20,marginBottom:18,borderLeft:'3px solid var(--warning)'}}>
+      <h2 style={{margin:'0 0 6px',fontSize:14,fontWeight:650}}>Key Insight</h2>
+      <p style={{margin:0,fontSize:13,color:'var(--text-2)'}}>"Free software" does not mean "zero-cost production." The total cost of ownership includes infrastructure, maintenance, engineering time, and opportunity costs.</p>
+    </div>
+    <div className="cost-grid"style={{marginBottom:18}}>
+      {[{t:'Free / Open Source Software',i:'fa-gift',items:['License cost: zero','What is free: VS Code, Git, PocketBase, Supabase CE, Appwrite, Semgrep, SonarQube CE','Hidden costs: Setup time, learning curve, community support (no SLA)']},{t:'Infrastructure Cost',i:'fa-server',items:['Self-hosting: VPS (5 to 50 USD/month), domain (10 to 15 USD/year), SSL (free options available)','Scaling: More CPU/RAM as traffic grows','Backups: Storage costs for database backups']},{t:'Managed Cloud Cost',i:'fa-cloud',items:['Supabase: Free tier to paid tiers to usage-based','Koyeb: Free tier to usage-based (GPU is expensive)','Trade-off: Pay money, save time on operations']},{t:'AI Model / API Cost',i:'fa-microchip',items:['Cloud LLMs: OpenAI, Anthropic, pay per token','Local models: Free but need GPU hardware','Budget: 10 to 100+ USD/month depending on usage']}].map(s=>
+        <div className="cost-card"key={s.t}>
+          <h3>{icon(s.i)}{s.t}</h3>
+          {s.items.map((x,j)=><div className="cost-item"key={j}>{x}</div>)}
+        </div>)}
+    </div>
+    <div className="panel"style={{padding:20}}>
+      <h3 style={{margin:'0 0 12px',fontSize:14,fontWeight:650,display:'flex',alignItems:'center',gap:8}}>{icon('fa-clock')}Engineering / Maintenance Cost</h3>
+      <p style={{margin:'0 0 12px',fontSize:13,color:'var(--text-2)'}}>The largest cost is always <strong>engineering time</strong>.</p>
+      <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fill,minmax(180px,1fr))',gap:8}}>
+        {[{t:'Learning',d:'Time to become productive with each tool'},{t:'Maintenance',d:'Updates, security patches, configuration'},{t:'Debugging',d:'Troubleshooting self-hosted infrastructure'}].map(x=><div key={x.t}style={{padding:12,borderRadius:'var(--radius-md)',background:'var(--surface-2)',border:'1px solid var(--border)',minWidth:0}}><div style={{fontSize:10,color:'var(--muted)',marginBottom:2}}>{x.t}</div><div style={{fontSize:12,color:'var(--text-2)'}}>{x.d}</div></div>)}
+      </div>
+    </div>
+  </>;
 }
 
 function MalawiView(){
-return<>
-<div className="panel"style={{marginBottom:18}}>
-<div className="panel-header"><h3 className="panel-title">Low-resource engineering context</h3><p className="panel-subtitle">Optimise for unreliable connectivity, constrained hardware, operating cost and small teams without abandoning good architecture.</p></div>
-<div className="panel-body">
-<div className="resource-grid">
-<Resource title="Typical constraints"items={['Limited or expensive bandwidth','Intermittent power and connectivity','Low-cost laptops, small servers or entry-level VPS plans','Small teams that need clear operational ownership']}iconName="fa-triangle-exclamation"/>
-<Resource title="Architectural responses"items={['Prefer simple deployment topologies over unnecessary microservices','Keep frontends lean and consider offline-first patterns','Use managed services selectively when they remove operational burden','Back up data locally and remotely with explicit recovery procedures']}iconName="fa-gears"/>
-</div>
-</div>
-</div>
-<div className="resource-grid"style={{marginBottom:18}}>
-<div className="panel panel-body">
-<h3 style={{margin:'0 0 5px',fontSize:14}}>Compact backend pattern</h3>
-<p className="muted"style={{margin:'0 0 10px',fontSize:11}}>PocketBase is a useful example when one binary, a local SQLite store and straightforward admin tooling meet the application requirements.</p>
-<div className="resource-callout"><h4>{icon('fa-check')}Keep the topology understandable</h4><p>For small deployments, fewer moving parts can materially reduce support overhead. Scale the architecture when the workload actually needs it.</p></div>
-</div>
-<div className="panel panel-body">
-<h3 style={{margin:'0 0 5px',fontSize:14}}>Frontend pattern</h3>
-<p className="muted"style={{margin:'0 0 10px',fontSize:11}}>Prefer compressed assets, modest JavaScript payloads, resilient caching and clear offline/error states when connectivity is unreliable.</p>
-<div className="resource-callout"><h4>{icon('fa-wifi')}Design for the connection you have</h4><p>Optimise the critical path first. A fast, resilient application is usually more valuable than a larger feature set that assumes perfect connectivity.</p></div>
-</div>
-</div>
-<div className="resource-grid">
-<Resource title="When PocketBase makes sense"items={['Single binary: no complex setup, works on minimal VPS','Low resources: runs on 256MB RAM','Offline development: everything local, no external dependencies','Easy deployment: copy one file to server','Best for: Prototypes, small apps, NGOs, local SMEs']}iconName="fa-check"/>
-<Resource title="When managed services make sense"items={['Supabase Cloud: free tier, no server management','Reduces operational burden: no backups, updates, patching','Better for small teams: focus on product, not infrastructure','Consideration: Requires internet connectivity','Best for: Startups, small teams, projects where ops time exceeds cloud cost']}iconName="fa-cloud"/>
-</div>
-</>;
+  return<>
+    <div className="panel"style={{marginBottom:18}}>
+      <div className="panel-header"><h3 className="panel-title">Low-resource engineering context</h3><p className="panel-subtitle">Optimise for unreliable connectivity, constrained hardware, operating cost and small teams without abandoning good architecture.</p></div>
+      <div className="panel-body">
+        <div className="resource-grid">
+          <Resource title="Typical constraints"items={['Limited or expensive bandwidth','Intermittent power and connectivity','Low-cost laptops, small servers or entry-level VPS plans','Small teams that need clear operational ownership']}iconName="fa-triangle-exclamation"/>
+          <Resource title="Architectural responses"items={['Prefer simple deployment topologies over unnecessary microservices','Keep frontends lean and consider offline-first patterns','Use managed services selectively when they remove operational burden','Back up data locally and remotely with explicit recovery procedures']}iconName="fa-gears"/>
+        </div>
+      </div>
+    </div>
+    <div className="resource-grid"style={{marginBottom:18}}>
+      <div className="panel panel-body">
+        <h3 style={{margin:'0 0 5px',fontSize:14}}>Compact backend pattern</h3>
+        <p className="muted"style={{margin:'0 0 10px',fontSize:11}}>PocketBase is a useful example when one binary, a local SQLite store and straightforward admin tooling meet the application requirements.</p>
+        <div className="resource-callout"><h4>{icon('fa-check')}Keep the topology understandable</h4><p>For small deployments, fewer moving parts can materially reduce support overhead. Scale the architecture when the workload actually needs it.</p></div>
+      </div>
+      <div className="panel panel-body">
+        <h3 style={{margin:'0 0 5px',fontSize:14}}>Frontend pattern</h3>
+        <p className="muted"style={{margin:'0 0 10px',fontSize:11}}>Prefer compressed assets, modest JavaScript payloads, resilient caching and clear offline/error states when connectivity is unreliable.</p>
+        <div className="resource-callout"><h4>{icon('fa-wifi')}Design for the connection you have</h4><p>Optimise the critical path first. A fast, resilient application is usually more valuable than a larger feature set that assumes perfect connectivity.</p></div>
+      </div>
+    </div>
+    <div className="resource-grid">
+      <Resource title="When PocketBase makes sense"items={['Single binary: no complex setup, works on minimal VPS','Low resources: runs on 256MB RAM','Offline development: everything local, no external dependencies','Easy deployment: copy one file to server','Best for: Prototypes, small apps, NGOs, local SMEs']}iconName="fa-check"/>
+      <Resource title="When managed services make sense"items={['Supabase Cloud: free tier, no server management','Reduces operational burden: no backups, updates, patching','Better for small teams: focus on product, not infrastructure','Consideration: Requires internet connectivity','Best for: Startups, small teams, projects where ops time exceeds cloud cost']}iconName="fa-cloud"/>
+    </div>
+  </>;
 }
 function Resource({title,items,iconName}){return<div className="resource-card"><h3>{icon(iconName)}{title}</h3><ul className="resource-list">{items.map((item,i)=><li key={i}>{icon('fa-check')}<span>{item}</span></li>)}</ul></div>;}
 
 function ComparisonView(){
-return<>
-<div className="panel"style={{padding:4,marginBottom:18}}>
-<div className="table-wrap"style={{border:'none'}}>
-<table>
-<thead><tr><th>Tool</th><th>Category</th><th>Self-Host</th><th>Database</th><th>Auth</th><th>API</th><th>Realtime</th><th>Best Fit</th></tr></thead>
-<tbody>{COMPARISON_DATA.map(r=><tr key={r.tool}>
-<td style={{fontWeight:600}}>{r.tool}</td>
-<td><span className="badge badge-blue">{r.cat}</span></td>
-<td>{r.self==='✓'?<span style={{color:'var(--success)'}}>✓</span>:<span style={{color:'var(--muted)'}}>—</span>}</td>
-<td className="cell-muted">{r.db}</td><td className="cell-muted">{r.auth}</td><td className="cell-muted">{r.api}</td><td className="cell-muted">{r.rt}</td><td className="cell-muted">{r.fit}</td>
-</tr>)}</tbody>
-</table>
-</div>
-</div>
-<div className="panel"style={{padding:20}}>
-<h2 style={{margin:'0 0 10px',fontSize:14,fontWeight:650}}>Legend</h2>
-<div style={{display:'flex',flexWrap:'wrap',gap:16,fontSize:12,color:'var(--text-2)'}}>
-<div><span style={{color:'var(--success)',fontWeight:600}}>Native</span> = Built-in capability</div>
-<div><span style={{color:'var(--info)',fontWeight:600}}>Via integration</span> = Available through packages</div>
-<div><span style={{color:'var(--muted)',fontWeight:600}}>N/A</span> = Not relevant</div>
-</div>
-</div>
-</>;
+  return<>
+    <div className="panel"style={{padding:4,marginBottom:18}}>
+      <div className="table-wrap"style={{border:'none'}}>
+        <table>
+          <thead><tr><th>Tool</th><th>Category</th><th>Self-Host</th><th>Database</th><th>Auth</th><th>API</th><th>Realtime</th><th>Best Fit</th></tr></thead>
+          <tbody>{COMPARISON_DATA.map(r=><tr key={r.tool}>
+            <td style={{fontWeight:600}}>{r.tool}</td>
+            <td><span className="badge badge-blue">{r.cat}</span></td>
+            <td>{r.self==='Yes'?<span style={{color:'var(--success)'}}>Yes</span>:<span style={{color:'var(--muted)'}}>No</span>}</td>
+            <td className="cell-muted">{r.db}</td>
+            <td className="cell-muted">{r.auth}</td>
+            <td className="cell-muted">{r.api}</td>
+            <td className="cell-muted">{r.rt}</td>
+            <td className="cell-muted">{r.fit}</td>
+          </tr>)}</tbody>
+        </table>
+      </div>
+    </div>
+    <div className="panel"style={{padding:20}}>
+      <h2 style={{margin:'0 0 10px',fontSize:14,fontWeight:650}}>Legend</h2>
+      <div style={{display:'flex',flexWrap:'wrap',gap:16,fontSize:12,color:'var(--text-2)'}}>
+        <div><span style={{color:'var(--success)',fontWeight:600}}>Native</span> = Built-in capability</div>
+        <div><span style={{color:'var(--info)',fontWeight:600}}>Via integration</span> = Available through packages</div>
+        <div><span style={{color:'var(--muted)',fontWeight:600}}>N/A</span> = Not relevant</div>
+      </div>
+    </div>
+  </>;
 }
 
 ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
